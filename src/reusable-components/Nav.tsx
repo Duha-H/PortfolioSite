@@ -7,7 +7,12 @@ interface NavProps {
   items: NavItem[];
 }
 
-class Nav extends React.Component<NavProps, NavProps> {
+interface NavState {
+  items: NavItem[];
+  mobile?: boolean;
+}
+
+class Nav extends React.Component<NavProps, NavState> {
 
   items: NavItem[] = [];
 
@@ -17,6 +22,7 @@ class Nav extends React.Component<NavProps, NavProps> {
     this.displayItemText = this.displayItemText.bind(this);
     this.state = {
       items: props.items,
+      mobile: false,
     };
   }
 
@@ -27,20 +33,44 @@ class Nav extends React.Component<NavProps, NavProps> {
 
   render() {
     return (
-      <ul className="nav">
-        {this.state.items.map((item, index) =>
-          <li
-            onMouseEnter={ () => this.displayItemText(index, true) }
-            onMouseLeave={ () => this.displayItemText(index, false) }
-          >
-            <Link to={item.link} >
-              <img src={ item.iconSrc } alt={ item.text } />
-              { item.display && <p>{ item.text }</p> }
-            </Link>
-            
-          </li>
-        )}
-      </ul>
+      <div>
+        <div className="parent">
+          <div className="line"></div>
+          <ul className="nav">
+            {this.state.items.map((item, index) =>
+              <li
+                onMouseEnter={ () => this.displayItemText(index, true) }
+                onMouseLeave={ () => this.displayItemText(index, false) }
+              >
+                <Link to={item.link} >
+                  <img src={ item.iconSrc } alt={ item.text } />
+                  { item.display && <p>{ item.text }</p> }
+                </Link>
+                
+              </li>
+            )}
+          </ul>
+        </div>
+
+        <div className="parent-mobile">
+          <img src={require('../assets/icon_nav.svg')} alt="navigation"
+            onClick={ () => { this.setState({mobile: !this.state.mobile }) }}
+          />
+          { this.state.mobile && <ul className="nav" >
+            {this.state.items.map((item, index) =>
+              <li>
+                <Link
+                  to={item.link}
+                  onClick={ () => this.setState({ mobile: false, }) }
+                >
+                  <img src={ item.iconSrc } alt={ item.text } />
+                  <p>{ item.text }</p>
+                </Link>
+              </li>
+            )}
+          </ul> }
+        </div>
+      </div>
     );
   }
 }

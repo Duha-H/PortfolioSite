@@ -1,8 +1,13 @@
 import React from "react";
+import "./Skills.css";
 
 class Skills extends React.Component {
   render() {
-    return (<p>skill things??</p>)
+    return (
+      <div className="page-content">
+        <h2>Skills</h2>
+      </div>
+    );
   }
 }
 

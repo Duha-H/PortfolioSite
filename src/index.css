@@ -1,3 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito:wght@300family=Roboto+Mono&display=swap');
+
+* {
+  --accent: rgb(79, 129, 223);
+  --primary: #fff;
+  font-size: 11pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--primary);
+}
+
+h1 {
+  font-size: 3em;
+  color: var(--accent);
+}
+
+h2 {
+  font-size: 2em;
+  color: var(--accent);
+}
+
+h3 {
+  font-size: 1.25em;
+  color: var(--primary);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +41,60 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p {
+  color: var(--primary);
+}
+
+a {
+  text-decoration: none;
+}
+
+p a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+p a:hover {
+  border-bottom: solid 4px rgba(79, 129, 223, 0.7);
+}
+
+div.line {
+  width: 3px;
+  height: 70px;
+  background-color: var(--accent);
+}
+
+div.page-content {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  box-sizing: border-box;
+}
+
+.container.dark {
+  --accent: #4f81df;
+  --primary: #ffffff;
+  --bg: #101214;
+}
+
+.container.light {
+  --accent: #4f81df;
+  --primary: #101214;
+  --bg: #e6e9ec;
+}
+
+/** Animations */
+@keyframes slide-down {
+  from {
+    height: 0;
+    transform: translateY(-30%) scaleY(0);
+  }
+  to {
+    height: 100%;
+    transform: translateY(0) scaleY(1);
+  }
 }

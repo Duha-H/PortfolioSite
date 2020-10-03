@@ -1,39 +1,37 @@
 import React from "react";
-import logo from "../logo.svg";
 import "../App.css";
 import "./Home.css";
 import { NavItem } from "../reusable-components/types";
 import Nav from "../reusable-components/Nav";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link
 } from "react-router-dom";
 import About from "../about/About";
 import Projects from "../projects/Projects";
 import Skills from "../skills/Skills";
 import Contact from "../contact/Contact";
+import homeIcon from "../assets/IconHome";
 
 class Home extends React.Component {
   navItems: NavItem[] = [
-    { text: 'Home', iconSrc: require('../assets/placeholder-icon.svg'), link: '/' },
-    { text: 'About', iconSrc: require('../assets/placeholder-icon.svg'), link: '/about' },
-    { text: 'Projects', iconSrc: require('../assets/placeholder-icon.svg'), link: '/projects' },
-    { text: 'Skills', iconSrc: require('../assets/placeholder-icon.svg'), link: '/skills' },
-    { text: 'Contact', iconSrc: require('../assets/placeholder-icon.svg'), link: '/contact' },
+    { text: 'home', iconSrc: require('../assets/icon_home.svg'), link: '/' },
+    { text: 'about', iconSrc: require('../assets/icon_about.svg'), link: '/about' },
+    { text: 'projects', iconSrc: require('../assets/icon_projects.svg'), link: '/projects' },
+    { text: 'skills', iconSrc: require('../assets/icon_skills.svg'), link: '/skills' },
   ]
 
   render() {
     return (
       <Router>
-        <div className="container">
+        <div className="container dark">
           <Nav items={ this.navItems } />
           <div className="content">
             <Route path="/" exact >
-              <div className="">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>Oui hon honn</p>
+              <div className="page-content" id="center">
+                <h3>Hi there,</h3>
+                <h1>Duha here!</h1>
+                <h3>I build useful software and tools, and I'd love to let you know more about myself :)</h3>
               </div>
             </Route>
             <Route path="/about" exact sensitive={false} >
@@ -48,6 +46,16 @@ class Home extends React.Component {
             <Route path="/contact" exact sensitive={false} >
               <Contact />
             </Route>
+          </div>
+
+          <div className="contact-links">
+            <a href="https://github.com/Duha-H" target="_blank" rel="noopener noreferrer">
+              <img src={require("../assets/icon_github.svg")} alt=""/>
+            </a>
+            <a href="https://linkedin.com/in/duha-hassan/" target="_blank" rel="noopener noreferrer">
+              <img src={require("../assets/icon_linkedin.svg")} alt=""/>
+            </a>
+            <div className="line"></div>
           </div>
         </div>
       </Router>

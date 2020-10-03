@@ -1,19 +1,35 @@
+div.parent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+div.parent-mobile {
+  display: none;
+}
+
+div.line {
+  height: 100px;
+}
+
 ul.nav {
   display: flex;
   flex-direction: column;
   list-style: none;
-  margin-top: 80px;
   padding: 0;
   width: 75px;
 }
 
 .nav p {
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.25em;
   padding: 0;
   margin: 0;
   cursor: pointer;
-  padding-left: 15px;
-  padding-right: 10px;
+  margin-right: 5px;
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .nav a {
@@ -21,22 +37,66 @@ ul.nav {
   color: aliceblue;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .nav li, .nav Link {
+  border-radius: 25px;
+  background: var(--bg);
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  padding: 5px;
+  padding-right: 0;
   margin: 10px;
   width: max-content;
 }
 
 .nav img {
   width: 25px;
+  height: 25px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .nav li:hover {
-  border-radius: 25px;
-  box-shadow: -5px 5px 5px #1d2124;
+  box-shadow: 0 0 15px rgba(43, 43, 43, 0.73);
   cursor: pointer;
+  padding-right: 10px;
+}
+
+
+@media screen and (max-width: 500px) {
+  div.parent {
+    display: none;
+  }
+
+  div.parent-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    align-items: flex-end;
+  }
+
+  .parent-mobile img {
+    width: 25px;
+    cursor: pointer;
+  }
+
+  ul.nav {
+    width: auto;
+    justify-content: right;
+    align-items: flex-end;
+    animation: slide-down 0.15s linear;
+    transform-origin: top;
+  }
+
+  .nav li {
+    box-shadow: 0 0 15px rgba(43, 43, 43, 0.73);
+    padding: 5px;
+    margin: 5px 10px;
+    margin-right: 0;
+  }
 }

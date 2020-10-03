@@ -1,8 +1,13 @@
 import React from "react";
+import "./Projects";
 
 class Projects extends React.Component {
   render() {
-    return (<p>project things??</p>)
+    return (
+      <div className="page-content">
+        <h2>Projects</h2>
+      </div>
+    );
   }
 }
 
