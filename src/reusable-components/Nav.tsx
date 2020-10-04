@@ -1,22 +1,23 @@
 import React from "react";
-import { NavItem } from "./types";
+import { NavItemData } from "./types";
 import "./Nav.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import NavItem from "./NavItem";
 
 interface NavProps {
-  items: NavItem[];
+  items: NavItemData[];
 }
 
 interface NavState {
-  items: NavItem[];
+  items: NavItemData[];
   mobile?: boolean;
 }
 
 class Nav extends React.Component<NavProps, NavState> {
 
-  items: NavItem[] = [];
+  items: NavItemData[] = [];
 
-  constructor(props: { items: NavItem[] }) {
+  constructor(props: { items: NavItemData[] }) {
     super(props);
     this.items = props.items;
     this.displayItemText = this.displayItemText.bind(this);
@@ -37,17 +38,8 @@ class Nav extends React.Component<NavProps, NavState> {
         <div className="parent">
           <div className="line"></div>
           <ul className="nav">
-            {this.state.items.map((item, index) =>
-              <li
-                onMouseEnter={ () => this.displayItemText(index, true) }
-                onMouseLeave={ () => this.displayItemText(index, false) }
-              >
-                <Link to={item.link} >
-                  <img src={ item.iconSrc } alt={ item.text } />
-                  { item.display && <p>{ item.text }</p> }
-                </Link>
-                
-              </li>
+            { this.state.items.map((item, index) =>
+              <NavItem data={ item } />
             )}
           </ul>
         </div>
@@ -59,13 +51,13 @@ class Nav extends React.Component<NavProps, NavState> {
           { this.state.mobile && <ul className="nav" >
             {this.state.items.map((item, index) =>
               <li>
-                <Link
+                <NavLink
                   to={item.link}
                   onClick={ () => this.setState({ mobile: false, }) }
                 >
                   <img src={ item.iconSrc } alt={ item.text } />
                   <p>{ item.text }</p>
-                </Link>
+                </NavLink>
               </li>
             )}
           </ul> }

@@ -1,0 +1,18 @@
+.view-container {
+  min-width: 400px;
+  height: 100vh;
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  right: 0;
+  background-color: var(--element-bg);
+  margin: 40px 0;
+  position: sticky;
+  top: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.view-header {
+  display: flex;
+  flex-direction: row;
+}

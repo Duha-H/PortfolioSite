@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 275.32">
+  <defs>
+    <style>
+      .cls-1,
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #101214;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 28px;
+      }
+
+      .cls-2 {
+        stroke: #101214;
+        stroke-miterlimit: 10;
+        stroke-width: 14px;
+      }
+    </style>
+  </defs>
+  <title>icon_switch_light</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <line class="cls-1" x1="14" y1="205.02" x2="14" y2="261.32" />
+      <line class="cls-2" x1="14" x2="14" y2="215.62" />
+    </g>
+  </g>
+</svg>

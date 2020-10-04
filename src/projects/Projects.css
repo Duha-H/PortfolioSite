@@ -1,3 +1,16 @@
 div.page-content {
   justify-content: initial;
+  /* max-width: 1500px; */
+}
+
+.projects-parent {
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

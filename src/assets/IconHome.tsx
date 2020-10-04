@@ -1,13 +1,5 @@
 import React from "react";
 
-const cls1 = {
-  fill: 'var(--primary)',
-};
-
-const cls2 = {
-  fill: 'none',
-}
-
 function homeIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.52 290.52">

@@ -1,0 +1,79 @@
+.project-container {
+  --radius: 15px;
+
+  min-width: 280px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--element-bg);
+  border-radius: var(--radius);
+  margin: 40px 30px;
+  flex: 1;
+  position: relative;
+}
+
+.project-container .image-overlay {
+  height: 65%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--element-bg);
+  opacity: 0.7;
+}
+
+.project-container .image-overlay:hover {
+  opacity: 0;
+}
+
+.project-container img.card-image {
+  height: 65%;
+  width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.info {
+  padding: 20px;
+  text-align: left;
+}
+
+.info h3 {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.project-header {
+  display: flex;
+  flex-direction: row;
+}
+
+img.icon:not(.disabled) {
+  cursor: pointer;
+}
+
+.tech {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 10px;
+}
+
+p.tech-item {
+  /* background-color: var(--primary); */
+  color: var(--secondary);
+  margin: 0;
+  font-weight: 500;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+  border-radius: var(--radius);
+  height: 1.3em;
+  padding: 5px 15px;
+  padding-left: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 120px;
+  overflow: hidden;
+}
