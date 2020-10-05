@@ -1,36 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito:wght@300family=Roboto+Mono&display=swap');
 
 * {
-  --accent: rgb(79, 129, 223);
-  --primary: #fff;
-  --secondary: #5e6266;
-  --element-bg: #141a1e;
   font-size: 11pt;
 }
 
-.container.dark {
-  --accent: #4f81df;
-  --primary: #e6e9ec;
-  --bg: #101214;
-  --secondary: #5e6266;
+:root {
+  --accent: rgb(79, 129, 223);
+  --primary: #fff;
+  --secondary: #7c848c;
   --element-bg: #141a1e;
+  --hover-shadow: 0 0 15px rgba(43, 43, 43, 0.73);
+  --bg-opaque: #10121499;
+  --font-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --font-nunito: 'Nunito', sans-serif;
+}
+
+.container.dark {
+  --accent: #76a4fb;
+  --accent-light: #8fb5fd;
+  --primary: #f2f4f7;
+  --bg: #101214;
+  --text: #8892b0;
+  --secondary: #7c848c;
+  --element-bg: #141a1e;
+  --hover-shadow: 0 0 15px rgba(26, 29, 32, 0.855);
+  --header-shadow: 0 10px 15px #101214b2;
+  --bg-opaque: #10121499;
 }
 
 .container.light {
   --accent: #4f81df;
+  --accent-light: #8fb5fd;
   --primary: #101214;
   --bg: #e6e9ec;
-  --secondary: #5e6266;
+  --text:#313540;
+  --secondary: #7c848c;
   --element-bg: #f2f4f7;
+  --hover-shadow: 0 0 15px rgba(208, 204, 204, 0.73);
+  --header-shadow: 0 10px 15px #e6e9eccb;
+  --bg-opaque: #e6e9ecb5;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code);
   color: var(--primary);
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 4em;
   color: var(--accent);
 }
 
@@ -42,7 +59,7 @@ h2 {
 h3 {
   font-size: 1.25em;
   color: var(--primary);
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--font-nunito);
   font-weight: 400;
   margin: 0;
 }
@@ -54,27 +71,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: var(--font-code);
 }
 
-p {
-  color: var(--primary);
+p, li {
+  color: var(--text);
+}
+
+li {
+  line-height: 1.5em;
 }
 
 a {
   text-decoration: none;
 }
 
-p a {
+p a, li a {
   color: var(--accent);
   font-weight: 600;
+  font-family: var(--font-code);
 }
 
-p a:hover {
+p a:hover, li a:hover {
   border-bottom: solid 4px rgba(79, 129, 223, 0.7);
 }
 
@@ -89,7 +111,7 @@ div.page-content {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 50px 0;
+  margin: 100px 0;
   padding-right: 80px;
   padding-left: 100px;
   box-sizing: border-box;
@@ -98,8 +120,7 @@ div.page-content {
 img.icon {
   width: 25px;
   height: 25px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 0 8px;
 }
 
 img.icon.disabled {
@@ -109,7 +130,8 @@ img.icon.disabled {
 @media screen and (max-width: 500px) {
   div.page-content {
     padding: 0 25px;
-    margin: 50px auto;
+    margin: 60px auto;
+    margin-top: 60px;
   }
 }
 
@@ -122,5 +144,28 @@ img.icon.disabled {
   to {
     height: 100%;
     transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    height: 0;
+    transform: translateY(30%) scaleY(0);
+  }
+  to {
+    height: 100%;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes blink-accent {
+  from {
+    color: var(--accent);
+  }
+  50% {
+    color: transparent;
+  }
+  to {
+    color: var(--accent);
   }
 }

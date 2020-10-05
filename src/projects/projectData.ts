@@ -1,31 +1,31 @@
 import { ProjectItem } from "../reusable-components/types";
-import { TECH } from "../reusable-components/constants";
+import { TECH, TAGS } from "../reusable-components/constants";
 
 
 const data: ProjectItem[] = [
   {
     title: 'Traccio',
-    excerpt: 'bleep bloop',
+    excerpt: 'Job-search tracking application',
     description: '',
     media: [require('../assets/placeholder_media.png')],
-    tech: [TECH.ANGULAR, TECH.TS, TECH.FB_FIRESTORE, TECH.FB_AUTH, TECH.GQL ],
+    tech: [TECH.ANGULAR, TECH.TS, TECH.FB, TECH.FB_FIRESTORE, TECH.FB_AUTH, TECH.GQL ],
     mode: 'solo',
     openSource: true,
-    tags: [],
+    tags: [TAGS.WEB, TAGS.FB, TAGS.SERVERLESS, ],
   },
   {
     title: 'Interactive 3D Modeller',
-    excerpt: 'bleep bloop',
+    excerpt: 'Simple, interactive, 3D modelling application',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.JS, TECH.WEBGL, TECH.GLSL, TECH.HTML, TECH.CSS ],
     mode: 'solo',
     openSource: true,
-    tags: [],
+    tags: [TAGS.GP, TAGS.WEB, ],
   },
   {
     title: 'Terra Pizza (Game)',
-    excerpt: 'bleep bloop',
+    excerpt: 'Desktop pizza-making game',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.CSHARP, TECH.UE, ],
@@ -35,7 +35,7 @@ const data: ProjectItem[] = [
   },
   {
     title: 'HELIOS DBMS',
-    excerpt: 'bleep bloop',
+    excerpt: 'Graphical interface database management system',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.JAVA, TECH.JDBC, TECH.SQL, TECH.SWING ],
@@ -45,17 +45,17 @@ const data: ProjectItem[] = [
   },
   {
     title: 'Graphic Design Portfolio',
-    excerpt: 'bleep bloop',
+    excerpt: 'Web-page of a collection of logo and business card designs',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.REACT, TECH.JS, TECH.CSS, ],
     mode: 'solo',
     openSource: true,
-    tags: [],
+    tags: [TAGS.REACT, TAGS.JS, TAGS.CSS, ],
   },
   {
     title: 'Text-Generating RNN',
-    excerpt: 'bleep bloop',
+    excerpt: 'Recurrent Neural Network generating phone reviews',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.PYTHON, TECH.TFLOW, ],
@@ -64,8 +64,8 @@ const data: ProjectItem[] = [
     tags: [],
   },
   {
-    title: 'Snake Game',
-    excerpt: 'bleep bloop',
+    title: 'Snake (Game)',
+    excerpt: 'SNAAAKE!',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.PYTHON, TECH.TK, ],
@@ -75,7 +75,7 @@ const data: ProjectItem[] = [
   },
   {
     title: 'Terra Pizza (Website)',
-    excerpt: 'bleep bloop',
+    excerpt: 'Website for Terra Pizza (the game)',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.ANGULAR, TECH.TS, TECH.CSS, TECH.HTML, ],
@@ -85,7 +85,7 @@ const data: ProjectItem[] = [
   },
   {
     title: '3D City Modeller',
-    excerpt: 'bleep bloop',
+    excerpt: 'Simple building-modelling desktop application',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.C, TECH.OPENGL, ],
@@ -95,7 +95,7 @@ const data: ProjectItem[] = [
   },
   {
     title: '3D Shooting Drone (Game)',
-    excerpt: 'bleep bloop',
+    excerpt: 'Simple user-controlled drone game',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.CPP, TECH.OPENGL, TECH.GLSL, ],
@@ -104,8 +104,8 @@ const data: ProjectItem[] = [
     tags: [],
   },
   {
-    title: 'Distributed Servers Application',
-    excerpt: 'bleep bloop',
+    title: 'P2P File-Sharing Application',
+    excerpt: 'File-sharing application using distributed directory server pool',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.JAVA, ],
@@ -115,7 +115,7 @@ const data: ProjectItem[] = [
   },
   {
     title: 'Dark Mode (Extension)',
-    excerpt: 'bleep bloop',
+    excerpt: 'Dark-mode browser extension',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.JS, TECH.HTML, TECH.CSS, ],
@@ -124,8 +124,8 @@ const data: ProjectItem[] = [
     tags: [],
   },
   {
-    title: 'Information Retrieval System',
-    excerpt: 'bleep bloop',
+    title: 'IR System',
+    excerpt: 'Information retrieval system on benchmark dataset',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.PYTHON, ],
@@ -135,7 +135,7 @@ const data: ProjectItem[] = [
   },
   {
     title: 'Timeline (NPM Package)',
-    excerpt: 'bleep bloop',
+    excerpt: 'Frontend library for timeline visualization',
     description: '',
     media: [require('../assets/placeholder_media.png')],
     tech: [TECH.TS, TECH.ANGULAR, TECH.REACT, ],

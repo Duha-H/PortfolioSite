@@ -1,0 +1,36 @@
+.nav li, .contact-links li {
+  border-radius: 25px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  padding-right: 0;
+  margin: 10px;
+  width: max-content;
+}
+
+.nav li.reverse, .contact-links li.reverse {
+  flex-direction: row-reverse;
+}
+
+.nav img, .nav svg, .contact-links img, .contact-links svg {
+  width: 25px;
+  height: 25px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.nav li:hover, .contact-links li:hover {
+  box-shadow: var(--hover-shadow);
+  cursor: pointer;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .nav li, .contact-links li {
+    box-shadow: var(--hover-shadow);
+    padding: 5px;
+    margin: 5px 10px;
+    margin-right: 0;
+  }
+}

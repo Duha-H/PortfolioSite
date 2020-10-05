@@ -19,8 +19,8 @@
   top: 0;
   left: 0;
   border-radius: var(--radius) var(--radius) 0 0;
-  background: var(--element-bg);
-  opacity: 0.7;
+  background: var(--accent);
+  opacity: 0.5;
 }
 
 .project-container .image-overlay:hover {
@@ -66,8 +66,7 @@ p.tech-item {
   color: var(--secondary);
   margin: 0;
   font-weight: 500;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+  font-family: var(--font-code);
   border-radius: var(--radius);
   height: 1.3em;
   padding: 5px 15px;

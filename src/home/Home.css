@@ -1,16 +1,32 @@
 .header {
   position: fixed;
   top: 0;
-  width: 100%;
+  right: 0;
+  left: 0;
+  /* width: 100%; */
   background-color: var(--bg);
+  box-shadow: var(--header-shadow);
+  /* align-items: initial; */
+  z-index: 1;
+  margin-left: 100px;
+  margin-right: 20px;
+}
+
+h2.logo {
+  /* margin-left: 100px; */
+  border-bottom: 4px solid var(--accent);
+  margin: 10px 0;
 }
 
 div.theme-toggle {
   margin: 0 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
 
 img.theme-toggle {
-  height: 40px;
+  height: 30px;
   padding: 0 4px;
   transform-origin: top;
   cursor: pointer;
@@ -22,6 +38,10 @@ img.theme-toggle.switch {
 
 div.theme-toggle:hover img.theme-toggle.switch {
   transform: translateY(0);
+}
+
+.nav-toggle {
+  display: none;
 }
 
 .container {
@@ -48,10 +68,66 @@ div.page-content {
 
 div.page-content#center {
   justify-content: center;
+  align-items: baseline;
 }
 
 div.page-content p:not() {
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--font-nunito);
+}
+
+.page-content .typewritten {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.page-content .typewritten #blink {
+  /* font-size: 1em; */
+  animation: 1s blink-accent infinite;
+  margin: 0;
+}
+
+.page-content .typewritten h1#name {
+  margin: 0;
+}
+
+.page-content .home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 100px;
+}
+
+.page-content .home h3,
+.page-content .home h2 {
+  color: var(--text);
+}
+
+.page-content h2 {
+  margin: 10px 0;
+  margin-bottom: 18px;
+}
+
+.button {
+  background-color: var(--accent);
+  color: #e6e9ec;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  margin: 50px 0;
+}
+
+a.button {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.button img.icon {
+  padding-left: 0;
 }
 
 div.contact-links {
@@ -67,7 +143,7 @@ div.contact-links {
   margin: 8px 0;
 }
 
-.contact-links img {
+.contact-links a img {
   width: 20px;
 }
 
@@ -76,8 +152,26 @@ div.contact-links {
 }
 
 @media screen and (max-width: 500px) {
-  div.page-content {
+  .header {
+    margin-left: 20px;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-top: 40px;
+  }
+
+  /* div.page-content {
     margin: 35px 25px;
+  } */
+  div.contact-links {
+    right: 10px;
+  }
+
+
+  .page-content#center h2 {
+    font-size: 1.8em;
+    white-space: nowrap;
   }
 
   .contact-links div.line {

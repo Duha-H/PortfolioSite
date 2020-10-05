@@ -1,3 +1,54 @@
 div.page-content {
   justify-content: initial;
 }
+
+.about-section {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+
+.about-section p.title {
+  white-space: nowrap;
+  font-family: var(--font-code);
+  color: var(--accent);
+  font-weight: 600;
+  /* padding: 20px; */
+  min-width: 130px;
+  margin-top: 30px;
+  text-decoration: underline 4px var(--element-bg);
+}
+
+.about-section ul {
+  background-color: var(--element-bg);
+  list-style: outside none none;
+  padding: 20px;
+  padding-left: 0px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.about-section li::before {
+  content: "▪";
+  color: var(--accent);
+  display: inline-block;
+  width: 1em;
+  position: absolute;
+  left: 20px;
+  font-size: 1.5em;
+}
+
+.about-section li {
+  padding-left: 40px;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  
+}

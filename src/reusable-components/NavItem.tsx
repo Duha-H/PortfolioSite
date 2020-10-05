@@ -3,9 +3,11 @@ import ReactDOM from "react-dom";
 import { NavLink } from "react-router-dom";
 import homeIcon from "../assets/IconHome";
 import { NavItemData } from "./types";
+import "./NavItem.css";
 
 interface NavItemProp {
   data: NavItemData;
+  reverse?: boolean;
 }
 
 interface NavItemState {
@@ -20,6 +22,7 @@ class NavItem extends React.Component<NavItemProp, NavItemProp> {
     this.item = props.data;
     this.state = {
       data: props.data,
+      reverse: false,
     };
   }
 
@@ -33,6 +36,7 @@ class NavItem extends React.Component<NavItemProp, NavItemProp> {
       <li
         onMouseEnter={ () => this.displayItemText(true) }
         onMouseLeave={ () => this.displayItemText(false) }
+        className={this.props.reverse ? 'reverse' : ''}
       >
         <NavLink to={this.state.data.link} activeClassName="active-link" >
           {/* { homeIcon() } */}

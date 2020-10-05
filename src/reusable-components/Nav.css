@@ -23,14 +23,13 @@ ul.nav {
 }
 
 .nav p {
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code);
   font-size: 1.25em;
   padding: 0;
   margin: 0;
   cursor: pointer;
   margin-right: 5px;
   color: var(--accent);
-  font-weight: 600;
 }
 
 .nav a {
@@ -41,30 +40,9 @@ ul.nav {
   align-items: center;
 }
 
-.nav li, .nav Link {
-  border-radius: 25px;
-  background: var(--bg);
-  display: flex;
-  flex-direction: row;
-  padding: 5px;
-  padding-right: 0;
-  margin: 10px;
-  width: max-content;
+.nav a:hover {
+  border-bottom: none;
 }
-
-.nav img, .nav svg {
-  width: 25px;
-  height: 25px;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-.nav li:hover {
-  box-shadow: 0 0 15px rgba(43, 43, 43, 0.73);
-  cursor: pointer;
-  padding-right: 10px;
-}
-
 
 @media screen and (max-width: 500px) {
   div.parent {
@@ -75,10 +53,11 @@ ul.nav {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 60px;
     right: 20px;
     align-items: flex-end;
+    z-index: 3;
   }
 
   .parent-mobile img {
@@ -95,7 +74,7 @@ ul.nav {
   }
 
   .nav li {
-    box-shadow: 0 0 15px rgba(43, 43, 43, 0.73);
+    box-shadow: var(--hover-shadow);
     padding: 5px;
     margin: 5px 10px;
     margin-right: 0;

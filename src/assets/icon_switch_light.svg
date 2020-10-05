@@ -7,14 +7,14 @@
       }
 
       .cls-1 {
-        stroke: #101214;
+        stroke: #5e6266;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-width: 28px;
       }
 
       .cls-2 {
-        stroke: #101214;
+        stroke: #5e6266;
         stroke-miterlimit: 10;
         stroke-width: 14px;
       }
