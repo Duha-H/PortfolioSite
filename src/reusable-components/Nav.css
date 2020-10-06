@@ -79,4 +79,8 @@ ul.nav {
     margin: 5px 10px;
     margin-right: 0;
   }
+
+  ul.nav p {
+    font-size: 1.15em;
+  }
 }

@@ -25,7 +25,7 @@ class About extends React.Component {
             <li>As far as tech goes, <b>graphics programming</b> is my go to! I've worked with a number of 3D modelling and rendering applications, and I'm in constant fascination by the computational intricacies that go into building highly performant graphics software.</li>
             <li><b>Computer Vision</b> topics are a very close second. I've had the chance to cover some coursework in vision concepts such as image filtering and feature extraction, and facial recognition, and have written some (very) simple programs performing some of these tasks. It's become an incredibly intruiging facet of tech for me.</li>
             <li>Outside of tech, I'm an <b>astronomy</b> nerd. Space, man. It's infinite(?) and empty and wild. Have a look at <a href="https://en.wikipedia.org/wiki/Superbubble">Superbubbles</a>!</li>
-            <li>My free time is consumed by watching a good <b>sci-fi</b> drama (The Expance currently tops my list), consuming good <b>music</b> (I'm a grunge-head), re-reading <b>The Dark Tower</b> series, re-watching <b>The Office</b> for the 10th time, or solving a <b>rubik's cube</b> (I can currently reliably solve it in under 3 minutes, and I think that's a personality trait for some reason).</li>
+            <li>My free time is consumed by watching a good <b>sci-fi</b> drama (The Expanse currently tops my list), consuming good <b>music</b> (I'm a grunge-head), re-reading <b>The Dark Tower</b> series, re-watching <b>The Office</b> for the 10th time, or solving a <b>rubik's cube</b> (I can currently reliably solve it in under 3 minutes, and I think that's a personality trait for some reason).</li>
           </ul>
         </div>
 

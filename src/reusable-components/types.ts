@@ -6,6 +6,7 @@ export interface NavItemData {
 }
 
 export interface ProjectItem {
+  id: number;
   title: string;
   excerpt: string;
   description: string;
@@ -15,6 +16,7 @@ export interface ProjectItem {
   openSource: boolean;
   releases?: string[];
   sourceUrl?: string;
+  projectUrl?: string;
   tags: string[];
 }
 

@@ -121,6 +121,10 @@ div.page-content p:not() {
   margin: 50px 0;
 }
 
+.button:hover {
+  transform: scale(1.02);
+}
+
 a.button {
   font-weight: 600;
   font-size: 1.1em;
@@ -145,6 +149,10 @@ div.contact-links {
 
 .contact-links a img {
   width: 20px;
+}
+
+.contact-links a:hover {
+  transform: scale(1.1);
 }
 
 .contact-links div.line {

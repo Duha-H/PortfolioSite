@@ -76,3 +76,11 @@ p.tech-item {
   max-width: 120px;
   overflow: hidden;
 }
+
+@media screen and (max-width: 500px) {
+  .project-container {
+    width: 90%;
+    margin: 40px auto;
+    box-sizing: border-box;
+  }
+}

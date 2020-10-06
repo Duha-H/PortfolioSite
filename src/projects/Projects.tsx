@@ -2,7 +2,7 @@ import React from "react";
 import ProjectCard from "../reusable-components/ProjectCard";
 import ProjectView from "../reusable-components/ProjectView";
 import { ProjectItem } from "../reusable-components/types";
-import data from "./projectData";
+import { soloProjects, teamProjects } from "./projectData";
 import "./Projects";
 import "./Projects.css";
 
@@ -11,11 +11,13 @@ interface ProjectsState {
 }
 
 class Projects extends React.Component<any, ProjectsState>{
-  projects = data;
+  // projects = data;
+  soloProjects = soloProjects;
+  teamProjects = teamProjects;
   constructor(props: any) {
     super(props);
     this.state = {
-      selectedProject: this.projects[0],
+      selectedProject: undefined,
     }
   }
 
@@ -32,11 +34,21 @@ class Projects extends React.Component<any, ProjectsState>{
       <div className="page-content" style={{ maxWidth: '1500px' }}>
         <h2>Projects</h2>
         <div className="projects-parent">
-          <div className="projects">
-            { this.projects.map(project => {
-              return <ProjectCard project={project} onInfoClick={() => this.displayProject(project)} />
-            })}
+          <div className="">
+            <h2 className="section-title">Projects I Built&nbsp;&nbsp;</h2>
+            <div className="projects">
+              { this.soloProjects.map(project => {
+                return <ProjectCard project={project} onInfoClick={() => this.displayProject(project)} />
+              })}
+            </div>
+            <h2 className="section-title">Projects I Contributed to&nbsp;&nbsp;</h2>
+            <div className="projects">
+              { this.teamProjects.map(project => {
+                return <ProjectCard project={project} onInfoClick={() => this.displayProject(project)} />
+              })}
+            </div>
           </div>
+          
           { this.state.selectedProject &&
             <ProjectView
               project={this.state.selectedProject}
