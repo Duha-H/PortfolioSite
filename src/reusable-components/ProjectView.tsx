@@ -68,7 +68,7 @@ class ProjectView extends React.Component<ViewProp, ViewState> {
             ? <a href={this.props.project.sourceUrl} target="_blank" rel="noopener noreferrer">
               <img src={require("../assets/icon_github.svg")} alt="" className="icon"/>
               </a>
-            : <p>this project is, unfortunately, not open sourced</p>
+            : <p>This project is, unfortunately, not open sourced.</p>
           }
         </div>
 

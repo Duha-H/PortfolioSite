@@ -25,7 +25,7 @@
   --element-bg: #141a1e;
   --hover-shadow: 0 0 15px rgba(26, 29, 32, 0.855);
   --header-shadow: 0 10px 15px #101214b2;
-  --bg-opaque: #10121499;
+  --bg-opaque: #101214de;
 }
 
 .container.light {
@@ -38,7 +38,7 @@
   --element-bg: #f2f4f7;
   --hover-shadow: 0 0 15px rgba(208, 204, 204, 0.73);
   --header-shadow: 0 10px 15px #e6e9eccb;
-  --bg-opaque: #e6e9ecb5;
+  --bg-opaque: #e6e9ec;
 }
 
 h1, h2, h3, h4, h5, h6 {

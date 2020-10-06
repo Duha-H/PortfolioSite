@@ -1,8 +1,9 @@
 .project-container {
-  --radius: 15px;
+  --radius: 10px;
+  --img-height: 55%;
 
-  min-width: 280px;
-  height: 450px;
+  min-width: 260px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   background-color: var(--element-bg);
@@ -10,10 +11,11 @@
   margin: 40px 30px;
   flex: 1;
   position: relative;
+  cursor: pointer;
 }
 
 .project-container .image-overlay {
-  height: 65%;
+  height: var(--img-height);
   width: 100%;
   position: absolute;
   top: 0;
@@ -28,7 +30,7 @@
 }
 
 .project-container img.card-image {
-  height: 65%;
+  height: var(--img-height);
   width: 100%;
   overflow: hidden;
   object-fit: cover;
@@ -50,8 +52,17 @@
   flex-direction: row;
 }
 
-img.icon:not(.disabled) {
+.project-container img.icon {
+  padding-right: 0;
+  width: 20px;
+}
+
+.project-container img.icon:not(.disabled) {
   cursor: pointer;
+}
+
+.project-container img.icon.disabled {
+  cursor: default;
 }
 
 .tech {

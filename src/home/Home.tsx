@@ -39,6 +39,11 @@ class Home extends React.Component<any, StateType> {
 
   componentDidMount() {
     this.setName();
+    const storedTheme = localStorage.getItem('duha-theme');
+    if (storedTheme &&
+        (storedTheme === 'light' || storedTheme === 'dark')) {
+      this.setState({ theme: storedTheme });
+    }
   }
 
   setName() {
@@ -55,8 +60,10 @@ class Home extends React.Component<any, StateType> {
   toggleTheme() {
     if (this.state.theme === 'dark') {
       this.setState({ theme: 'light', })
+      localStorage.setItem('duha-theme', 'light');
     } else {
       this.setState({ theme: 'dark', })
+      localStorage.setItem('duha-theme', 'dark');
     }
   }
 

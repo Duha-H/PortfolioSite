@@ -6,7 +6,7 @@ div.page-content {
 .projects-parent {
   display: flex;
   flex-direction: row;
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 .projects {
@@ -15,17 +15,25 @@ div.page-content {
   flex-wrap: wrap;
 }
 
-h2.section-title {
-  color: var(--text);
+h3.section-title {
+  color: var(--secondary);
   font-family: var(--font-nunito);
   text-decoration: underline 3px var(--accent-light);
   margin-left: 30px;
   font-weight: bold;
+  font-size: 1.5em;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  position: sticky;
+  top: 50px;
+  z-index: 2;
+  background-color: var(--bg);
+  box-shadow: 0 30px 20px -30px var(--bg-opaque);
   /* border-bottom: 3px solid var(--accent-light); */
 }
 
 @media screen and (max-width: 500px) {
-  h2.section-title {
+  h3.section-title {
     margin-left: 0;
     font-size: 1.7em;
   }

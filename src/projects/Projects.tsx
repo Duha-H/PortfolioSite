@@ -35,16 +35,26 @@ class Projects extends React.Component<any, ProjectsState>{
         <h2>Projects</h2>
         <div className="projects-parent">
           <div className="">
-            <h2 className="section-title">Projects I Built&nbsp;&nbsp;</h2>
+            <h3 className="section-title">Projects I Built&nbsp;&nbsp;</h3>
             <div className="projects">
               { this.soloProjects.map(project => {
-                return <ProjectCard project={project} onInfoClick={() => this.displayProject(project)} />
+                return (
+                  <ProjectCard
+                    project={project}
+                    onClick={() => this.displayProject(project)}
+                    onInfoClick={() => this.displayProject(project)} />
+                )
               })}
             </div>
-            <h2 className="section-title">Projects I Contributed to&nbsp;&nbsp;</h2>
+            <h3 className="section-title">Projects I Contributed to&nbsp;&nbsp;</h3>
             <div className="projects">
               { this.teamProjects.map(project => {
-                return <ProjectCard project={project} onInfoClick={() => this.displayProject(project)} />
+                return (
+                  <ProjectCard
+                    project={project}
+                    onClick={() => this.displayProject(project)}
+                    onInfoClick={() => this.displayProject(project)} />
+                )
               })}
             </div>
           </div>

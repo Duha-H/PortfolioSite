@@ -5,9 +5,10 @@
   position: absolute;
   right: 0;
   background-color: var(--element-bg);
-  margin: 40px 0;
+  /* margin: 40px 0; */
+  margin-top: 60px;
   position: sticky;
-  top: 60px;
+  top: 70px;
   padding: 20px;
   box-sizing: border-box;
   animation: 0.5s slide-up linear;
@@ -103,10 +104,12 @@ p.tech-item {
     position: fixed;
     min-width: 450px;
     /* left: 0; */
-    top: 100px;
-    box-shadow: 0 0 150px var(--bg);
+    /* top: 100px; */
+    bottom: 0;
+    box-shadow: 0 0 70px 100px var(--bg-opaque);
     left: 50%;
     transform: translateX(-50%);
+    z-index: 3;
     /* overflow-y: scroll; */
     /* padding-bottom: 80px; */
   }
