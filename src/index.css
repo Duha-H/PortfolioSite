@@ -13,6 +13,7 @@
   --bg-opaque: #10121499;
   --font-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   --font-nunito: 'Nunito', sans-serif;
+
 }
 
 .container.dark {
@@ -26,6 +27,7 @@
   --hover-shadow: 0 0 15px rgba(26, 29, 32, 0.855);
   --header-shadow: 0 10px 15px #101214b2;
   --bg-opaque: #101214de;
+  scrollbar-color: var(--accent) var(--bg);
 }
 
 .container.light {
@@ -39,6 +41,7 @@
   --hover-shadow: 0 0 15px rgba(208, 204, 204, 0.73);
   --header-shadow: 0 10px 15px #e6e9eccb;
   --bg-opaque: #e6e9ec;
+  scrollbar-color: var(--accent) var(--bg);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -72,6 +75,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg);
+  scrollbar-color: var(--accent) var(--bg);
 }
 
 code {
@@ -90,13 +94,13 @@ a {
   text-decoration: none;
 }
 
-p a, li a {
+p a, li a, a.link {
   color: var(--accent);
   font-weight: 600;
   font-family: var(--font-code);
 }
 
-p a:hover, li a:hover {
+p a:hover, li a:hover, a.link:hover {
   border-bottom: solid 4px rgba(79, 129, 223, 0.7);
 }
 
@@ -107,7 +111,7 @@ div.line {
 }
 
 div.page-content {
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -118,8 +122,8 @@ div.page-content {
 }
 
 img.icon {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   padding: 0 8px;
 }
 

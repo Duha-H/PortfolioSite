@@ -1,18 +1,18 @@
 .view-container {
-  min-width: 400px;
+  min-width: 50%;
   height: 100vh;
-  border-radius: 15px 15px 0 0;
-  position: absolute;
-  right: 0;
-  background-color: var(--element-bg);
+  /* border-radius: 15px 15px 0 0; */
+  /* position: absolute; */
+  /* right: 0; */
+  /* background-color: var(--element-bg); */
   /* margin: 40px 0; */
   margin-top: 60px;
-  position: sticky;
-  top: 70px;
+  /* position: sticky; */
+  /* top: 70px; */
   padding: 20px;
   box-sizing: border-box;
-  animation: 0.5s slide-up linear;
-  transform-origin: bottom;
+  /* animation: 0.5s slide-up linear; */
+  /* transform-origin: bottom; */
 }
 
 .view-header {
@@ -24,11 +24,12 @@
   width: 20px;
 }
 
-h3.title {
+h2.title {
   color: var(--accent);
   font-family: var(--font-code);
   /* text-decoration: underline 4px var(--accent); */
   font-weight: 600;
+  text-align: left;
 }
 
 .img-viewer img.main {
@@ -81,10 +82,12 @@ h3.title {
   text-decoration: underline 2px var(--accent-light);
   margin: 0;
   padding-bottom: 15px;
+  text-align: left;
 }
 
 .project-section p {
   margin: 0;
+  text-align: left;
 }
 
 p.tech-item {

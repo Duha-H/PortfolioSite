@@ -7,9 +7,10 @@ class About extends React.Component {
       <div className="page-content">
         <h2>About me</h2>
         <p>Welp, I'm not always sure how to describe myself, but I'll give it a shot!</p>
-        <p>I'm a recently-graduated software developer, currently based in Toronto. I enjoy building pieces of software that solve a problem, or make a task slightly easier! I come from a background of design, and I think that gives me a unique attention to detail, and propels me to see through every facet of a project I work on.</p>
-        <p>I find great value in working as part of a team, and do my best to be a teammate I would want to have. I greatly value communication in a team setting above all else.</p>
-        <p>You can find a bit more about my educational and professional backgrounds <a href="">here</a>, or in my <a href="">resume</a> if you're in a hurry!</p>
+        <p>I'm a recently-graduated software developer, currently based in Toronto. I enjoy building pieces of software that solve a problem, or make a task slightly easier!</p>
+        <p>I haven't always had an interest in software development, but 4 years ago in an inadvertent escape from an Architecture degree (2/10 would not recommend &#128578;) I decided to transfer to a Computer Science program, and it has kind of just clicked for me since. Coming from a background in architectural design projects, I think I've developed the ability to view projects holistically and anticipate future concerns, as well as a unique attention to minute details. Which, I think, is kind of neat! &#9996;&#128513;</p>
+        <p>I have quite a bit of learning to do (to say the least), and I, therefore, find great value in working as part of a team. I do my best to be a teammate I would want to have, and I greatly value communication in as a team member above all else.</p>
+        <p>You can find a bit more about my educational and professional backgrounds <a href="/skills">here</a>, or in my <a href="">resume</a> if you're in a hurry!</p>
 
         <div className="about-section">
           <p className="title">Career Goals&nbsp;</p>

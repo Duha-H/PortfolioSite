@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.37 266.37">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4f81df;
+      }
+    </style>
+  </defs>
+  <title>icon_contact_2</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <path class="cls-1"
+        d="M133.19,0A133.19,133.19,0,1,0,266.37,133.19,133.19,133.19,0,0,0,133.19,0Zm86,68.84-73.41,69.52c-7.38,6-15.54,5.75-22.92-.26l-67-69.26ZM41,197.54V70.3h7l73.58,76c8.1,6.6,17,6.89,25.15.29l80.56-76.3h6.54V197.54Z" />
+    </g>
+  </g>
+</svg>

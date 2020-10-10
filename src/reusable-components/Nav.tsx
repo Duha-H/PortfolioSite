@@ -43,26 +43,15 @@ class Nav extends React.Component<NavProps, NavState> {
           <div className="line"></div>
           <ul className="nav">
             { this.state.items.map((item, index) =>
-              <NavItem data={ item } />
+              <NavItem data={ item } onHideClick={ () => { } } />
             )}
           </ul>
         </div>
 
         <div className="parent-mobile">
-          {/* <img src={require('../assets/icon_nav.svg')} alt="navigation"
-            onClick={ () => { this.setState({mobile: !this.state.mobile }) }}
-          /> */}
           { this.props.mobile && <ul className="nav" >
             {this.state.items.map((item, index) =>
-              <li>
-                <NavLink
-                  to={item.link}
-                  onClick={ () => this.props.onHideClick() }
-                >
-                  <img src={ item.iconSrc } alt={ item.text } />
-                  <p>{ item.text }</p>
-                </NavLink>
-              </li>
+              <NavItem data={ item } textAlwaysVisible={ true } onHideClick={ () => this.props.onHideClick() } />
             )}
           </ul> }
         </div>

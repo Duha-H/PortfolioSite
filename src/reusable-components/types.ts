@@ -18,5 +18,9 @@ export interface ProjectItem {
   sourceUrl?: string;
   projectUrl?: string;
   tags: string[];
+  motivation?: string;
+  appBreakdown?: string;
+  issues?: string;
+  roadmap?: string; // things you'd do differently, things planned for the future
 }
 

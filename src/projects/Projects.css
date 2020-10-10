@@ -15,10 +15,9 @@ div.page-content {
   flex-wrap: wrap;
 }
 
-h3.section-title {
-  color: var(--secondary);
+.projects-parent h3.section-title {
+  color: var(--primary);
   font-family: var(--font-nunito);
-  text-decoration: underline 3px var(--accent-light);
   margin-left: 30px;
   font-weight: bold;
   font-size: 1.5em;
@@ -29,11 +28,10 @@ h3.section-title {
   z-index: 2;
   background-color: var(--bg);
   box-shadow: 0 30px 20px -30px var(--bg-opaque);
-  /* border-bottom: 3px solid var(--accent-light); */
 }
 
 @media screen and (max-width: 500px) {
-  h3.section-title {
+  .projects-parent h3.section-title {
     margin-left: 0;
     font-size: 1.7em;
   }

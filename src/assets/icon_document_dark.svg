@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.83 172.36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #e6e9ec;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <title>icon_document_dark</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <path class="cls-1"
+        d="M3,145.81V8A5,5,0,0,1,8,3H184.83a5,5,0,0,1,5,5V164.35a5,5,0,0,1-8.07,4l-11.87-9.23a5,5,0,0,0-6-.12l-12.16,8.68a5,5,0,0,1-5.38.27L117,151.09a5,5,0,0,0-6.08.87L99.76,163.48a5,5,0,0,1-6.94.25l-11.14-10a5,5,0,0,0-7,.36l-5.84,6.43a5,5,0,0,1-7.23.17l-26-26a5,5,0,0,0-6.82-.24L11.28,149.58A5,5,0,0,1,3,145.81Z" />
+      <line class="cls-1" x1="30.01" y1="50.98" x2="164.82" y2="50.98" />
+      <line class="cls-1" x1="30.01" y1="81.62" x2="164.82" y2="81.62" />
+      <line class="cls-1" x1="30.01" y1="112.26" x2="164.82" y2="112.26" />
+    </g>
+  </g>
+</svg>
