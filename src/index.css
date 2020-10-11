@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito:wght@300family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Nunito:wght@300family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
   font-size: 11pt;
@@ -6,6 +7,7 @@
 
 :root {
   --accent: rgb(79, 129, 223);
+  --accent-opaque: #76a4fb80;
   --primary: #fff;
   --secondary: #7c848c;
   --element-bg: #141a1e;
@@ -13,12 +15,13 @@
   --bg-opaque: #10121499;
   --font-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   --font-nunito: 'Nunito', sans-serif;
-
+  --font-poppins: 'Poppins', sans-serif;
 }
 
-.container.dark {
+body[theme='dark'] {
   --accent: #76a4fb;
   --accent-light: #8fb5fd;
+  --accent-opaque: #76a4fb80;
   --primary: #f2f4f7;
   --bg: #101214;
   --text: #8892b0;
@@ -30,9 +33,10 @@
   scrollbar-color: var(--accent) var(--bg);
 }
 
-.container.light {
+body[theme='light'] {
   --accent: #4f81df;
   --accent-light: #8fb5fd;
+  --accent-opaque: #76a4fb80;
   --primary: #101214;
   --bg: #e6e9ec;
   --text:#313540;
@@ -50,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 3.5em;
   color: var(--accent);
 }
 

@@ -44,7 +44,7 @@ class AppContainer extends React.Component<any, StateType> {
     }
     if (this.props.location.pathname !== '/') {
       this.setState({ showNav: true, });
-    }
+    }    
   }
 
   componentDidUpdate(prevProps: any) {
@@ -65,9 +65,11 @@ class AppContainer extends React.Component<any, StateType> {
     if (this.state.theme === 'dark') {
       this.setState({ theme: 'light', });
       localStorage.setItem('duha-theme', 'light');
+      document.body.setAttribute('theme', 'light');
     } else {
       this.setState({ theme: 'dark', });
       localStorage.setItem('duha-theme', 'dark');
+      document.body.setAttribute('theme', 'dark');
     }
   }
 
