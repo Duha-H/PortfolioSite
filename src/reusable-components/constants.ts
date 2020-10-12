@@ -60,3 +60,9 @@ export const TAGS = {
   AWS: 'AWS',
   SERVERLESS: 'serverless',
 }
+
+export const STATUSES = {
+  live: 'live',
+  wip: 'coming soon',
+  comp: 'completed, private',
+}

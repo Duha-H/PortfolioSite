@@ -13,6 +13,7 @@ div.page-content {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .projects-parent h3.section-title {

@@ -1,3 +1,5 @@
+import { STATUSES } from "./constants";
+
 export interface NavItemData {
   text: string;
   link: string;
@@ -13,6 +15,7 @@ export interface ProjectItem {
   media: string[]; // string of media sources
   tech: string[];
   mode: 'solo project' | 'team project';
+  status: 'live' | 'wip' | 'comp';
   openSource: boolean;
   releases?: string[];
   sourceUrl?: string;
