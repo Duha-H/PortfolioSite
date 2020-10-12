@@ -34,23 +34,24 @@ class ProjectView extends React.Component<any, ViewState> {
   componentDidMount() {
     const { match: { params }} = this.props;
     const newProject = projects[+this.props.match.params.projectId];
-    this.setState({
-      project: newProject,
-      projectTitle: newProject.title,
-      displayContent: true,
-    });
-    this.setNextIDs(newProject.id);
+    this.setNewProject(newProject);
   }
 
   componentDidUpdate(prevProps: ViewProp) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
       const newProject = projects[+this.props.match.params.projectId];
-      this.setState({
-        project: newProject,
-        projectTitle: newProject.title,
-      });
-      this.setNextIDs(newProject.id);
+      this.setNewProject(newProject);
     }
+  }
+
+  setNewProject(newProject: ProjectItem) {
+    this.setState({
+      project: newProject,
+      projectTitle: newProject.title, // update later
+      displayContent: false,
+    });
+    this.setNextIDs(newProject.id);
+    this.setName(80);
   }
 
   setName(rate?: number) {

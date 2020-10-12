@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import About from "./about/About";
 import Contact from "./contact/Contact";
 import Home from "./home/Home";
@@ -11,7 +11,6 @@ import Skills from "./skills/Skills";
 
 interface StateType {
   theme: 'dark' | 'light';
-  // name: string;
   mobileNav: boolean;
   showNav: boolean;
 }
@@ -55,6 +54,7 @@ class AppContainer extends React.Component<any, StateType> {
   }
 
   onRouteChange() {
+    window.scrollTo(0, 0);
     if (this.props.location !== '/') {
       this.setState({ showNav: true, });
     } else if (this.props.location === '/' && this.state.showNav) {
