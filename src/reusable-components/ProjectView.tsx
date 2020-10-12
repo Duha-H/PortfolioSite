@@ -1,5 +1,6 @@
 import React from "react";
 import { ProjectItem } from "./types";
+import { STATUSES } from "./constants";
 import "./ProjectView.css";
 import projects from "../projects/projectData";
 import { Redirect, withRouter } from "react-router-dom";
@@ -103,13 +104,18 @@ class ProjectView extends React.Component<any, ViewState> {
           </a>
         </div>
         
-        <div className={this.state.displayContent ? 'slide-up' : 'hidden'}>
+        <div className={ this.state.displayContent ? 'slide-up' : 'hidden' }>
           <div className="spanning-content baseline">
             
             <div className="project-section" id="multiple">
               <div className="project-section row">
                 <h4 className="title">type</h4>
                 <p>{ this.state.project.mode }</p>
+              </div>
+              <div className="project-section row">
+                <h4 className="title">status</h4>
+                <p id={this.state.project.status}>{ STATUSES[this.state.project.status] }</p>
+                <div id={this.state.project.status} className="status-icon"></div>
               </div>
               <div className="project-section row">
                 <h4 className="title">tech</h4>
@@ -124,23 +130,33 @@ class ProjectView extends React.Component<any, ViewState> {
 
           </div>
 
-          <div className="img-viewer">
-            <img src={require('../assets/project-media/modeller_0.svg')} alt=""/>
-          </div>
+          { this.state.project.media[1] &&
+            <div className="img-viewer">
+              <img src={this.state.project.media[1]} alt=""/>
+            </div>
+          }
           
           <div className="project-section">
             <h4 className="title">why?</h4>
             <p dangerouslySetInnerHTML={{ __html: this.state.project.motivation }}></p>
           </div>
           
-          <div className="img-viewer">
-            <img src={require('../assets/project-media/modeller_group.svg')} alt=""/>
-          </div>
+          { this.state.project.media[2] &&
+            <div className="img-viewer">
+              <img src={this.state.project.media[2]} alt=""/>
+            </div>
+          }
 
           { this.state.project.appBreakdown && 
-            <div className="project-section">
+            <div className="project-section right">
               <h4 className="title">development details</h4>
               <p dangerouslySetInnerHTML={{ __html: this.state.project.appBreakdown }}></p>
+            </div>
+          }
+
+          { this.state.project.media[3] &&
+            <div className="img-viewer">
+              <img src={this.state.project.media[3]} alt=""/>
             </div>
           }
 
@@ -148,6 +164,13 @@ class ProjectView extends React.Component<any, ViewState> {
             <div className="project-section">
               <h4 className="title">lessons learned</h4>
               <p dangerouslySetInnerHTML={{ __html: this.state.project.issues }}></p>
+            </div>
+          }
+
+          
+          { this.state.project.media[4] &&
+            <div className="img-viewer">
+              <img src={this.state.project.media[4]} alt=""/>
             </div>
           }
           
@@ -158,6 +181,7 @@ class ProjectView extends React.Component<any, ViewState> {
               <ProjectCard project={projects[this.state.nextIDs[1]]} />
             </div>
           </div>
+
         </div>
 
       </div>

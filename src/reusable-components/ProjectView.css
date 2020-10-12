@@ -13,7 +13,8 @@
 .slide-up {
   animation: 0.5s slide-up ease;
   transform-origin: top;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .view-header {
@@ -52,6 +53,37 @@ h2.title {
 
 .spanning-content.banner .spanning-content h2#blink {
   color: var(--secondary);
+}
+
+.project-section .status-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 8px 10px;
+}
+
+.project-section .status-icon#wip {
+  background-color: var(--color-wip);
+}
+
+.project-section .status-icon#live {
+  background-color: var(--color-live);
+}
+
+.project-section .status-icon#comp {
+  background-color: var(--color-comp);
+}
+
+.project-section p#wip {
+  color: var(--color-wip);
+}
+
+.project-section p#live {
+  color: var(--color-live);
+}
+
+.project-section p#comp {
+  color: var(--color-comp);
 }
 
 .img-viewer {
@@ -100,6 +132,10 @@ h2.title {
   justify-content: center;
   margin-top: 50px;
   max-width: 700px;
+}
+
+.project-section.right {
+  align-self: flex-end;
 }
 
 .project-section .project-section { /** nested */
@@ -154,7 +190,8 @@ p.tech-item {
 
 .slide-up .home {
   max-width: 700px;
-  margin: 100px auto;
+  margin: 200px auto;
+  margin-bottom: 100px;
 }
 
 @media screen and (max-width: 900px) {

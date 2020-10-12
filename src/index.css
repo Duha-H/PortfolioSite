@@ -16,6 +16,10 @@
   --font-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   --font-nunito: 'Nunito', sans-serif;
   --font-poppins: 'Poppins', sans-serif;
+
+  --color-wip: #df9648;
+  --color-live: #4cc871;
+  --color-comp: #6db2c8;
 }
 
 body[theme='dark'] {
@@ -179,4 +183,8 @@ img.icon.disabled {
   to {
     color: var(--accent);
   }
+}
+
+button:not(:disabled):hover {
+  filter: brightness(120%) hue-rotate(2deg);
 }
