@@ -2,130 +2,168 @@ import React from "react";
 import { ProjectItem } from "./types";
 import "./ProjectView.css";
 import projects from "../projects/projectData";
+import { Redirect, withRouter } from "react-router-dom";
+import ProjectCard from "./ProjectCard";
 
 interface ViewProp {
   project: ProjectItem;
-  // onHideClick: () => void;
   [key: string]: any;
 }
 
 interface ViewState {
+  project: ProjectItem | undefined;
   selectedImgIdx: number;
   projectTitle: string;
+  displayContent: boolean;
+  nextIDs: number[];
 }
 
-class ProjectView extends React.Component<ViewProp, ViewState> {
+class ProjectView extends React.Component<any, ViewState> {
 
-  project: ProjectItem | undefined;
   constructor(props: any) {
     super(props);
     this.state = {
+      project: projects[0],
       selectedImgIdx: 0,
       projectTitle: '',
+      displayContent: false,
+      nextIDs: [1, 2],
     }
-    this.project = projects[0];
   }
 
   componentDidMount() {
     const { match: { params }} = this.props;
-    this.project = projects[+this.props.match.params.projectId];
-    // if (this.props.match.params.mode === 'solo') {
-    //   this.project = soloProjects.find(project => {
-    //     return project.id === +this.props.match.params.projectId;
-    //   });
-    // } else {
-    //   this.project = teamProjects.find(project => {
-    //     return project.id === +this.props.match.params.projectId;
-    //   });
-    // }
-    this.setName(100);
+    const newProject = projects[+this.props.match.params.projectId];
+    this.setState({
+      project: newProject,
+      projectTitle: newProject.title,
+      displayContent: true,
+    });
+    this.setNextIDs(newProject.id);
   }
 
   componentDidUpdate(prevProps: ViewProp) {
-    // if (prevProps.project.id !== this.props.project.id) {
-    //   this.setState({ selectedImgIdx: 0 });
-    // }
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      const newProject = projects[+this.props.match.params.projectId];
+      this.setState({
+        project: newProject,
+        projectTitle: newProject.title,
+      });
+      this.setNextIDs(newProject.id);
+    }
   }
 
   setName(rate?: number) {
     let index = 0;
     const updateRate = rate ? rate : 150;
     setInterval(() => {
-      if (this.state.projectTitle === this.project?.title) {
+      if (this.state.projectTitle === this.state.project?.title) {
+        this.setState({ displayContent: true, });
         return;
       }
-      this.setState({ projectTitle: this.state.projectTitle + this.project?.title[index], });
+      this.setState({ projectTitle: this.state.projectTitle + this.state.project?.title[index], });
       index++;
     }, updateRate);
   }
 
+  setNextIDs(newID: number) {
+    if (!this.state.project) {
+      return;
+    }
+    const projectList = Object.values(projects);
+    const projectIdx = projectList.findIndex(project => project.id === newID );
+    const nextID1 = projectIdx === projectList.length - 1 ? 0 : projectIdx + 1;
+    const nextID2 = nextID1 === projectList.length - 1 ? 0 : nextID1 + 1;
+    this.setState({
+      nextIDs: [projectList[nextID1].id, projectList[nextID2].id],
+    });
+  }
+
   render() {
-    if (!this.project) {
-      return (
-        <div className=""></div>
-      );
+    if (!this.state.project) {
+      return <Redirect to='/projects' />;
     }
     return (
-      <div className="view-container">
-        <div className="view-header">
+      <div className="page-content">
+        <div className="spanning-content banner">
+          <h2 className="title">{ this.state.projectTitle }</h2>
           <div className="spacer"></div>
-          <img
-            src={require('../assets/icon_clear_1.svg')}
-            alt="hide project"
-            className="icon"
-            style={{ paddingRight: 0, }}
-            onClick={ () => this.props.onHideClick() } />
-        </div>
-        <div className="spanning-content">
-          <h2 className="title">{ this.state.projectTitle }&nbsp;</h2>
-          <h2 id="blink">|</h2>
+          <a href={this.state.project.sourceUrl} target="_blank" rel="noopener noreferrer">
+            <img
+              src={require("../assets/icon_github.svg")} alt="source code"
+              className={`icon ${this.state.project.sourceUrl ? '' : 'disabled'}`}
+              title={this.state.project.sourceUrl ? 'source code' : 'this project is not open-sourced'}/>
+          </a>
+          <a href={this.state.project.projectUrl} target="_blank" rel="noopener noreferrer">
+            <img
+              src={require("../assets/icon_open.svg")} alt="view project"
+              className={`icon ${this.state.project.projectUrl ? '' : 'disabled'}`}
+              title={this.state.project.projectUrl ? 'view project' : 'this project was not made public'}/>
+          </a>
         </div>
         
-        <div className="img-viewer">
-          <img className="main" src={this.project.media[this.state.selectedImgIdx]} alt={`${this.project.title} preview`} />
-          {/* <div className="images">
-            { this.project.media.map((image, idx) => {
-              return (
-                <img src={image}
-                  alt="preview"
-                  onClick={() => this.setState({ selectedImgIdx: idx, }) }/>
-              )
-            }) }
-          </div> */}
-        </div>
+        <div className={this.state.displayContent ? 'slide-up' : 'hidden'}>
+          <div className="spanning-content baseline">
+            
+            <div className="project-section" id="multiple">
+              <div className="project-section row">
+                <h4 className="title">type</h4>
+                <p>{ this.state.project.mode }</p>
+              </div>
+              <div className="project-section row">
+                <h4 className="title">tech</h4>
+                <p className="tech-item">{ this.state.project.tech.join(' | ') }</p>
+              </div>
+            </div>
 
-        <div className="project-section">
-          <p className="title">description</p>
-          <p>{ this.project.description }</p>
-        </div>
+            <div className="project-section">
+              <h4 className="title">description</h4>
+              <p>{ this.state.project.description }</p>
+            </div>
 
-        <div className="project-section row">
-          <p className="title">tech</p>
-          <p className="tech-item">{ this.project.tech.join(' \u25AA ') }</p>
-        </div>
-
-        <div className="project-section row">
-          <p className="title">view source</p>
-          { this.project.openSource
-            ? <a href={this.project.sourceUrl} target="_blank" rel="noopener noreferrer">
-              <img src={require("../assets/icon_github.svg")} alt="" className="icon"/>
-              </a>
-            : <p>This project is, unfortunately, not open sourced.</p>
-          }
-        </div>
-
-        { this.project.projectUrl && 
-          <div className="project-section row">
-            <p className="title">view project</p>
-            <a href={this.project.sourceUrl} target="_blank" rel="noopener noreferrer">
-              <img src={require("../assets/icon_open.svg")} alt="" className="icon"/>
-            </a>
           </div>
-        }
+
+          <div className="img-viewer">
+            <img src={require('../assets/project-media/modeller_0.svg')} alt=""/>
+          </div>
+          
+          <div className="project-section">
+            <h4 className="title">why?</h4>
+            <p dangerouslySetInnerHTML={{ __html: this.state.project.motivation }}></p>
+          </div>
+          
+          <div className="img-viewer">
+            <img src={require('../assets/project-media/modeller_group.svg')} alt=""/>
+          </div>
+
+          { this.state.project.appBreakdown && 
+            <div className="project-section">
+              <h4 className="title">development details</h4>
+              <p dangerouslySetInnerHTML={{ __html: this.state.project.appBreakdown }}></p>
+            </div>
+          }
+
+          { this.state.project.issues && 
+            <div className="project-section">
+              <h4 className="title">lessons learned</h4>
+              <p dangerouslySetInnerHTML={{ __html: this.state.project.issues }}></p>
+            </div>
+          }
+          
+          <div className="home">
+            <h3 className="section-title">Check out other projects!</h3>
+            <div className="projects">
+              <ProjectCard project={projects[this.state.nextIDs[0]]} />
+              <ProjectCard project={projects[this.state.nextIDs[1]]} />
+            </div>
+          </div>
+        </div>
+
       </div>
+      
     );
   }
 
 }
 
-export default ProjectView;
+export default withRouter(ProjectView);

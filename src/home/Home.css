@@ -120,8 +120,8 @@ div.page-content p:not() {
 }
 
 .button {
-  background-color: var(--accent);
-  color: #e6e9ec;
+  /* background-color: var(--accent); */
+  color: var(--primary);
   border-radius: 20px;
   display: flex;
   flex-direction: row;
@@ -129,25 +129,26 @@ div.page-content p:not() {
   justify-content: center;
   padding: 10px 15px;
   margin: 50px 0;
+  border: 1.5px solid var(--primary);
 }
 
 .header .button {
   margin: 10px 0;
   margin-right: 50px;
-  padding: 5px 10px;
+  padding: 5px 15px;
 }
 
 .button:hover {
-  transform: scale(1.02);
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
 }
 
 a.button {
   font-weight: 600;
-  font-size: 1.1em;
 }
 
 .header a.button {
-  font-weight: normal;
+  /* font-weight: normal; */
   font-size: 1em;
 }
 

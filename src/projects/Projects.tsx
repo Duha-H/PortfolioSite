@@ -15,9 +15,9 @@ class Projects extends React.Component {
     return (
       <div className="page-content">
         <h2>Projects</h2>
+        <p>Below is a selection of projects that I've built or contributed to. Click on a project to learn more about it! &#10024;</p>
         <div className="projects-parent">
           <div className="">
-            <p>Below is a selection of projects that I've built or contributed to. Click on a project to learn more about it! &#10024;</p>
             <div className="projects">
               { Object.values(projects).map(project => {
                 return <ProjectCard project={project} />

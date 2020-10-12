@@ -30,7 +30,7 @@ export const TECH = {
   AWS_APPSYNC: 'AWS AppSync',
   AWS_DB: 'AWS DynamoDB',
   FB: 'Firebase',
-  FB_FIRESTORE: 'Firebase Cloud Firestore',
+  FB_FIRESTORE: 'Cloud Firestore',
   FB_AUTH: 'Firebase Authentication',
   MONGO: 'MongoDB',
   ORACLE: 'Oracle Database',

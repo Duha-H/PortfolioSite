@@ -2,7 +2,7 @@ div.parent {
   display: flex;
   align-items: center;
   flex-direction: column;
-  z-index: 2;
+  z-index: 4;
   position: fixed;
 }
 

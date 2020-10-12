@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
 import About from "./about/About";
 import Contact from "./contact/Contact";
 import Home from "./home/Home";
@@ -41,6 +41,7 @@ class AppContainer extends React.Component<any, StateType> {
     if (storedTheme &&
         (storedTheme === 'light' || storedTheme === 'dark')) {
       this.setState({ theme: storedTheme });
+      document.body.setAttribute('theme', storedTheme);
     }
     if (this.props.location.pathname !== '/') {
       this.setState({ showNav: true, });

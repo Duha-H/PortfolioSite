@@ -15,6 +15,16 @@
   /* transform-origin: bottom; */
 }
 
+.hidden {
+  display: none;
+}
+
+.slide-up {
+  animation: 0.5s slide-up ease;
+  transform-origin: top;
+  display: block;
+}
+
 .view-header {
   display: flex;
   flex-direction: row;
@@ -24,12 +34,48 @@
   width: 20px;
 }
 
+.spanning-content.banner {
+  padding-top: 60px;
+  padding-bottom: 10px;
+  margin-bottom: 50px;
+  position: sticky;
+  top: 40px;
+  background-color: var(--bg);
+}
+
+.spanning-content.baseline {
+  align-items: baseline;
+}
+
+.banner a:hover {
+  transform: scale(1.1);
+}
+
 h2.title {
-  color: var(--accent);
+  color: var(--secondary);
   font-family: var(--font-code);
   /* text-decoration: underline 4px var(--accent); */
   font-weight: 600;
   text-align: left;
+  margin: 0;
+  /* white-space: nowrap; */
+}
+
+.spanning-content.banner .spanning-content h2#blink {
+  color: var(--secondary);
+}
+
+.img-viewer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+
+.img-viewer img {
+  max-width: 100%;
+
 }
 
 .img-viewer img.main {
@@ -63,7 +109,17 @@ h2.title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 35px 0;
+  margin-top: 50px;
+  max-width: 700px;
+}
+
+.project-section .project-section { /** nested */
+  margin-top: 0;
+}
+
+.project-section#multiple {
+  width: 300px;
+  margin-right: 50px;
 }
 
 .project-section.row {
@@ -72,22 +128,24 @@ h2.title {
   justify-content: start;
 }
 
-.project-section p.title {
+.project-section p.title, .project-section h4.title {
   white-space: nowrap;
   font-family: var(--font-code);
   color: var(--accent);
   font-weight: 600;
-  min-width: 110px;
+  min-width: 80px;
   /* margin-top: 30px; */
-  text-decoration: underline 2px var(--accent-light);
+  /* text-decoration: underline 2px var(--accent-light); */
   margin: 0;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
   text-align: left;
 }
 
-.project-section p {
+.project-section p:not(.tech-item) {
   margin: 0;
   text-align: left;
+  line-height: 1.75em;
+  font-family: var(--font-poppins);
 }
 
 p.tech-item {
@@ -96,10 +154,20 @@ p.tech-item {
   overflow: visible;
   color: var(--text);
   height: auto;
+  line-height: 1.75em;
+}
+
+.project-section p.tech-item {
+  padding: 0;
 }
 
 .project-section img.icon {
   padding: 0;
+}
+
+.slide-up .home {
+  max-width: 700px;
+  margin: 100px auto;
 }
 
 @media screen and (max-width: 900px) {
@@ -115,6 +183,10 @@ p.tech-item {
     z-index: 3;
     /* overflow-y: scroll; */
     /* padding-bottom: 80px; */
+  }
+
+  .spanning-content.baseline {
+    flex-direction: column-reverse;
   }
 }
 

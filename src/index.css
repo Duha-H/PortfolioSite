@@ -63,12 +63,16 @@ h2 {
   color: var(--accent);
 }
 
-h3 {
+h3, h4 {
   font-size: 1.25em;
   color: var(--primary);
   font-family: var(--font-nunito);
   font-weight: 400;
   margin: 0;
+}
+
+h4 {
+  font-size: 1.15em;
 }
 
 body {
@@ -123,6 +127,7 @@ div.page-content {
   padding-right: 80px;
   padding-left: 100px;
   box-sizing: border-box;
+  background-color: var(--bg);
 }
 
 img.icon {
@@ -157,12 +162,10 @@ img.icon.disabled {
 
 @keyframes slide-up {
   from {
-    height: 0;
-    transform: translateY(30%) scaleY(0);
+    transform: translateY(50%);
   }
   to {
-    height: 100%;
-    transform: translateY(0) scaleY(1);
+    transform: translateY(0);
   }
 }
 
