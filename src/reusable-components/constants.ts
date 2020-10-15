@@ -36,6 +36,7 @@ export const TECH = {
   ORACLE: 'Oracle Database',
   TK: 'Tkinter',
   VSC: 'VSCode API',
+  RXJS: 'RxJS',
 }
 
 export const TAGS = {

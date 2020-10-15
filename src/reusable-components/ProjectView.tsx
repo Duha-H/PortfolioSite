@@ -125,7 +125,7 @@ class ProjectView extends React.Component<any, ViewState> {
 
             <div className="project-section">
               <h4 className="title">description</h4>
-              <p>{ this.state.project.description }</p>
+              <p dangerouslySetInnerHTML={{ __html: this.state.project.description }}></p>
             </div>
 
           </div>
@@ -160,10 +160,10 @@ class ProjectView extends React.Component<any, ViewState> {
             </div>
           }
 
-          { this.state.project.issues && 
+          { this.state.project.challenges && 
             <div className="project-section">
-              <h4 className="title">lessons learned</h4>
-              <p dangerouslySetInnerHTML={{ __html: this.state.project.issues }}></p>
+              <h4 className="title">challenges and take-aways</h4>
+              <p dangerouslySetInnerHTML={{ __html: this.state.project.challenges }}></p>
             </div>
           }
 
@@ -171,6 +171,13 @@ class ProjectView extends React.Component<any, ViewState> {
           { this.state.project.media[4] &&
             <div className="img-viewer">
               <img src={this.state.project.media[4]} alt=""/>
+            </div>
+          }
+
+          { this.state.project.roadmap && 
+            <div className="project-section">
+              <h4 className="title">roadmap</h4>
+              <p dangerouslySetInnerHTML={{ __html: this.state.project.roadmap }}></p>
             </div>
           }
           

@@ -24,7 +24,7 @@ export interface ProjectItem {
   motivation?: any;
   appBreakdown?: string;
   contribution?: string;
-  issues?: string;
+  challenges?: string;
   roadmap?: string; // things you'd do differently, things planned for the future
 }
 
