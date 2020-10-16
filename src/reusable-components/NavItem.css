@@ -1,11 +1,11 @@
-.nav li, .contact-links li {
+.nav li {
   border-radius: 25px;
   background: var(--bg);
   display: flex;
   flex-direction: row;
   padding: 5px;
   padding-right: 0;
-  margin: 10px;
+  margin: 5px 10px;
   width: max-content;
   line-height: normal;
 }
@@ -28,7 +28,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .nav li, .contact-links li {
+  .nav li {
     box-shadow: var(--hover-shadow);
     padding: 5px;
     margin: 5px 10px;

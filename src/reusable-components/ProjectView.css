@@ -86,12 +86,20 @@ h2.title {
   color: var(--color-comp);
 }
 
+.project-section p b {
+  background-image: linear-gradient(to bottom, var(--accent-opaque) 20%, transparent 20%, transparent 80%, var(--accent-opaque) 80%, var(--accent-opaque));
+  background-position: 0 1.03em;
+  background-repeat: repeat-x;
+  font-weight: normal;
+}
+
 .img-viewer {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 100px 0;
+  margin-bottom: 50px;
+  margin-top: 100px;
 }
 
 .img-viewer img {
@@ -130,8 +138,12 @@ h2.title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 100px;
   max-width: 700px;
+}
+
+.baseline .project-section {
+  margin-top: 50px;
 }
 
 .project-section.right {
@@ -220,5 +232,29 @@ p.tech-item {
     box-shadow: 0 0 15px var(--bg);
     overflow-y: auto;
     padding-bottom: 80px;
+  }
+
+  h2.title {
+    font-size: 1.45em;
+    white-space: nowrap;
+  }
+
+  .baseline .project-section {
+    margin-top: 10px;
+  }
+
+  .home .section-title {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    /* margin-bottom: 50px; */
+    position: sticky;
+    top: 40px;
+    background-color: var(--bg);
+    width: 100%;
+    z-index: 2;
+  }
+
+  .project-section {
+    margin-top: 40px;
   }
 }

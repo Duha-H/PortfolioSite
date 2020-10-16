@@ -74,7 +74,6 @@ class Home extends React.Component<any, StateType> {
             <p>I have quite a bit of learning to do (to say the least), and I, therefore, find great value in working as part of a team. I do my best to be a teammate I would want to have, and I greatly value communication in as a team member above all else.</p>
             <Link to="/about" className="link">read more</Link>
           </div>
-          <img id="about-img" src={require('../assets/about_img.svg')} alt=""/>
         </div>
 
         <div className="home">

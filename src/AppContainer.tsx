@@ -4,6 +4,7 @@ import About from "./about/About";
 import Contact from "./contact/Contact";
 import Home from "./home/Home";
 import Projects from "./projects/Projects";
+import MobileNav from "./reusable-components/MobileNav";
 import Nav from "./reusable-components/Nav";
 import ProjectView from "./reusable-components/ProjectView";
 import { NavItemData } from "./reusable-components/types";
@@ -20,7 +21,12 @@ class AppContainer extends React.Component<any, StateType> {
     { text: 'home', iconSrc: require('./assets/icon_home.svg'), link: '/' },
     { text: 'about me', iconSrc: require('./assets/icon_about.svg'), link: '/about' },
     { text: 'projects', iconSrc: require('./assets/icon_projects.svg'), link: '/projects' },
-    { text: 'background', iconSrc: require('./assets/icon_skills.svg'), link: '/skills' },
+  ];
+  contactLinks: NavItemData[] = [
+    { text: 'resume', iconSrc: require('./assets/icon_document.svg'), link: '/skills' },
+    { text: 'email', iconSrc: require('./assets/icon_contact.svg'), link: 'mailto:duha.h.153@gmail.com' },
+    { text: 'github', iconSrc: require('./assets/icon_github.svg'), link: 'https://github.com/Duha-H' },
+    { text: 'linkedin', iconSrc: require('./assets/icon_linkedin.svg'), link: 'https://github.com/Duha-H' },
   ];
   docIcon1 = './assets/icon_document_dark.svg';
   docIcon2 = './assets/icon_document_dark.svg';
@@ -89,17 +95,18 @@ class AppContainer extends React.Component<any, StateType> {
   render() {
     return (
       <div className={`container ${this.state.theme}`}>
-        <Nav items={ this.navItems } mobile={this.state.mobileNav} onHideClick={ () => this.hideMobileNav() } />
+        <div className="nav-links">
+          <div className="line"></div>
+          <Nav items={ this.navItems } onHideClick={ () => this.hideMobileNav() } />
+        </div>
+        
         <div className="spanning-content header">
           <h2 className="logo">DH</h2>
           <div className="spacer"></div>
-          <a href="mailto:duha.h.153@gmail.com" className="button"
-            onMouseEnter={ () => this.toggleDocIcon() }
-            onMouseLeave={ () => this.toggleDocIcon() }>
-            <img src={require('./assets/icon_document_dark.svg')} alt="contact" className="icon"/>
-            resume
-          </a>
-          <img src={require('./assets/icon_nav.svg')} alt="navigation" className="nav-toggle icon"
+          <img
+            src={ this.state.mobileNav ? require('./assets/icon_clear.svg') : require('./assets/icon_nav.svg')}
+            alt="navigation"
+            className="nav-toggle icon"
             onClick={ () => { this.setState({ mobileNav: !this.state.mobileNav, }) }}
           />
           <div className="theme-toggle" onClick={ () => this.toggleTheme() }>
@@ -108,6 +115,7 @@ class AppContainer extends React.Component<any, StateType> {
           </div>
         </div>
 
+
         <div className="content">
           <Route path="/" exact component={Home} />
           <Route path="/about" exact sensitive={false} component={About} />
@@ -115,18 +123,12 @@ class AppContainer extends React.Component<any, StateType> {
           <Route path="/projects/:projectId" component={ProjectView} />
           <Route path="/skills" exact sensitive={false} component={Skills} />
           <Route path="/contact" exact sensitive={false} component={Contact} />
+
+          <MobileNav navItems={this.navItems} contactItems={this.contactLinks} mobile={this.state.mobileNav} onHideClick={ () => this.hideMobileNav() } />
         </div>
 
         <div className="contact-links">
-          <a href="mailto:duha.h.153@gmail.com" target="_blank" rel="noopener noreferrer" title="email">
-            <img src={require("./assets/icon_contact_2.svg")} alt=""/>
-          </a>
-          <a href="https://github.com/Duha-H" target="_blank" rel="noopener noreferrer" title="github">
-            <img src={require("./assets/icon_github.svg")} alt=""/>
-          </a>
-          <a href="https://linkedin.com/in/duha-hassan/" target="_blank" rel="noopener noreferrer" title="linkedin">
-            <img src={require("./assets/icon_linkedin.svg")} alt=""/>
-          </a>
+          <Nav items={ this.contactLinks } onHideClick={ () => this.hideMobileNav() } />
           <div className="line"></div>
         </div>
 

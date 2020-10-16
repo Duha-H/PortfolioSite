@@ -3,26 +3,23 @@
   top: 0;
   right: 0;
   left: 0;
-  /* width: 100%; */
   background-color: var(--bg);
   box-shadow: var(--header-shadow);
-  /* align-items: initial; */
   z-index: 3;
-  margin-left: 100px;
-  margin-right: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 h2.logo {
-  /* margin-left: 100px; */
-  border-bottom: 4px solid var(--accent);
   margin: 10px 0;
 }
 
 div.theme-toggle {
-  margin: 0 20px;
-  position: fixed;
+  margin: 0;
+  position: absolute;
   top: 0;
-  right: 0;
+  right: 20px;
 }
 
 img.theme-toggle {
@@ -33,7 +30,7 @@ img.theme-toggle {
 }
 
 img.theme-toggle.switch {
-  transform: translateY(-10%);
+  transform: translateY(-20%);
 }
 
 div.theme-toggle:hover img.theme-toggle.switch {
@@ -44,11 +41,20 @@ div.theme-toggle:hover img.theme-toggle.switch {
   display: none;
 }
 
+.nav-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   background-color: var(--bg);
   text-align: center;
   min-height: 100vh;
-  /* min-width: 100vw; */
   display: flex;
   flex-direction: row;
   font-size: calc(10px + 2vmin);
@@ -57,7 +63,6 @@ div.theme-toggle:hover img.theme-toggle.switch {
 .content {
   width: 100%;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -82,7 +87,6 @@ div.page-content p:not() {
 }
 
 *#blink {
-  /* font-size: 1em; */
   animation: 1s blink-accent infinite;
   margin: 0;
 }
@@ -120,7 +124,6 @@ div.page-content p:not() {
 }
 
 .button {
-  /* background-color: var(--accent); */
   color: var(--primary);
   border-radius: 20px;
   display: flex;
@@ -148,7 +151,6 @@ a.button {
 }
 
 .header a.button {
-  /* font-weight: normal; */
   font-size: 1em;
 }
 
@@ -165,22 +167,13 @@ a.button {
 div.contact-links {
   position: fixed;
   bottom: 0;
-  right: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.contact-links a {
-  margin: 8px 0;
-}
-
 .contact-links a img {
   width: 20px;
-}
-
-.contact-links a:hover {
-  transform: scale(1.1);
 }
 
 .contact-links div.line {
@@ -189,29 +182,30 @@ div.contact-links {
 
 @media screen and (max-width: 500px) {
   .header {
-    margin-left: 20px;
+    align-items: baseline;
+  }
+
+  .page-content .home {
+    margin-top: 60%;
   }
 
   .nav-toggle {
     display: block;
     margin-top: 40px;
+    cursor: pointer;
   }
 
-  /* div.page-content {
-    margin: 35px 25px;
-  } */
   div.contact-links {
     right: 10px;
   }
-
 
   .page-content#center h2 {
     font-size: 1.8em;
     white-space: nowrap;
   }
 
-  .contact-links div.line {
-    height: 5vh;
+  div.line {
+    display: none;
   }
 }
 

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.52 290.52">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #4f81df;
+      }
+    </style>
+  </defs>
+  <title>icon_document_1</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <rect class="cls-1" width="290.52" height="290.52" />
+      <path class="cls-2"
+        d="M235.28,40.65H60.46a6,6,0,0,0-6,6v187.6a6,6,0,0,0,10.45,4l16-17.79a6,6,0,0,1,8.18-.69l25.56,20.15a6,6,0,0,0,7.41,0l48.54-38a6,6,0,0,1,5.54-1l57.27,18.46a6,6,0,0,0,7.84-5.71v-167A6,6,0,0,0,235.28,40.65ZM217.4,172.9H85.15V162.69H217.4Zm0-39.77H85.15V122.92H217.4Zm0-39.76H85.15V83.15H217.4Z" />
+    </g>
+  </g>
+</svg>

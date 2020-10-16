@@ -52,10 +52,6 @@
   color: var(--accent);
 }
 
-.info a {
-  z-index: 3;
-}
-
 .project-header {
   display: flex;
   flex-direction: row;
@@ -89,7 +85,7 @@ p.tech-item {
   font-family: var(--font-code);
   border-radius: var(--radius);
   height: 1.3em;
-  padding: 5px 15px;
+  padding: 0px 15px;
   padding-left: 0;
   white-space: nowrap;
   text-overflow: ellipsis;

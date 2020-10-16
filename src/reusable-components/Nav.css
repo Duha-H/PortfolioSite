@@ -3,7 +3,6 @@ div.parent {
   align-items: center;
   flex-direction: column;
   z-index: 4;
-  position: fixed;
 }
 
 div.parent-mobile {
@@ -54,8 +53,7 @@ ul.nav {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: fixed;
-    top: 60px;
+    position: absolute;
     right: 20px;
     align-items: flex-end;
     z-index: 3;

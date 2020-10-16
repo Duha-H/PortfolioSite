@@ -13,10 +13,8 @@ div.page-content {
   font-family: var(--font-code);
   color: var(--accent);
   font-weight: 600;
-  /* padding: 20px; */
   min-width: 130px;
   margin-top: 30px;
-  text-decoration: underline 4px var(--element-bg);
 }
 
 .about-section ul {
@@ -47,8 +45,4 @@ div.page-content {
   .about-section {
     flex-direction: column;
   }
-}
-
-@media screen and (max-width: 500px) {
-  
 }

@@ -160,13 +160,19 @@ class ProjectView extends React.Component<any, ViewState> {
             </div>
           }
 
-          { this.state.project.challenges && 
+          { this.state.project.contribution && 
             <div className="project-section">
+              <h4 className="title">contributions</h4>
+              <p dangerouslySetInnerHTML={{ __html: this.state.project.contribution }}></p>
+            </div>
+          }
+
+          { this.state.project.challenges && 
+            <div className="project-section right">
               <h4 className="title">challenges and take-aways</h4>
               <p dangerouslySetInnerHTML={{ __html: this.state.project.challenges }}></p>
             </div>
           }
-
           
           { this.state.project.media[4] &&
             <div className="img-viewer">

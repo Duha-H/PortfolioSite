@@ -6,7 +6,6 @@ import NavItem from "./NavItem";
 
 interface NavProps {
   items: NavItemData[];
-  mobile?: boolean;
   onHideClick: () => void;
 }
 
@@ -40,20 +39,11 @@ class Nav extends React.Component<NavProps, NavState> {
     return (
       <div>
         <div className="parent">
-          <div className="line"></div>
           <ul className="nav">
             { this.state.items.map((item, index) =>
               <NavItem data={ item } onHideClick={ () => { } } />
             )}
           </ul>
-        </div>
-
-        <div className="parent-mobile">
-          { this.props.mobile && <ul className="nav" >
-            {this.state.items.map((item, index) =>
-              <NavItem data={ item } textAlwaysVisible={ true } onHideClick={ () => this.props.onHideClick() } />
-            )}
-          </ul> }
         </div>
       </div>
     );
