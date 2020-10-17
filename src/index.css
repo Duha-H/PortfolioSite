@@ -118,7 +118,7 @@ p b, li b {
 }
 
 p a:hover, li a:hover, a.link:hover {
-  border-bottom: solid 4px rgba(79, 129, 223, 0.7);
+  border-bottom: solid 4px var(--accent);
 }
 
 div.line {
@@ -150,6 +150,10 @@ img.icon.disabled {
 }
 
 @media screen and (max-width: 500px) {
+  * {
+    font-size: 10.5pt;
+  }
+
   div.page-content {
     padding: 0 15px;
     padding-top: 15px;

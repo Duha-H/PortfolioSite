@@ -100,7 +100,7 @@ div.page-content p:not() {
   flex-direction: column;
   justify-content: center;
   align-items: baseline;
-  margin-top: 300px;
+  margin-top: 350px;
 }
 
 .page-content .home.row {
@@ -180,9 +180,16 @@ div.contact-links {
   margin-top: 5px;
 }
 
+@media screen and (max-width: 1400px) {
+  .header {
+    margin-left: 75px;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .header {
     align-items: baseline;
+    margin-left: 0px;
   }
 
   .page-content .home {

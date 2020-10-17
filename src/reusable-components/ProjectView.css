@@ -96,15 +96,18 @@ h2.title {
 .img-viewer {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   margin-bottom: 50px;
   margin-top: 100px;
+  overflow-x: auto;
+  scrollbar-color: var(--secondary) var(--bg);
 }
 
 .img-viewer img {
   max-width: 100%;
-
+  min-width: 600px;
+  margin: 0 auto;
 }
 
 .img-viewer img.main {

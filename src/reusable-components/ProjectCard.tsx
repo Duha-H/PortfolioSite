@@ -2,6 +2,7 @@ import React from "react";
 import { ProjectItem } from "./types";
 import "./ProjectCard.css";
 import { Link } from "react-router-dom";
+import { url } from "inspector";
 
 interface CardProps {
   project: ProjectItem,
@@ -26,9 +27,9 @@ class ProjectCard extends React.Component<CardProps, CardProps> {
   render() {
     return (
       <div className="project-container">
-        <Link to={`/projects/${this.state.project.id}`}>
-          <div className="image-overlay"></div>
-          <img src={this.state.project.media[0]} className="card-image" alt=""/>
+        <Link to={`/projects/${this.state.project.id}`} id="parent">
+          <div className="image-overlay" style={{backgroundImage: `url(${this.state.project.media[0]})`, }}></div>
+          {/* <img src={this.state.project.media[0]} className="card-image" alt=""/> */}
           <div className="info">
             <div className="project-header">
               <h3>{ this.state.project.title }</h3>

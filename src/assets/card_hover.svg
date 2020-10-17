@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 322.07 408.09">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #76a4fb;
+      }
+
+      #Layer_2 {
+        transform: rotate(0deg);
+        transition: transform 0.5s, background 0.5s;
+      }
+
+      .project-container:hover #Layer_2 {
+        transform: rotate(-10deg);
+      }
+
+      @keyframes wiggle {
+        from {
+          transform: rotate(-10deg);
+        }
+        to {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+  </defs>
+  <title>card_hover_1</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <!-- <path class="cls-1"
+        d="M299.31,8.19a34.62,34.62,0,0,1,14,16.25c.92,2.2,4.55,1.23,3.62-1A38.87,38.87,0,0,0,301.2,5c-2.06-1.27-3.95,2-1.89,3.24Z" /> -->
+      <path class="cls-1"
+        d="M306.36,3.51a25.37,25.37,0,0,1,12,16c.59,2.34,4.21,1.35,3.62-1A29.18,29.18,0,0,0,308.26.27a1.88,1.88,0,0,0-1.9,3.24Z" />
+      <!-- <path class="cls-1"
+        d="M7.57,373.14a46.9,46.9,0,0,0,10.57,34.32c1.52,1.87,4.16-.8,2.65-2.66a43.15,43.15,0,0,1-9.47-31.66c.23-2.4-3.52-2.39-3.75,0Z" /> -->
+      <path class="cls-1"
+        d="M.62,374.94a48.47,48.47,0,0,0,5.09,30.68c1.13,2.14,4.37.24,3.24-1.89a44.1,44.1,0,0,1-4.71-27.79c.36-2.36-3.25-3.38-3.62-1Z" />
+    </g>
+  </g>
+</svg>
