@@ -1,6 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.39 118.7">
   <defs>
-    <style>.cls-1{fill:none;stroke:#4f81df;stroke-linecap:round;stroke-miterlimit:10;stroke-width:13px;}</style>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #4f81df;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 15px;
+      }
+    </style>
   </defs>
   <title>icon_nav</title>
   <g id="Layer_2" data-name="Layer 2">

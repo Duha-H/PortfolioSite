@@ -7,10 +7,10 @@
       }
 
       .cls-1 {
-        stroke: #76a4fb;
+        stroke: #4f81df;
         stroke-linecap: round;
         stroke-miterlimit: 10;
-        stroke-width: 15px;
+        stroke-width: 35px;
       }
     </style>
   </defs>

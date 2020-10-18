@@ -39,8 +39,12 @@
   align-items: baseline;
 }
 
-.banner a:hover {
-  transform: scale(1.1);
+.banner a img.icon:not(.disabled) {
+  transition: transform 0.3s ease-in-out;
+}
+
+.banner a:hover img.icon:not(.disabled) {
+  transform: scale(1.15);
 }
 
 h2.title {

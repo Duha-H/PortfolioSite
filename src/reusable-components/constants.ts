@@ -31,13 +31,63 @@ export const TECH = {
   AWS_DB: 'AWS DynamoDB',
   FB: 'Firebase',
   FB_FIRESTORE: 'Cloud Firestore',
-  FB_AUTH: 'Firebase Authentication',
+  FB_AUTH: 'Firebase Auth',
   MONGO: 'MongoDB',
   ORACLE: 'Oracle Database',
   TK: 'Tkinter',
   VSC: 'VSCode API',
   RXJS: 'RxJS',
+  WIN: 'Windows',
+  LINUX: 'Linux',
+  GIT: 'Git',
 }
+
+export const languages = [
+  TECH.C,
+  TECH.CPP,
+  TECH.CSHARP,
+  TECH.PYTHON,
+  TECH.JS,
+  TECH.TS,
+  TECH.HTML,
+  TECH.CSS,
+  TECH.JAVA,
+  TECH.RUST,
+  TECH.SQL,
+  TECH.GQL,
+  TECH.GLSL,
+];
+
+export const libraries = [
+  TECH.OPENGL,
+  TECH.WEBGL,
+  TECH.ANGULAR,
+  TECH.REACT,
+  TECH.RN,
+  TECH.UE,
+  TECH.SWING,
+  TECH.JDBC,
+  TECH.TFLOW,
+  TECH.FLASK,
+  TECH.NODE,
+  TECH.TK,
+  TECH.RXJS,
+];
+
+export const tools = [
+  TECH.AWS,
+  TECH.AWS_APPSYNC,
+  TECH.AWS_COGNITO,
+  TECH.AWS_DB,
+  TECH.FB,
+  TECH.FB_AUTH,
+  TECH.FB_FIRESTORE,
+  TECH.MONGO,
+  TECH.ORACLE,
+  TECH.GIT,
+  TECH.WIN,
+  TECH.LINUX,
+];
 
 export const TAGS = {
   ...TECH,

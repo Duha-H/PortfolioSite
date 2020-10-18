@@ -1,11 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.52 290.52">
   <defs>
-    <style>.cls-1{fill:#4f81df;}</style>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #4f81df;
+      }
+    </style>
   </defs>
-  <title>icon_linkedin</title>
+  <title>icon_linkedin_1</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="Layer_1-2" data-name="Layer 1">
-      <path class="cls-1" d="M19,0H5A5,5,0,0,0,0,5V19a5,5,0,0,0,5,5H19a5,5,0,0,0,5-5V5A5,5,0,0,0,19,0ZM8,19H5V8H8ZM6.5,6.73A1.77,1.77,0,1,1,8.25,5,1.75,1.75,0,0,1,6.5,6.73ZM20,19H17V13.4c0-3.37-4-3.12-4,0V19H10V8h3V9.77c1.4-2.59,7-2.78,7,2.47Z" />
+      <rect class="cls-1" width="290.52" height="290.52" />
+      <path class="cls-2"
+        d="M209,36H81.55A45.52,45.52,0,0,0,36,81.55V209a45.52,45.52,0,0,0,45.51,45.51H209A45.51,45.51,0,0,0,254.48,209V81.55A45.51,45.51,0,0,0,209,36ZM108.85,209H81.55V108.85h27.3ZM95.2,97.31a16.06,16.06,0,1,1,15.93-16A16,16,0,0,1,95.2,97.31ZM218.07,209h-27.3V158c0-30.65-36.41-28.33-36.41,0v51h-27.3V108.85h27.3v16.07c12.71-23.54,63.71-25.28,63.71,22.53Z" />
     </g>
   </g>
 </svg>

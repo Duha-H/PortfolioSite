@@ -108,6 +108,7 @@ p a, li a, a.link {
   color: var(--accent);
   font-weight: 600;
   font-family: var(--font-code);
+  position: relative;
 }
 
 p b, li b {
@@ -118,7 +119,26 @@ p b, li b {
 }
 
 p a:hover, li a:hover, a.link:hover {
-  border-bottom: solid 4px var(--accent);
+  /* border-bottom: solid 4px var(--accent); */
+}
+
+p a:after, ul:not(.nav) li a:after, a.link:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: -5px;
+  content: "";
+  display: block;
+  height: 3px;
+  right: 100%;
+  left: 0;
+  position: absolute;
+  background: var(--accent);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+p a:hover:after, ul:not(.nav) li a:hover:after, a.link:hover:after { 
+  width: 100%; 
+  right: 0;
 }
 
 div.line {
@@ -147,6 +167,7 @@ img.icon {
 
 img.icon.disabled {
   opacity: 0.2;
+  cursor: default;
 }
 
 @media screen and (max-width: 500px) {
@@ -156,7 +177,7 @@ img.icon.disabled {
 
   div.page-content {
     padding: 0 15px;
-    padding-top: 15px;
+    padding-top: 35px;
     margin: 60px auto;
     margin-top: 70px;
   }

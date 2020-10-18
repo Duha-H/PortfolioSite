@@ -9,6 +9,7 @@ import {
 import PropTypes from "prop-types";
 import projects from "../projects/projectData";
 import ProjectCard from "../reusable-components/ProjectCard";
+import { languages, libraries, tools } from "../reusable-components/constants";
 
 interface StateType {
   // theme: 'dark' | 'light';
@@ -60,20 +61,52 @@ class Home extends React.Component<any, StateType> {
             <h1 id="name">{ this.state.name }</h1><h1 id="blink">|</h1>
           </div>
           <h2>Software Developer</h2>
-          <h3>I'd love to let you know more about myself and my work :)</h3>
-          <a href="mailto:duha.h.153@gmail.com" className="button">
-            <img src={require('../assets/icon_contact.svg')} alt="contact" className="icon"/>
-             Get in touch
-          </a>
+          <h3>I'd love to let you know more about myself and my work &#128578;</h3>
         </div>
 
         <div className="home row">
           <div className="">
-            <p>I'm a recently-graduated software developer, currently based in Toronto. I enjoy building pieces of software that solve a problem, or make a task slightly easier!</p>
-            <p>I haven't always had an interest in software development, but 4 years ago in an inadvertent escape from an Architecture degree (2/10 would not recommend &#128578;) I decided to transfer to a Computer Science program, and it has kind of just clicked for me since. Coming from a background in architectural design projects, I think I've developed the ability to view projects holistically and anticipate future concerns, as well as a unique attention to minute details. Which, I think, is kind of neat!</p>
-            <p>I have quite a bit of learning to do (to say the least), and I, therefore, find great value in working as part of a team. I do my best to be a teammate I would want to have, and I greatly value communication in as a team member above all else.</p>
-            <Link to="/about" className="link">read more</Link>
+            <p>I'm a <b>recently-graduated software developer</b>, currently based in Toronto. I enjoy experimenting with different technologies, and building pieces of software that solve a problem or make a task slightly easier.</p>
+            <p>I haven't always had an interest in software development, but 4 years ago in an inadvertent escape from an Architecture degree I decided to transfer to a Computer Science program, and it has kind of just clicked for me since!</p>
           </div>
+          
+          <div className="">
+            <p>Coming from a background in <b>architectural design</b>, I think I've developed the ability to view projects holistically and anticipate future concerns, as well as a unique attention to minute details. Which, I think, is kind of neat!</p>
+            <p>I have quite a bit of learning to do, and I, therefore, find great value in working as part of a team. I do my best to be a teammate I would want to have, and I greatly value communication in as a team member above all else.</p>
+            <p className="prompt"><Link to="/about" className="link">read more</Link><img className="icon" src={require('../assets/icon_arrow.svg')} alt=""/></p>
+          </div>
+        </div>
+
+        <div className="home">
+          <h3 className="section-title">Skills</h3>
+          <p>Whenever possible, I do my best to select the most appropriate tools for a project &#128296;. This gives me a greater chance to become familiar with a variety of tools and tech stacks out there.</p>
+          <p>Here are some <b>technical tools I'm familiar with:</b></p>
+          <ul className="skills">
+            <li>
+              <div>
+                <p className="title"><img src={require('../assets/icon_skills.svg')} className="icon" alt=""/> Languages</p>
+                <div className="skill-group">
+                  { languages.map(language => <p className="tech-item">{ language }</p>) }
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p className="title"><img src={require('../assets/icon_skills.svg')} className="icon" alt=""/> Libraries, APIs, Frameworks</p>
+                <div className="skill-group">
+                  { libraries.map(library => <p className="tech-item">{ library }</p>) }
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p className="title"><img src={require('../assets/icon_skills.svg')} className="icon" alt=""/> Platforms, Databases, Tools</p>
+                <div className="skill-group">
+                  { tools.map(tool => <p className="tech-item">{ tool }</p>) }
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
 
         <div className="home">
@@ -83,7 +116,18 @@ class Home extends React.Component<any, StateType> {
             <ProjectCard project={this.projects[1]} />
             <ProjectCard project={this.projects[2]} />
           </div>
-          <Link to="/projects" className="link">view more</Link>
+          <p className="prompt"><Link to="/projects" className="link">view more</Link><img className="icon" src={require('../assets/icon_arrow.svg')} alt=""/></p>
+        </div>
+
+        <div className="home confined">
+          <h3 className="section-title">Connect</h3>
+          <p>I'm currently in the market for employment, so I'd love to hear from you if you're looking for a developer, or would just like to collaborate or chat about cool stuff!</p>
+          <p className="prompt">Shoot me an &nbsp; <a href="mailto:duha.h.153@gmail.com">email</a><img src={require('../assets/icon_contact.svg')} alt="contact" className="icon"/></p>
+          <p className="prompt">Or reach out on &nbsp; <a href="mailto:duha.h.153@gmail.com">linkedin</a><img src={require('../assets/icon_linkedin.svg')} alt="contact" className="icon"/></p>
+        </div>
+
+        <div className="home" style={{ width: '100%', }}>
+          <p className="prompt" style={{ justifyContent: 'center', }}>Check out this portfolio's &nbsp; <a href="https://github.com/Duha-H/website">repository on github</a><img className="icon" src={require('../assets/icon_github.svg')} alt=""/>!</p>
         </div>
       </div>
     );
