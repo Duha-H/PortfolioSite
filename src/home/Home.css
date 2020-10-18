@@ -30,11 +30,12 @@ img.theme-toggle {
 }
 
 img.theme-toggle.switch {
-  transform: translateY(-20%);
+  transform: translateY(-30%);
 }
 
 div.theme-toggle:hover img.theme-toggle.switch {
   transform: translateY(0);
+  transition: transform 0.2s ease-in-out;
 }
 
 .nav-toggle {
@@ -221,6 +222,10 @@ p.prompt {
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
+}
+
+p.prompt:hover {
+  color: var(--primary);
 }
 
 .contact-links a img {

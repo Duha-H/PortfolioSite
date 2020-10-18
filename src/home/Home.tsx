@@ -38,6 +38,7 @@ class Home extends React.Component<any, StateType> {
   }
 
   componentDidMount() {
+    document.title = 'Portfolio Home | Duha Hassan';
     this.setName();
   }
 
@@ -55,7 +56,7 @@ class Home extends React.Component<any, StateType> {
   render() {
     return (
       <div className="page-content" id="center">
-        <div className="home">
+        <div className="home" data-aos='fade-up'>
           <h3 style={{color: 'var(--text)'}}>Hi there! I'm</h3>
           <div className="typewritten">
             <h1 id="name">{ this.state.name }</h1><h1 id="blink">|</h1>
@@ -64,7 +65,7 @@ class Home extends React.Component<any, StateType> {
           <h3>I'd love to let you know more about myself and my work &#128578;</h3>
         </div>
 
-        <div className="home row">
+        <div className="home row" data-aos='fade-up'>
           <div className="">
             <p>I'm a <b>recently-graduated software developer</b>, currently based in Toronto. I enjoy experimenting with different technologies, and building pieces of software that solve a problem or make a task slightly easier.</p>
             <p>I haven't always had an interest in software development, but 4 years ago in an inadvertent escape from an Architecture degree I decided to transfer to a Computer Science program, and it has kind of just clicked for me since!</p>
@@ -77,7 +78,7 @@ class Home extends React.Component<any, StateType> {
           </div>
         </div>
 
-        <div className="home">
+        <div className="home" data-aos='fade-up'>
           <h3 className="section-title">Skills</h3>
           <p>Whenever possible, I do my best to select the most appropriate tools for a project &#128296;. This gives me a greater chance to become familiar with a variety of tools and tech stacks out there.</p>
           <p>Here are some <b>technical tools I'm familiar with:</b></p>
@@ -109,7 +110,7 @@ class Home extends React.Component<any, StateType> {
           </ul>
         </div>
 
-        <div className="home">
+        <div className="home" data-aos='fade-up'>
           <h3 className="section-title">Select Projects</h3>
           <div className="projects">
             <ProjectCard project={this.projects[0]} />
@@ -119,7 +120,7 @@ class Home extends React.Component<any, StateType> {
           <p className="prompt"><Link to="/projects" className="link">view more</Link><img className="icon" src={require('../assets/icon_arrow.svg')} alt=""/></p>
         </div>
 
-        <div className="home confined">
+        <div className="home confined" data-aos='fade-up'>
           <h3 className="section-title">Connect</h3>
           <p>I'm currently in the market for employment, so I'd love to hear from you if you're looking for a developer, or would just like to collaborate or chat about cool stuff!</p>
           <p className="prompt">Shoot me an &nbsp; <a href="mailto:duha.h.153@gmail.com">email</a><img src={require('../assets/icon_contact.svg')} alt="contact" className="icon"/></p>

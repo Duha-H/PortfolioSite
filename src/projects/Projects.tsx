@@ -11,6 +11,10 @@ interface ProjectsState {
 
 class Projects extends React.Component {
 
+  componentDidMount() {
+    document.title = 'Projects | Duha Hassan';
+  }
+
   render() {
     return (
       <div className="page-content">
@@ -20,6 +24,8 @@ class Projects extends React.Component {
           <div className="">
             <div className="projects">
               { Object.values(projects).map(project => {
+                // console.log(project);
+                
                 return <ProjectCard project={project} />
               }) }
             </div>

@@ -2,6 +2,11 @@ import React from "react";
 import "./About.css";
 
 class About extends React.Component {
+
+  componentDidMount() {
+    document.title = 'About | Duha Hassan';
+  }
+
   render() {
     return (
       <div className="page-content">

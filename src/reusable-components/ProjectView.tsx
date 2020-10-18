@@ -16,7 +16,7 @@ interface ViewState {
   selectedImgIdx: number;
   projectTitle: string;
   displayContent: boolean;
-  nextIDs: number[];
+  nextIDs: string[];
 }
 
 class ProjectView extends React.Component<any, ViewState> {
@@ -24,23 +24,25 @@ class ProjectView extends React.Component<any, ViewState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      project: projects[0],
+      project: projects['traccio'],
       selectedImgIdx: 0,
       projectTitle: '',
       displayContent: false,
-      nextIDs: [1, 2],
+      nextIDs: ['3d-modeller', 'terra-pizza'],
     }
   }
 
   componentDidMount() {
     const { match: { params }} = this.props;
-    const newProject = projects[+this.props.match.params.projectId];
+    
+    const newProject = projects[this.props.match.params.projectId];
+    document.title = `${newProject.title} - Projects | Duha Hassan`;
     this.setNewProject(newProject);
   }
 
   componentDidUpdate(prevProps: ViewProp) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      const newProject = projects[+this.props.match.params.projectId];
+      const newProject = projects[this.props.match.params.projectId];
       this.setNewProject(newProject);
     }
   }
@@ -68,14 +70,14 @@ class ProjectView extends React.Component<any, ViewState> {
     }, updateRate);
   }
 
-  setNextIDs(newID: number) {
+  setNextIDs(newID: string) {
     if (!this.state.project) {
       return;
     }
     const projectList = Object.values(projects);
     const projectIdx = projectList.findIndex(project => project.id === newID );
     const nextID1 = projectIdx === projectList.length - 1 ? 0 : projectIdx + 1;
-    const nextID2 = nextID1 === projectList.length - 1 ? 0 : nextID1 + 1;
+    const nextID2 = nextID1 === projectList.length - 1 ? 0 : nextID1 + 1;    
     this.setState({
       nextIDs: [projectList[nextID1].id, projectList[nextID2].id],
     });
@@ -84,7 +86,7 @@ class ProjectView extends React.Component<any, ViewState> {
   render() {
     if (!this.state.project) {
       return <Redirect to='/projects' />;
-    }
+    }    
     return (
       <div className="page-content">
         <div className="spanning-content banner">

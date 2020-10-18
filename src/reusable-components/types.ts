@@ -8,7 +8,7 @@ export interface NavItemData {
 }
 
 export interface ProjectItem {
-  id: number;
+  id: string;
   title: string;
   excerpt: string;
   description: string;
