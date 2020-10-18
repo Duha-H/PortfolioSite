@@ -11,7 +11,7 @@
 }
 
 .slide-up {
-  animation: 0.5s slide-up ease;
+  animation: 0.7s slide-up ease;
   transform-origin: top;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,7 @@
   position: sticky;
   top: 40px;
   background-color: var(--bg);
+  z-index: 2;
 }
 
 .spanning-content.baseline {

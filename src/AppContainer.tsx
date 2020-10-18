@@ -63,6 +63,7 @@ class AppContainer extends React.Component<any, StateType> {
     window.scrollTo(0, 0);
     if (this.props.location !== '/') {
       this.setState({ showNav: true, });
+      document.documentElement.style.setProperty('--nav-slide-duration', '1000s');
     } else if (this.props.location === '/' && this.state.showNav) {
       this.setState({ showNav: false, });
     }
@@ -100,7 +101,11 @@ class AppContainer extends React.Component<any, StateType> {
           <Nav items={ this.navItems } onHideClick={ () => this.hideMobileNav() } />
         </div>
         
-        <div className="spanning-content header">
+        <div className="spanning-content header"
+            data-aos="fade-down"
+            data-aos-easing="ease-in-back"
+            data-aos-delay={ this.state.showNav ? "0" : "2200" }
+            data-aos-offset="0">
           <h2 className="logo">DH</h2>
           <div className="spacer"></div>
           <img

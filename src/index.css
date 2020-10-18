@@ -20,6 +20,8 @@
   --color-wip: #df9648;
   --color-live: #4cc871;
   --color-comp: #6db2c8;
+
+  --nav-slide-duration: 3.85s;
 }
 
 body[theme='dark'] {
@@ -118,10 +120,6 @@ p b, li b {
   font-weight: normal;
 }
 
-p a:hover, li a:hover, a.link:hover {
-  /* border-bottom: solid 4px var(--accent); */
-}
-
 p a:after, ul:not(.nav) li a:after, a.link:after {    
   background: none repeat scroll 0 0 transparent;
   bottom: -5px;
@@ -170,6 +168,15 @@ img.icon.disabled {
   cursor: default;
 }
 
+div.nav-links::before {
+  top: -30%;
+  opacity: 0.5;
+}
+
+div.nav-links {
+  animation: var(--nav-slide-duration) nav-slide-down ease;
+}
+
 @media screen and (max-width: 500px) {
   * {
     font-size: 10.5pt;
@@ -195,12 +202,44 @@ img.icon.disabled {
   }
 }
 
+@keyframes nav-slide-down {
+  from {
+    top: -30%;
+    opacity: 0;
+  }
+  75% {
+    top: -30%;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
 @keyframes slide-up {
   from {
+    opacity: 0.5;
     transform: translateY(50%);
   }
   to {
+    opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes nav-slide-up {
+  from {
+    bottom: -30%;
+    opacity: 0;
+  }
+  75% {
+    bottom: -30%;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
   }
 }
 

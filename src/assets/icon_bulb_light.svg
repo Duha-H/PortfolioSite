@@ -3,17 +3,18 @@
     <style>
       .cls-1,
       .cls-2 {
-        fill: #5e6266;
+        fill: #8fb5fd;
+        filter: drop-shadow(0 0 1rem #8fb5fd);
       }
 
       .cls-1 {
-        stroke: #e6e9ec;
+        stroke: transparent;
         stroke-miterlimit: 10;
         stroke-width: 9px;
       }
 
       .cls-3 {
-        fill: #e6e9ec;
+        fill: #33383d;
       }
     </style>
   </defs>

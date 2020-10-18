@@ -133,63 +133,63 @@ class ProjectView extends React.Component<any, ViewState> {
           </div>
 
           { this.state.project.media[1] &&
-            <div className="img-viewer">
+            <div className="img-viewer" data-aos="fade-up">
               <img src={this.state.project.media[1]} alt=""/>
             </div>
           }
           
-          <div className="project-section">
+          <div className="project-section" data-aos="fade-left">
             <h4 className="title">why?</h4>
             <p dangerouslySetInnerHTML={{ __html: this.state.project.motivation }}></p>
           </div>
           
           { this.state.project.media[2] &&
-            <div className="img-viewer">
+            <div className="img-viewer" data-aos="fade-up">
               <img src={this.state.project.media[2]} alt=""/>
             </div>
           }
 
           { this.state.project.appBreakdown && 
-            <div className="project-section right">
+            <div className="project-section right" data-aos="fade-right">
               <h4 className="title">development details</h4>
               <p dangerouslySetInnerHTML={{ __html: this.state.project.appBreakdown }}></p>
             </div>
           }
 
           { this.state.project.media[3] &&
-            <div className="img-viewer">
+            <div className="img-viewer" data-aos="fade-up">
               <img src={this.state.project.media[3]} alt=""/>
             </div>
           }
 
           { this.state.project.contribution && 
-            <div className="project-section">
+            <div className="project-section" data-aos="fade-left">
               <h4 className="title">contributions</h4>
               <p dangerouslySetInnerHTML={{ __html: this.state.project.contribution }}></p>
             </div>
           }
 
           { this.state.project.challenges && 
-            <div className="project-section right">
+            <div className="project-section right" data-aos="fade-right">
               <h4 className="title">challenges and take-aways</h4>
               <p dangerouslySetInnerHTML={{ __html: this.state.project.challenges }}></p>
             </div>
           }
           
           { this.state.project.media[4] &&
-            <div className="img-viewer">
+            <div className="img-viewer" data-aos="fade-up">
               <img src={this.state.project.media[4]} alt=""/>
             </div>
           }
 
           { this.state.project.roadmap && 
-            <div className="project-section">
+            <div className="project-section" data-aos="fade-left">
               <h4 className="title">roadmap</h4>
               <p dangerouslySetInnerHTML={{ __html: this.state.project.roadmap }}></p>
             </div>
           }
           
-          <div className="home">
+          <div className="home" data-aos="fade-up">
             <h3 className="section-title">Check out other projects!</h3>
             <div className="projects">
               <ProjectCard project={projects[this.state.nextIDs[0]]} />
