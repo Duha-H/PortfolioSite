@@ -1,11 +1,12 @@
 import React from "react";
 import { NavItemData } from "./types";
 import "./Nav.css";
-import { Link, NavLink } from "react-router-dom";
 import NavItem from "./NavItem";
 
 interface NavProps {
-  items: NavItemData[];
+  navItems: NavItemData[];
+  contactItems: NavItemData[];
+  mobile: boolean;
   onHideClick: () => void;
 }
 
@@ -15,20 +16,12 @@ interface NavState {
 
 class Nav extends React.Component<NavProps, NavState> {
 
-  items: NavItemData[] = [];
 
-  constructor(props: any) {
+  constructor(props: NavProps) {
     super(props);
-    this.items = props.items;
-    this.displayItemText = this.displayItemText.bind(this);
     this.state = {
-      items: props.items,
+      items: props.navItems,
     };
-  }
-
-  displayItemText(index: number, state: boolean) {
-    this.items[index].display = state;
-    this.setState({ items: this.items });    
   }
 
   hideNav() {
@@ -37,11 +30,20 @@ class Nav extends React.Component<NavProps, NavState> {
 
   render() {
     return (
-      <div>
-        <div className="parent">
+      <div className={this.props.mobile ? 'nav visible' : 'nav'} >
+        <div className="parent top">
+          <div className="spacer"></div>
+          <ul className="nav" >
+            {this.props.navItems.map(item =>
+              <NavItem data={ item } textAlwaysVisible={ true } onHideClick={ () => this.props.onHideClick() } />
+            )}
+          </ul>
+        </div>
+
+        <div className="parent bottom">
           <ul className="nav">
-            { this.state.items.map((item, index) =>
-              <NavItem data={ item } onHideClick={ () => { } } />
+            {this.props.contactItems.map(item =>
+              <NavItem data={ item } textAlwaysVisible={ true } onHideClick={ () => this.props.onHideClick() } />
             )}
           </ul>
         </div>

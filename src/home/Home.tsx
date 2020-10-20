@@ -138,9 +138,7 @@ class Home extends React.Component<any, StateType> {
           <p className="prompt">Or connect with me on &nbsp; <a href="mailto:duha.h.153@gmail.com">linkedin</a><img src={require('../assets/icon_linkedin.svg')} alt="contact" className="icon"/></p>
         </div>
 
-        <div className="home" style={{ width: '100%', }} data-aos="fade-up">
-          <p className="prompt" style={{ justifyContent: 'center', }}>Check out this portfolio's &nbsp; <a href="https://github.com/Duha-H/website">repository on github</a><img className="icon" src={require('../assets/icon_github.svg')} alt=""/>!</p>
-        </div>
+        
       </div>
     );
   }

@@ -5,7 +5,7 @@
         fill: none;
         stroke: #e6e9ec;
         stroke-miterlimit: 10;
-        stroke-width: 9px;
+        stroke-width: 12px;
       }
 
       .cls-2 {

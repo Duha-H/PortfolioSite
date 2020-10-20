@@ -1,10 +1,10 @@
 import React from "react";
-import { Route, withRouter } from "react-router-dom";
+import { NavLink, Route, withRouter } from "react-router-dom";
 import About from "./about/About";
 import Contact from "./contact/Contact";
 import Home from "./home/Home";
 import Projects from "./projects/Projects";
-import MobileNav from "./reusable-components/MobileNav";
+import MobileNav from "./reusable-components/Nav";
 import Nav from "./reusable-components/Nav";
 import ProjectView from "./reusable-components/ProjectView";
 import { NavItemData } from "./reusable-components/types";
@@ -21,9 +21,9 @@ class AppContainer extends React.Component<any, StateType> {
     { text: 'home', iconSrc: require('./assets/icon_home.svg'), link: '/' },
     { text: 'about me', iconSrc: require('./assets/icon_about.svg'), link: '/about' },
     { text: 'projects', iconSrc: require('./assets/icon_projects.svg'), link: '/projects' },
+    { text: 'resume', iconSrc: require('./assets/icon_skills.svg'), link: '/skills' },
   ];
   contactLinks: NavItemData[] = [
-    { text: 'resume', iconSrc: require('./assets/icon_document.svg'), link: '/skills' },
     { text: 'email', iconSrc: require('./assets/icon_contact.svg'), link: 'mailto:duha.h.153@gmail.com' },
     { text: 'github', iconSrc: require('./assets/icon_github.svg'), link: 'https://github.com/Duha-H' },
     { text: 'linkedin', iconSrc: require('./assets/icon_linkedin.svg'), link: 'https://github.com/Duha-H' },
@@ -96,10 +96,7 @@ class AppContainer extends React.Component<any, StateType> {
   render() {
     return (
       <div className={`container ${this.state.theme}`}>
-        <div className="nav-links">
-          <div className="line"></div>
-          <Nav items={ this.navItems } onHideClick={ () => this.hideMobileNav() } />
-        </div>
+        <div className="sidebar"></div>
         
         <div className="spanning-content header"
             data-aos="fade-down"
@@ -122,6 +119,8 @@ class AppContainer extends React.Component<any, StateType> {
 
 
         <div className="content">
+          <Nav navItems={this.navItems} contactItems={this.contactLinks} mobile={this.state.mobileNav} onHideClick={ () => this.hideMobileNav() } />
+
           <Route path="/" exact component={Home} />
           <Route path="/about" exact sensitive={false} component={About} />
           <Route path="/projects" exact sensitive={false} component={Projects} />
@@ -129,12 +128,20 @@ class AppContainer extends React.Component<any, StateType> {
           <Route path="/skills" exact sensitive={false} component={Skills} />
           <Route path="/contact" exact sensitive={false} component={Contact} />
 
-          <MobileNav navItems={this.navItems} contactItems={this.contactLinks} mobile={this.state.mobileNav} onHideClick={ () => this.hideMobileNav() } />
         </div>
 
-        <div className="contact-links">
-          <Nav items={ this.contactLinks } onHideClick={ () => this.hideMobileNav() } />
-          <div className="line"></div>
+        <div className="contact spanning-content" style={{ width: '100%', }}>
+          <p className="prompt" style={{ justifyContent: 'center', }}>Check out this portfolio's &nbsp; <a href="https://github.com/Duha-H/website">repository on github</a><img className="icon" src={require('./assets/icon_github.svg')} alt=""/>!</p>
+          <div className="spacer"></div>
+          <ul className="nav contact">
+            { this.contactLinks.map(item => {
+              return <li>
+                <NavLink to={item.link} activeClassName="active-link" >
+                  <img src={ item.iconSrc } alt={ item.text } className="icon" />
+                </NavLink>
+              </li>
+            }) }
+          </ul>
         </div>
 
       </div>

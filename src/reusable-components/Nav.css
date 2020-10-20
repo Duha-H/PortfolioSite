@@ -1,12 +1,34 @@
+div.nav:not(.visible) {
+  display: none;
+}
+
+.parent:not(.bottom) {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  background-color: var(--bg);
+  z-index: 3;
+  box-shadow: var(--header-shadow);
+
+  transform-origin: top;
+}
+
+.parent.bottom {
+  position: fixed;
+  display: none;
+}
+
 div.parent {
   display: flex;
   align-items: center;
   flex-direction: column;
   z-index: 4;
-}
-
-div.parent-mobile {
-  display: none;
 }
 
 div.line {
@@ -15,19 +37,18 @@ div.line {
 
 ul.nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   list-style: none;
   padding: 0;
-  width: 75px;
   flex-wrap: wrap;
+  margin: 0;
 }
 
 .nav p {
   font-family: var(--font-code);
   padding: 0;
-  margin: 0;
+  margin: 0 5px;
   cursor: pointer;
-  margin-right: 5px;
   color: var(--accent);
 }
 
@@ -45,23 +66,36 @@ ul.nav {
 }
 
 @media screen and (max-width: 500px) {
-  div.parent {
-    display: none;
+  div.nav.visible {
+    display: block;
+    position: fixed;
+    top: 65px;
+    bottom: 0;
+    background: var(--bg);
+    margin: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
   }
 
-  div.parent-mobile {
+  div.nav.visible .parent.top, div.nav.visible .parent.bottom {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: absolute;
-    right: 20px;
     align-items: flex-end;
-    z-index: 3;
+    width: 100px;
+    max-width: auto;
+    right: 15px;
+    left: auto;
   }
 
-  .parent-mobile img {
-    width: 25px;
-    cursor: pointer;
+  .parent.top {
+    top: 85px;
+  }
+
+  .parent.bottom {
+    display: block;
+    bottom: 20px;
   }
 
   ul.nav {
@@ -70,13 +104,6 @@ ul.nav {
     align-items: flex-end;
     animation: slide-down 0.15s linear;
     transform-origin: top;
-  }
-
-  .nav li {
-    box-shadow: var(--hover-shadow);
-    padding: 5px;
-    margin: 5px 10px;
-    margin-right: 0;
   }
 
   ul.nav p {

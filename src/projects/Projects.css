@@ -14,6 +14,7 @@ div.page-content {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .projects-parent h3.section-title {

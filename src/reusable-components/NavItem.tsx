@@ -45,7 +45,7 @@ class NavItem extends React.Component<NavItemProp, NavItemState> {
         onClick={ () => this.props.onHideClick() }
         className={this.props.reverse ? 'reverse' : ''}
       >
-        <NavLink to={this.state.data.link} activeClassName="active-link" >
+        <NavLink to={this.state.data.link} activeClassName="active-link" exact>
           <img src={ this.state.data.iconSrc } alt={ this.state.data.text } />
           { (this.state.data.display || this.props.textAlwaysVisible ) && <p>{ this.state.data.text }</p> }
         </NavLink>
