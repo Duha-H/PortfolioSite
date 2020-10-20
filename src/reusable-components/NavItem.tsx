@@ -46,7 +46,7 @@ class NavItem extends React.Component<NavItemProp, NavItemState> {
         className={this.props.reverse ? 'reverse' : ''}
       >
         <NavLink to={this.state.data.link} activeClassName="active-link" exact>
-          <img src={ this.state.data.iconSrc } alt={ this.state.data.text } />
+          <img src={ this.state.data.iconSrc } alt={ this.state.data.text } className="icon" />
           { (this.state.data.display || this.props.textAlwaysVisible ) && <p>{ this.state.data.text }</p> }
         </NavLink>
       </li>

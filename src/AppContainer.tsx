@@ -51,6 +51,7 @@ class AppContainer extends React.Component<any, StateType> {
     if (this.props.location.pathname !== '/') {
       this.setState({ showNav: true, });
     }    
+    // this.onRouteChange();
   }
 
   componentDidUpdate(prevProps: any) {

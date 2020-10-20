@@ -3,7 +3,6 @@ import "../App.css";
 import "./Home.css";
 import { NavItemData } from "../reusable-components/types";
 import {
-  Link,
   NavLink,
   withRouter,
 } from "react-router-dom";
@@ -11,6 +10,7 @@ import PropTypes from "prop-types";
 import projects from "../projects/projectData";
 import ProjectCard from "../reusable-components/ProjectCard";
 import { languages, libraries, tools } from "../reusable-components/constants";
+import Contact from "../contact/Contact";
 
 interface StateType {
   // theme: 'dark' | 'light';
@@ -131,11 +131,15 @@ class Home extends React.Component<any, StateType> {
           <p className="prompt"><NavLink to="/projects" className="link">view more</NavLink><img className="icon" src={require('../assets/icon_arrow.svg')} alt=""/></p>
         </div>
 
-        <div className="home confined">
-          <h3 className="section-title">Connect</h3>
-          <p>I'm currently in the market for employment, so I'd love to hear from you if you're looking for a developer, or would just like to collaborate or chat about cool stuff!</p>
+        <div className="home confined connect">
+          <h3 className="section-title">Reach out!</h3>
+          <p>
+            If you're looking for a collaborator or a developer, or just want to chat about cool stuff, I'd love to hear from you!<br></br>
+            I'm also currently <b>in the market for employment</b>, so if you've got any opportunities, feel free to send them my way.
+          </p>
           <p className="prompt">Shoot me an &nbsp; <a href="mailto:duha.h.153@gmail.com">email</a><img src={require('../assets/icon_contact.svg')} alt="contact" className="icon"/></p>
-          <p className="prompt">Or connect with me on &nbsp; <a href="mailto:duha.h.153@gmail.com">linkedin</a><img src={require('../assets/icon_linkedin.svg')} alt="contact" className="icon"/></p>
+          <p className="prompt">Connect with me on &nbsp; <a href="mailto:duha.h.153@gmail.com">linkedin</a><img src={require('../assets/icon_linkedin.svg')} alt="contact" className="icon"/></p>
+          <p className="prompt">Or, check out more of my projects on &nbsp; <a href="https://github.com/Duha-H/">github</a><img src={require('../assets/icon_github.svg')} alt="github" className="icon"/></p>
         </div>
 
         

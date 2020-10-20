@@ -68,7 +68,7 @@ div.page-content {
 
 div.page-content#center {
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
 }
 
 div.page-content p:not() {
@@ -106,16 +106,16 @@ div.page-content p:not() {
   /* align-items: center; */
 }
 
-.home.row div {
-  padding: 10px;
+.home .row div {
+  padding-right: 15px;
 }
 
 .page-content .home.confined {
   max-width: 600px;
 }
 
-.page-content .home.row div {
-  padding: 5px;
+.page-content .home.connect {
+  margin-bottom: 200px;
 }
 
 .page-content .home h3,

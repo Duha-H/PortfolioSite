@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
-  font-size: 11pt;
+  font-size: 10.5pt;
 }
 
 :root {
@@ -22,7 +22,7 @@
   --color-comp: #6db2c8;
 
   --nav-slide-duration: 3.85s;
-  --max-content-width: 1350px;
+  --max-content-width: 1200px;
 }
 
 body[theme='dark'] {
@@ -44,7 +44,7 @@ body[theme='light'] {
   --accent: #4f81df;
   --accent-light: #8fb5fd;
   --accent-opaque: #76a4fb80;
-  --primary: #101214;
+  --primary: #404b55;
   --bg: #e6e9ec;
   --text:#313540;
   --secondary: #7c848c;
@@ -95,7 +95,7 @@ code {
   font-family: var(--font-code);
 }
 
-p, li {
+p, li, input, label, textarea {
   color: var(--text);
 }
 
@@ -176,8 +176,8 @@ div.page-content {
 }
 
 img.icon {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
 }
 
 *:not(.nav) img.icon {
@@ -187,6 +187,15 @@ img.icon {
 img.icon.disabled {
   opacity: 0.2;
   cursor: default;
+}
+
+.nav.contact img.icon, img.nav-toggle.icon {
+  transition: all 0.2s ease-in-out;
+}
+
+.nav.contact img.icon:hover, img.nav-toggle.icon:hover {
+  transform: scale(1.25);
+  filter: grayscale(10%);
 }
 
 div.nav-links::before {

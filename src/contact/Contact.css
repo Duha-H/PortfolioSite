@@ -1,3 +1,36 @@
-div.page-content {
-  justify-content: initial;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-component {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.contact-form input, .contact-form textarea {
+  background-color: var(--element-bg);
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 10px;
+  color: var(--text);
+  border: 2px solid transparent;
+  font-family: var(--font-nunito);
+  box-sizing: border-box;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border: 2px solid var(--accent);
+}
+
+.contact-component label {
+  font-family: var(--font-nunito);
+}
+
+.contact-component:focus-within label {
+  color: var(--accent);
 }
