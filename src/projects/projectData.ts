@@ -1,6 +1,6 @@
 /* eslint-disable no-multi-str */
 import { ProjectItem } from "../reusable-components/types";
-import { TECH, TAGS, STATUSES } from "../reusable-components/constants";
+import { TECH, TAGS } from "../reusable-components/constants";
 
 
 const projects: {[key: string]: ProjectItem} = {

@@ -1,6 +1,5 @@
 import React from "react";
-import { contactLinks, navItems } from "../reusable-components/constants";
-import Nav from "../reusable-components/Nav";
+import { navItems } from "../reusable-components/constants";
 import NavItem from "../reusable-components/NavItem";
 import "./NotFound.css";
 

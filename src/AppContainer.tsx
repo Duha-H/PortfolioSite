@@ -7,9 +7,7 @@ import Home from "./home/Home";
 import Projects from "./projects/Projects";
 import Nav from "./reusable-components/Nav";
 import ProjectView from "./reusable-components/ProjectView";
-import { NavItemData } from "./reusable-components/types";
 import Skills from "./skills/Skills";
-// import * as resume from "./assets/pdfs/Resume_Duha_Hassan_v3_default.pdf";
 import { navItems, contactLinks } from "./reusable-components/constants";
 
 interface StateType {
@@ -97,7 +95,6 @@ class AppContainer extends React.Component<any, StateType> {
             data-aos-delay={ this.state.showNav ? "0" : "2200" }
             data-aos-offset="0">
           <a href="/" className="logo" id="logo-home"><h2 className="logo">DH</h2></a>
-          {/* <img src={require('./assets/logo512.png')} alt="DH" className="logo"/> */}
           <div className="spacer"></div>
           <button
             onClick={ () => { this.setState({ mobileNav: !this.state.mobileNav, }) }}
