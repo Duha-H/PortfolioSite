@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink, Route, withRouter } from "react-router-dom";
+import { NavLink, Redirect, Route, Switch, withRouter } from "react-router-dom";
+import NotFound from "./404-component/NotFound";
 import About from "./about/About";
 import Contact from "./contact/Contact";
 import Home from "./home/Home";
@@ -9,6 +10,7 @@ import ProjectView from "./reusable-components/ProjectView";
 import { NavItemData } from "./reusable-components/types";
 import Skills from "./skills/Skills";
 // import * as resume from "./assets/pdfs/Resume_Duha_Hassan_v3_default.pdf";
+import { navItems, contactLinks } from "./reusable-components/constants";
 
 interface StateType {
   theme: 'dark' | 'light';
@@ -17,17 +19,7 @@ interface StateType {
 }
 
 class AppContainer extends React.Component<any, StateType> {
-  navItems: NavItemData[] = [
-    { text: 'home', iconSrc: require('./assets/icon_home.svg'), link: '/' },
-    { text: 'about', iconSrc: require('./assets/icon_about.svg'), link: '/about' },
-    { text: 'projects', iconSrc: require('./assets/icon_projects.svg'), link: '/projects' },
-    { text: 'resume', iconSrc: require('./assets/icon_skills.svg'), link: require('./assets/pdfs/Resume_Duha_Hassan_v3_default.pdf'), external: true, },
-  ];
-  contactLinks: NavItemData[] = [
-    { text: 'email', iconSrc: require('./assets/icon_contact.svg'), link: 'mailto:duha.h.153@gmail.com' },
-    { text: 'github', iconSrc: require('./assets/icon_github.svg'), link: 'https://github.com/Duha-H' },
-    { text: 'linkedin', iconSrc: require('./assets/icon_linkedin.svg'), link: 'https://github.com/Duha-H' },
-  ];
+  
   docIcon1 = './assets/icon_document_dark.svg';
   docIcon2 = './assets/icon_document_dark.svg';
   currDocIcon = this.docIcon2;
@@ -104,46 +96,61 @@ class AppContainer extends React.Component<any, StateType> {
             data-aos-easing="ease-in-back"
             data-aos-delay={ this.state.showNav ? "0" : "2200" }
             data-aos-offset="0">
-          <a href="/" className="logo"><h2 className="logo">DH</h2></a>
+          <a href="/" className="logo" id="logo-home"><h2 className="logo">DH</h2></a>
           {/* <img src={require('./assets/logo512.png')} alt="DH" className="logo"/> */}
           <div className="spacer"></div>
-          <img
-            src={ this.state.mobileNav ? require('./assets/icon_clear.svg') : require('./assets/icon_nav.svg')}
-            alt="navigation"
-            className="nav-toggle icon"
+          <button
             onClick={ () => { this.setState({ mobileNav: !this.state.mobileNav, }) }}
-          />
-          <div className="theme-toggle" onClick={ () => this.toggleTheme() }>
+            id="button-navigation"
+            aria-label="Navigation menu button">
+            <img
+              src={ this.state.mobileNav ? require('./assets/icon_clear.svg') : require('./assets/icon_nav.svg')}
+              alt="navigation button"
+              className="nav-toggle icon"
+            />
+          </button>
+          <button
+            className="theme-toggle"
+            onClick={ () => this.toggleTheme() }
+            id="toggle-theme"
+            aria-label="Light/Dark theme toggle">
             <img src={require(`./assets/icon_bulb_${this.state.theme}.svg`)} alt="theme toggle" className="theme-toggle"/>
             <img src={require(`./assets/icon_switch_${this.state.theme}.svg`)} alt="theme toggle" className="theme-toggle switch"/>
-          </div>
+          </button>
         </div>
 
 
         <div className="content">
-          <Nav navItems={this.navItems} contactItems={this.contactLinks} mobile={this.state.mobileNav} onHideClick={ () => this.hideMobileNav() } />
-
-          <Route path="/" exact component={Home} />
-          <Route path="/about" exact sensitive={false} component={About} />
-          <Route path="/projects" exact sensitive={false} component={Projects} />
-          <Route path="/projects/:projectId" component={ProjectView} />
-          <Route path="/skills" exact sensitive={false} component={Skills} />
-          <Route path="/contact" exact sensitive={false} component={Contact} />
-
+          <Nav navItems={navItems} contactItems={contactLinks} display={this.state.mobileNav} onHideClick={ () => this.hideMobileNav() } />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact sensitive={false} component={About} />
+            <Route path="/projects" exact sensitive={false} component={Projects} />
+            <Route path="/projects/:projectId" component={ProjectView} />
+            <Route path="/skills" exact sensitive={false} component={Skills} />
+            <Route path="/contact" exact sensitive={false} component={Contact} />
+            <Route path="/404" component={NotFound} exact />
+            <Redirect path="*" to="/404"/>
+            <Redirect path="/projects/*" to="/404"/>
+          </Switch>
         </div>
 
         <div className="contact spanning-content" style={{ width: '100%', }}
           data-aos="fade-up"
-          data-aos-easing="ease-in-back"
           data-aos-delay={ this.state.showNav ? "0" : "2200" }
-          data-aos-offset="0">
-          <p className="prompt" style={{ justifyContent: 'center', }}>Check out this portfolio's &nbsp; <a href="https://github.com/Duha-H/website">repository on github</a><img className="icon" src={require('./assets/icon_github.svg')} alt=""/>!</p>
+          data-aos-mirror="false"
+          data-aos-once="true">
+          <p className="prompt" style={{ justifyContent: 'center', }}>
+            Check out this portfolio's &nbsp;
+            <a href="https://github.com/Duha-H/website" rel="noopener noreferrer" target="_blank" id="link-repository">repository on github</a>
+            <img className="icon" src={require('./assets/icon_github.svg')} alt="github icon"/>!
+          </p>
           <div className="spacer"></div>
           <ul className="nav contact">
-            { this.contactLinks.map(item => {
+            { contactLinks.map(item => {
               return <li>
-                <NavLink to={item.link} activeClassName="active-link" >
-                  <img src={ item.iconSrc } alt={ item.text } className="icon" />
+                <NavLink to={item.link} activeClassName="active-link" id={`link-${item.text}`}>
+                  <img src={ item.iconSrc } alt={`${item.text} icon`} className="icon" />
                 </NavLink>
               </li>
             }) }

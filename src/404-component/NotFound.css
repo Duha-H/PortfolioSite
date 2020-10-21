@@ -1,0 +1,11 @@
+img.placeholder {
+  max-width: 500px;
+  width: 100%;
+  opacity: 0.8;
+  filter: brightness(60%);
+  margin: 20px auto;
+}
+
+div.alt-links {
+  margin: 20px auto;
+}
