@@ -100,10 +100,14 @@ ul.nav {
 
   ul.nav {
     width: auto;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: flex-end;
     animation: slide-down 0.15s linear;
     transform-origin: top;
+  }
+
+  .alt-links ul.nav {
+    justify-content: center;
   }
 
   ul.nav p {

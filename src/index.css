@@ -110,6 +110,7 @@ a {
 button {
   border: none;
   background: none;
+  padding: 0;
 }
 
 p a, li a, a.link {
