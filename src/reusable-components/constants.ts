@@ -128,7 +128,7 @@ export const navItems: NavItemData[] = [
 ];
 
 export const contactLinks: NavItemData[] = [
-  { text: 'email', iconSrc: require('../assets/icon_contact.svg'), link: 'mailto:duha.h.153@gmail.com' },
-  { text: 'github', iconSrc: require('../assets/icon_github.svg'), link: 'https://github.com/Duha-H' },
-  { text: 'linkedin', iconSrc: require('../assets/icon_linkedin.svg'), link: 'https://github.com/Duha-H' },
+  { text: 'email', iconSrc: require('../assets/icon_contact.svg'), link: 'mailto:duha.h.153@gmail.com', external: true, },
+  { text: 'github', iconSrc: require('../assets/icon_github.svg'), link: 'https://github.com/Duha-H', external: true, },
+  { text: 'linkedin', iconSrc: require('../assets/icon_linkedin.svg'), link: 'https://linkedin.com/in/duha-hassan/', external: true, },
 ];

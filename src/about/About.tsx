@@ -12,7 +12,7 @@ class About extends React.Component {
       <div className="page-content">
         <h2>About</h2>
         <div className="slide-up">
-          <p>I'm Duha!</p>
+          <p>Hi, I'm Duha!</p>
           <p>I'm a <b>recently-graduated software developer</b>, currently based in Toronto. I enjoy experimenting with different technologies, and building pieces of software that solve a problem or make a task slightly easier.</p>
           <p>I haven't always had an interest in software development, but 4 years ago in an inadvertent escape from an Architecture degree (2/10 would not recommend &#128578;) I decided to transfer to a Computer Science program, and it has kind of just clicked for me since. Coming from a background in architectural design projects, I think I've developed the ability to view projects holistically and anticipate future concerns, as well as a unique attention to minute details. Which, I think, is kind of neat!</p>
           <p>I have quite a bit of learning to do (to say the least), and I, therefore, find great value in working as part of a team. I do my best to be a teammate I would want to have, and I greatly value communication as a team member above all else.</p>

@@ -38,6 +38,15 @@
   flex: 1;
 }
 
+[data-aos="disappear"] {
+  opacity: 1;
+  transition-property: opacity;
+}
+
+[data-aos="disappear"].aos-animate {
+  opacity: 0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

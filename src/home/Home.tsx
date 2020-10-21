@@ -61,26 +61,24 @@ class Home extends React.Component<any, StateType> {
           <div className="typewritten">
             <h1 id="name">{ this.state.name }</h1><h1 id="blink">|</h1>
           </div>
-          <h2 data-aos="fade-down"
-              data-aos-easing="ease-in-back"
-              data-aos-delay="1100"
-              data-aos-once="false"
-              data-aos-offset="0">Software Developer</h2>
-          <h3 data-aos="fade-down"
-              data-aos-easing="ease-in-back"
-              data-aos-delay="1100"
-              data-aos-offset="0">I'd love to let you know more about myself and my work &#128578;</h3>
-          <p className="prompt center"
+          <div className=""
+            style={{width: '100%', }}
             data-aos="fade-down"
-            data-aos-anchor="center-bottom"
             data-aos-easing="ease-in-back"
-            data-aos-delay="1300"
+            data-aos-delay="1100"
             data-aos-once="false"
-            data-aos-mirror="true"
-            data-aos-offset="0"
-            id="scroll-prompt">
-            scroll down <img className="icon" src={require('../assets/icon_arrow_down.svg')} alt="down arrow"/>
-          </p>
+            data-aos-offset="0">
+            <h2>Software Developer</h2>
+            <h3>I'd love to let you know more about myself and my work &#128578;</h3>
+            <p className="prompt center"
+              data-aos="disappear"
+              data-aos-anchor-placement="top-center"
+              data-aos-easing="ease-in-back"
+              id="scroll-prompt">
+              scroll down <img className="icon" src={require('../assets/icon_arrow_down.svg')} alt="down arrow"/>
+            </p>
+          </div>
+          
         </div>
 
         <div className="home">
@@ -147,7 +145,7 @@ class Home extends React.Component<any, StateType> {
         <div className="home confined connect">
           <h3 className="section-title">Reach out!</h3>
           <p>
-            If you're looking for a collaborator or a developer, or just want to chat about cool stuff, I'd love to hear from you!<br></br>
+            If you're looking for a developer or someone to collaborate with, or would just like to chat about cool stuff, I'd love to hear from you!<br></br>
             I'm also currently <b>in the market for employment</b>, so if you've got any opportunities, feel free to send them my way.
           </p>
           <p className="prompt">
@@ -157,7 +155,7 @@ class Home extends React.Component<any, StateType> {
           </p>
           <p className="prompt">
             Connect with me on &nbsp;
-            <a href="mailto:duha.h.153@gmail.com" rel="noopener noreferrer" target="_blank" id="link-linkedin">linkedin</a>
+            <a href="https://linkedin.com/in/duha-hassan/" rel="noopener noreferrer" target="_blank" id="link-linkedin">linkedin</a>
             <img src={require('../assets/icon_linkedin.svg')} alt="" className="icon"/>
           </p>
           <p className="prompt">

@@ -41,7 +41,7 @@ class AppContainer extends React.Component<any, StateType> {
     if (this.props.location.pathname !== '/') {
       this.setState({ showNav: true, });
     }    
-    // this.onRouteChange();
+    this.onRouteChange();
   }
 
   componentDidUpdate(prevProps: any) {
@@ -146,9 +146,9 @@ class AppContainer extends React.Component<any, StateType> {
           <ul className="nav contact">
             { contactLinks.map(item => {
               return <li>
-                <NavLink to={item.link} activeClassName="active-link" id={`link-${item.text}`}>
+                <a href={item.link} rel="noopener noreferrer" target="_blank" id={`link-${item.text}`}>
                   <img src={ item.iconSrc } alt={`${item.text} icon`} className="icon" />
-                </NavLink>
+                </a>
               </li>
             }) }
           </ul>
