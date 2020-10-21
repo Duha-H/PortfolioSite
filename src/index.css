@@ -189,7 +189,7 @@ div.page-content {
 
 div.page-content.center {
   align-items: center;
-  margin-top: 20%;
+  margin-top: 170px;
 }
 
 img.icon {
@@ -260,6 +260,10 @@ div.contact p.prompt {
     padding-top: 35px;
     margin: 60px auto;
     margin-top: 70px;
+  }
+
+  div.page-content.center {
+    margin-top: 100px;
   }
 
   .contact.spanning-content {
