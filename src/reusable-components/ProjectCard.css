@@ -23,14 +23,14 @@
   background-size: contain;
 }
 
-.project-container a#parent {
+.project-container a.link-parent {
   height: 100%;
   margin: 15px;
   background-color: var(--element-bg);
   border-radius: var(--radius);
 }
 
-.project-container:hover a#parent {
+.project-container:hover a.link-parent {
   box-shadow: var(--hover-shadow);
 }
 

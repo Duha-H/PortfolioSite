@@ -15,11 +15,13 @@ h2.logo {
   margin: 10px 0;
 }
 
-div.theme-toggle {
+button.theme-toggle {
   margin: 0;
   position: absolute;
   top: 0;
   right: 20px;
+  border: none;
+  background: none;
 }
 
 img.theme-toggle {
@@ -33,7 +35,7 @@ img.theme-toggle.switch {
   transform: translateY(-30%);
 }
 
-div.theme-toggle:hover img.theme-toggle.switch {
+button.theme-toggle:hover img.theme-toggle.switch {
   transform: translateY(0);
   transition: transform 0.2s ease-in-out;
 }
@@ -224,6 +226,13 @@ p.prompt {
   width: 100%;
 }
 
+p.prompt.center {
+  margin-top: 150px;
+  justify-content: center;
+  text-align: center;
+  animation: 0.8s shimmer ease-in-out alternate infinite;
+}
+
 p.prompt:hover {
   color: var(--primary);
 }
@@ -248,7 +257,9 @@ p.prompt:hover {
   }
 
   ul.skills li {
-    min-width: auto;
+    min-width: unset;
+    width: 90%;
+    box-sizing: border-box;
   }
 }
 

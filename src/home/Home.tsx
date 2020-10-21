@@ -70,6 +70,17 @@ class Home extends React.Component<any, StateType> {
               data-aos-easing="ease-in-back"
               data-aos-delay="1100"
               data-aos-offset="0">I'd love to let you know more about myself and my work &#128578;</h3>
+          <p className="prompt center"
+            data-aos="fade-down"
+            data-aos-anchor="center-bottom"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="1300"
+            data-aos-once="false"
+            data-aos-mirror="true"
+            data-aos-offset="0"
+            id="scroll-prompt">
+            scroll down <img className="icon" src={require('../assets/icon_arrow_down.svg')} alt="down arrow"/>
+          </p>
         </div>
 
         <div className="home">
@@ -83,7 +94,10 @@ class Home extends React.Component<any, StateType> {
             <div className="">
               <p>Coming from a background in architectural design, I think I've developed the ability to view projects holistically and anticipate future concerns, as well as a unique attention to minute details. Which, I think, is kind of neat!</p>
               <p>I have quite a bit of learning to do, and I, therefore, find great value in working as part of a team. I do my best to be a teammate I would want to have, and I greatly value communication as a team member above all else.</p>
-              <p className="prompt"><NavLink to="/about" className="link">read more</NavLink><img className="icon" src={require('../assets/icon_arrow.svg')} alt=""/></p>
+              <p className="prompt">
+                <NavLink to="/about" className="link" id="link-about">read more</NavLink>
+                <img className="icon" src={require('../assets/icon_arrow.svg')} alt="right arrow"/>
+              </p>
             </div>
           </div>
         </div>
@@ -127,7 +141,7 @@ class Home extends React.Component<any, StateType> {
             <ProjectCard project={this.projects[1]} />
             <ProjectCard project={this.projects[2]} />
           </div>
-          <p className="prompt"><NavLink to="/projects" className="link">view more</NavLink><img className="icon" src={require('../assets/icon_arrow.svg')} alt=""/></p>
+          <p className="prompt"><NavLink to="/projects" className="link">view more</NavLink><img className="icon" src={require('../assets/icon_arrow.svg')} alt="right arrow"/></p>
         </div>
 
         <div className="home confined connect">
@@ -136,12 +150,23 @@ class Home extends React.Component<any, StateType> {
             If you're looking for a collaborator or a developer, or just want to chat about cool stuff, I'd love to hear from you!<br></br>
             I'm also currently <b>in the market for employment</b>, so if you've got any opportunities, feel free to send them my way.
           </p>
-          <p className="prompt">Shoot me an &nbsp; <a href="mailto:duha.h.153@gmail.com">email</a><img src={require('../assets/icon_contact.svg')} alt="contact" className="icon"/></p>
-          <p className="prompt">Connect with me on &nbsp; <a href="mailto:duha.h.153@gmail.com">linkedin</a><img src={require('../assets/icon_linkedin.svg')} alt="contact" className="icon"/></p>
-          <p className="prompt">Or, check out more of my projects on &nbsp; <a href="https://github.com/Duha-H/">github</a><img src={require('../assets/icon_github.svg')} alt="github" className="icon"/></p>
+          <p className="prompt">
+            Shoot me an &nbsp;
+            <a href="mailto:duha.h.153@gmail.com" rel="noopener noreferrer" target="_blank" id="link-email">email</a>
+            <img src={require('../assets/icon_contact.svg')} alt="" className="icon"/>
+          </p>
+          <p className="prompt">
+            Connect with me on &nbsp;
+            <a href="mailto:duha.h.153@gmail.com" rel="noopener noreferrer" target="_blank" id="link-linkedin">linkedin</a>
+            <img src={require('../assets/icon_linkedin.svg')} alt="" className="icon"/>
+          </p>
+          <p className="prompt">
+            Or, check out more of my projects on &nbsp;
+            <a href="https://github.com/Duha-H/" rel="noopener noreferrer" target="_blank" id="link-github">github</a>
+            <img src={require('../assets/icon_github.svg')} alt="" className="icon"/>
+          </p>
         </div>
 
-        
       </div>
     );
   }

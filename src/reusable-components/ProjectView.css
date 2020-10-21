@@ -162,7 +162,7 @@ h2.title {
   margin-top: 0;
 }
 
-.project-section#multiple {
+.project-section.multiple {
   width: 300px;
   margin-right: 50px;
 }

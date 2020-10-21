@@ -6,7 +6,7 @@ import NavItem from "./NavItem";
 interface NavProps {
   navItems: NavItemData[];
   contactItems: NavItemData[];
-  mobile: boolean;
+  display: boolean;
   onHideClick: () => void;
 }
 
@@ -30,7 +30,7 @@ class Nav extends React.Component<NavProps, NavState> {
 
   render() {
     return (
-      <div className={this.props.mobile ? 'nav visible' : 'nav'} >
+      <div className={this.props.display ? 'nav visible' : 'nav'} >
         <div className="parent top">
           <div className="spacer"></div>
           <ul className="nav" >

@@ -17,6 +17,7 @@ interface ViewState {
   projectTitle: string;
   displayContent: boolean;
   nextIDs: string[];
+  projectMounted: boolean;
 }
 
 class ProjectView extends React.Component<any, ViewState> {
@@ -24,20 +25,23 @@ class ProjectView extends React.Component<any, ViewState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      project: projects['traccio'],
+      project: undefined,
       selectedImgIdx: 0,
       projectTitle: '',
       displayContent: false,
       nextIDs: ['3d-modeller', 'terra-pizza'],
+      projectMounted: false,
     }
   }
 
   componentDidMount() {
+    this.setState({ projectMounted: true, });
     const { match: { params }} = this.props;
-    
     const newProject = projects[this.props.match.params.projectId];
-    document.title = `${newProject.title} - Projects | Duha Hassan`;
-    this.setNewProject(newProject);
+    if (newProject) {
+      document.title = `${newProject.title} - Projects | Duha Hassan`;
+      this.setNewProject(newProject);
+    }
   }
 
   componentDidUpdate(prevProps: ViewProp) {
@@ -52,6 +56,7 @@ class ProjectView extends React.Component<any, ViewState> {
       project: newProject,
       projectTitle: newProject.title, // update later
       displayContent: false,
+      projectMounted: true,
     });
     this.setNextIDs(newProject.id);
     this.setName(80);
@@ -84,23 +89,25 @@ class ProjectView extends React.Component<any, ViewState> {
   }
 
   render() {
-    if (!this.state.project) {
-      return <Redirect to='/projects' />;
-    }    
+    if (this.state.projectMounted && !this.state.project) {
+      return <Redirect to='/404' />;
+    } else if (!this.state.project) {
+      return <div></div>; // placeholder while re-rendering occurs
+    }
     return (
       <div className="page-content">
         <div className="spanning-content banner">
           <h2 className="title">{ this.state.projectTitle }</h2>
           <div className="spacer"></div>
-          <a href={this.state.project.sourceUrl} target="_blank" rel="noopener noreferrer">
+          <a href={this.state.project.sourceUrl} target="_blank" rel="noopener noreferrer" id={`link-${this.state.project.id}-github`}>
             <img
-              src={require("../assets/icon_github.svg")} alt="source code"
+              src={require("../assets/icon_github.svg")} alt="view source code icon"
               className={`icon ${this.state.project.sourceUrl ? '' : 'disabled'}`}
               title={this.state.project.sourceUrl ? 'source code' : 'this project is not open-sourced'}/>
           </a>
-          <a href={this.state.project.projectUrl} target="_blank" rel="noopener noreferrer">
+          <a href={this.state.project.projectUrl} target="_blank" rel="noopener noreferrer" id={`link-${this.state.project.id}-live`}>
             <img
-              src={require("../assets/icon_open.svg")} alt="view project"
+              src={require("../assets/icon_open.svg")} alt="view project icon"
               className={`icon ${this.state.project.projectUrl ? '' : 'disabled'}`}
               title={this.state.project.projectUrl ? 'view project' : 'this project was not made public'}/>
           </a>
@@ -108,8 +115,7 @@ class ProjectView extends React.Component<any, ViewState> {
         
         <div className={ this.state.displayContent ? 'slide-up' : 'hidden' }>
           <div className="spanning-content baseline">
-            
-            <div className="project-section" id="multiple">
+            <div className="project-section multiple">
               <div className="project-section row">
                 <h4 className="title">type</h4>
                 <p>{ this.state.project.mode }</p>
@@ -124,17 +130,15 @@ class ProjectView extends React.Component<any, ViewState> {
                 <p className="tech-item">{ this.state.project.tech.join(' | ') }</p>
               </div>
             </div>
-
             <div className="project-section">
               <h4 className="title">description</h4>
               <p dangerouslySetInnerHTML={{ __html: this.state.project.description }}></p>
             </div>
-
           </div>
 
           { this.state.project.media[1] &&
             <div className="img-viewer" data-aos="fade-up">
-              <img src={this.state.project.media[1]} alt=""/>
+              <img src={this.state.project.media[1].content} alt={this.state.project.media[1].altText} />
             </div>
           }
           
@@ -145,7 +149,7 @@ class ProjectView extends React.Component<any, ViewState> {
           
           { this.state.project.media[2] &&
             <div className="img-viewer" data-aos="fade-up">
-              <img src={this.state.project.media[2]} alt=""/>
+              <img src={this.state.project.media[2].content} alt={this.state.project.media[2].altText} />
             </div>
           }
 
@@ -158,7 +162,7 @@ class ProjectView extends React.Component<any, ViewState> {
 
           { this.state.project.media[3] &&
             <div className="img-viewer" data-aos="fade-up">
-              <img src={this.state.project.media[3]} alt=""/>
+              <img src={this.state.project.media[3].content} alt={this.state.project.media[3].altText} />
             </div>
           }
 
@@ -178,7 +182,7 @@ class ProjectView extends React.Component<any, ViewState> {
           
           { this.state.project.media[4] &&
             <div className="img-viewer" data-aos="fade-up">
-              <img src={this.state.project.media[4]} alt=""/>
+              <img src={this.state.project.media[4].content} alt={this.state.project.media[4].altText} />
             </div>
           }
 

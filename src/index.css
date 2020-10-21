@@ -107,6 +107,11 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  background: none;
+}
+
 p a, li a, a.link {
   color: var(--accent);
   font-weight: 600;
@@ -181,6 +186,11 @@ div.page-content {
   background-color: var(--bg);
 }
 
+div.page-content.center {
+  align-items: center;
+  margin-top: 20%;
+}
+
 img.icon {
   width: 20px;
   height: 20px;
@@ -221,6 +231,8 @@ div.contact {
   margin: 0 auto;
   max-width: var(--max-content-width);
   background-color: var(--bg);
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 div.contact p.prompt {
@@ -331,6 +343,15 @@ div.contact p.prompt {
   }
 }
 
+@keyframes shimmer {
+  from {
+    filter: brightness(100%) hue-rotate(0deg);
+  }
+  to {
+    filter: brightness(150%) hue-rotate(5deg);
+  }
+}
+
 button:not(:disabled):hover {
-  filter: brightness(120%) hue-rotate(2deg);
+  filter: brightness(110%) hue-rotate(2deg);
 }

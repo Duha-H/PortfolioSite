@@ -13,7 +13,7 @@ export interface ProjectItem {
   title: string;
   excerpt: string;
   description: string;
-  media: string[]; // string of media sources
+  media: MediaItem[]; // string of media sources
   tech: string[];
   mode: 'solo project' | 'team project';
   status: 'live' | 'wip' | 'comp';
@@ -29,3 +29,7 @@ export interface ProjectItem {
   roadmap?: string; // things you'd do differently, things planned for the future
 }
 
+export interface MediaItem {
+  content: string;
+  altText: string;
+}

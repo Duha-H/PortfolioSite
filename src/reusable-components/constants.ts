@@ -1,5 +1,7 @@
 // Constants
 
+import { NavItemData } from "./types";
+
 export const TECH = {
   C: 'C',
   CPP: 'C++',
@@ -117,3 +119,16 @@ export const STATUSES = {
   wip: 'coming soon',
   comp: 'completed, private',
 }
+
+export const navItems: NavItemData[] = [
+  { text: 'home', iconSrc: require('../assets/icon_home.svg'), link: '/' },
+  { text: 'about', iconSrc: require('../assets/icon_about.svg'), link: '/about' },
+  { text: 'projects', iconSrc: require('../assets/icon_projects.svg'), link: '/projects' },
+  { text: 'resume', iconSrc: require('../assets/icon_skills.svg'), link: require('../assets/pdfs/Resume_Duha_Hassan_v3_default.pdf'), external: true, },
+];
+
+export const contactLinks: NavItemData[] = [
+  { text: 'email', iconSrc: require('../assets/icon_contact.svg'), link: 'mailto:duha.h.153@gmail.com' },
+  { text: 'github', iconSrc: require('../assets/icon_github.svg'), link: 'https://github.com/Duha-H' },
+  { text: 'linkedin', iconSrc: require('../assets/icon_linkedin.svg'), link: 'https://github.com/Duha-H' },
+];
