@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 import projects from "../projects/projectData";
 import ProjectCard from "../reusable-components/ProjectCard";
 import { languages, libraries, tools } from "../reusable-components/constants";
-import Contact from "../contact/Contact";
 
 interface StateType {
   // theme: 'dark' | 'light';
@@ -62,12 +61,12 @@ class Home extends React.Component<any, StateType> {
           <div className="typewritten">
             <h1 id="name">{ this.state.name }</h1><h1 id="blink">|</h1>
           </div>
-          <h2 data-aos="fade-right"
+          <h2 data-aos="fade-down"
               data-aos-easing="ease-in-back"
               data-aos-delay="1100"
               data-aos-once="false"
               data-aos-offset="0">Software Developer</h2>
-          <h3 data-aos="fade-right"
+          <h3 data-aos="fade-down"
               data-aos-easing="ease-in-back"
               data-aos-delay="1100"
               data-aos-offset="0">I'd love to let you know more about myself and my work &#128578;</h3>
@@ -82,8 +81,8 @@ class Home extends React.Component<any, StateType> {
             </div>
             
             <div className="">
-              <p>Coming from a background in <b>architectural design</b>, I think I've developed the ability to view projects holistically and anticipate future concerns, as well as a unique attention to minute details. Which, I think, is kind of neat!</p>
-              <p>I have quite a bit of learning to do, and I, therefore, find great value in working as part of a team. I do my best to be a teammate I would want to have, and I greatly value communication in as a team member above all else.</p>
+              <p>Coming from a background in architectural design, I think I've developed the ability to view projects holistically and anticipate future concerns, as well as a unique attention to minute details. Which, I think, is kind of neat!</p>
+              <p>I have quite a bit of learning to do, and I, therefore, find great value in working as part of a team. I do my best to be a teammate I would want to have, and I greatly value communication as a team member above all else.</p>
               <p className="prompt"><NavLink to="/about" className="link">read more</NavLink><img className="icon" src={require('../assets/icon_arrow.svg')} alt=""/></p>
             </div>
           </div>

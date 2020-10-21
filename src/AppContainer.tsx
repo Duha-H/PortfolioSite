@@ -4,11 +4,11 @@ import About from "./about/About";
 import Contact from "./contact/Contact";
 import Home from "./home/Home";
 import Projects from "./projects/Projects";
-import MobileNav from "./reusable-components/Nav";
 import Nav from "./reusable-components/Nav";
 import ProjectView from "./reusable-components/ProjectView";
 import { NavItemData } from "./reusable-components/types";
 import Skills from "./skills/Skills";
+// import * as resume from "./assets/pdfs/Resume_Duha_Hassan_v3_default.pdf";
 
 interface StateType {
   theme: 'dark' | 'light';
@@ -19,9 +19,9 @@ interface StateType {
 class AppContainer extends React.Component<any, StateType> {
   navItems: NavItemData[] = [
     { text: 'home', iconSrc: require('./assets/icon_home.svg'), link: '/' },
-    { text: 'about me', iconSrc: require('./assets/icon_about.svg'), link: '/about' },
+    { text: 'about', iconSrc: require('./assets/icon_about.svg'), link: '/about' },
     { text: 'projects', iconSrc: require('./assets/icon_projects.svg'), link: '/projects' },
-    { text: 'resume', iconSrc: require('./assets/icon_skills.svg'), link: '/skills' },
+    { text: 'resume', iconSrc: require('./assets/icon_skills.svg'), link: require('./assets/pdfs/Resume_Duha_Hassan_v3_default.pdf'), external: true, },
   ];
   contactLinks: NavItemData[] = [
     { text: 'email', iconSrc: require('./assets/icon_contact.svg'), link: 'mailto:duha.h.153@gmail.com' },
@@ -104,7 +104,8 @@ class AppContainer extends React.Component<any, StateType> {
             data-aos-easing="ease-in-back"
             data-aos-delay={ this.state.showNav ? "0" : "2200" }
             data-aos-offset="0">
-          <h2 className="logo">DH</h2>
+          <a href="/" className="logo"><h2 className="logo">DH</h2></a>
+          {/* <img src={require('./assets/logo512.png')} alt="DH" className="logo"/> */}
           <div className="spacer"></div>
           <img
             src={ this.state.mobileNav ? require('./assets/icon_clear.svg') : require('./assets/icon_nav.svg')}
@@ -131,7 +132,11 @@ class AppContainer extends React.Component<any, StateType> {
 
         </div>
 
-        <div className="contact spanning-content" style={{ width: '100%', }}>
+        <div className="contact spanning-content" style={{ width: '100%', }}
+          data-aos="fade-up"
+          data-aos-easing="ease-in-back"
+          data-aos-delay={ this.state.showNav ? "0" : "2200" }
+          data-aos-offset="0">
           <p className="prompt" style={{ justifyContent: 'center', }}>Check out this portfolio's &nbsp; <a href="https://github.com/Duha-H/website">repository on github</a><img className="icon" src={require('./assets/icon_github.svg')} alt=""/>!</p>
           <div className="spacer"></div>
           <ul className="nav contact">

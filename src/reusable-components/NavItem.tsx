@@ -45,10 +45,16 @@ class NavItem extends React.Component<NavItemProp, NavItemState> {
         onClick={ () => this.props.onHideClick() }
         className={this.props.reverse ? 'reverse' : ''}
       >
-        <NavLink to={this.state.data.link} activeClassName="active-link" exact>
-          <img src={ this.state.data.iconSrc } alt={ this.state.data.text } className="icon" />
-          { (this.state.data.display || this.props.textAlwaysVisible ) && <p>{ this.state.data.text }</p> }
-        </NavLink>
+        { this.props.data.external
+          ? <a href={this.state.data.link} target="_blank" rel="noopener noreferrer">
+              <img src={ this.state.data.iconSrc } alt={ this.state.data.text } className="icon" />
+              { (this.state.data.display || this.props.textAlwaysVisible ) && <p>{ this.state.data.text }</p> }
+            </a>
+          : <NavLink to={this.state.data.link} activeClassName="active-link" exact>
+              <img src={ this.state.data.iconSrc } alt={ this.state.data.text } className="icon" />
+              { (this.state.data.display || this.props.textAlwaysVisible ) && <p>{ this.state.data.text }</p> }
+            </NavLink>
+        }
       </li>
     );
   }

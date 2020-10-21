@@ -100,7 +100,7 @@ p, li, input, label, textarea {
 }
 
 li {
-  line-height: 1.5em;
+  line-height: 1.75em;
 }
 
 a {
@@ -147,6 +147,12 @@ p a:hover:after, ul:not(.nav) li a:hover:after, a.link:hover:after {
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
+}
+
+img.logo {
+  width: 35px;
+  height: 35px;
+  margin: 10px 0;
 }
 
 div.line {

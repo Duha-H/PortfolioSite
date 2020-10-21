@@ -2,9 +2,10 @@ import { STATUSES } from "./constants";
 
 export interface NavItemData {
   text: string;
-  link: string;
+  link: any;
   iconSrc: string;
   display?: boolean;
+  external?: boolean;
 }
 
 export interface ProjectItem {

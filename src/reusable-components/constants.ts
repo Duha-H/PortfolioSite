@@ -43,15 +43,15 @@ export const TECH = {
 }
 
 export const languages = [
+  TECH.JS,
+  TECH.TS,
+  TECH.JAVA,
+  TECH.PYTHON,
   TECH.C,
   TECH.CPP,
   TECH.CSHARP,
-  TECH.PYTHON,
-  TECH.JS,
-  TECH.TS,
   TECH.HTML,
   TECH.CSS,
-  TECH.JAVA,
   TECH.RUST,
   TECH.SQL,
   TECH.GQL,
@@ -59,10 +59,10 @@ export const languages = [
 ];
 
 export const libraries = [
-  TECH.OPENGL,
-  TECH.WEBGL,
   TECH.ANGULAR,
   TECH.REACT,
+  TECH.OPENGL,
+  TECH.WEBGL,
   TECH.RN,
   TECH.UE,
   TECH.SWING,
@@ -75,6 +75,9 @@ export const libraries = [
 ];
 
 export const tools = [
+  TECH.GIT,
+  TECH.WIN,
+  TECH.LINUX,
   TECH.AWS,
   TECH.AWS_APPSYNC,
   TECH.AWS_COGNITO,
@@ -84,9 +87,6 @@ export const tools = [
   TECH.FB_FIRESTORE,
   TECH.MONGO,
   TECH.ORACLE,
-  TECH.GIT,
-  TECH.WIN,
-  TECH.LINUX,
 ];
 
 export const TAGS = {
