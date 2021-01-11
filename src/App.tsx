@@ -8,7 +8,7 @@ import './App.css';
 class App extends React.Component {
   componentDidMount(){
     AOS.init({
-      duration: 1500,
+      duration: 1000,
     })
   }
 

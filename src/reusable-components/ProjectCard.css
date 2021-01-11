@@ -16,7 +16,7 @@
 }
 
 .project-container:hover {
-  transform: rotate(2deg) scale(1.08);
+  transform: rotate(1deg) scale(1.05);
   background-image: url('../assets/card_hover.svg');
   background-position: 0 0;
   background-repeat: no-repeat;
