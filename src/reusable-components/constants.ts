@@ -124,7 +124,7 @@ export const navItems: NavItemData[] = [
   { text: 'home', iconSrc: require('../assets/icon_home.svg'), link: '/' },
   { text: 'about', iconSrc: require('../assets/icon_about.svg'), link: '/about' },
   { text: 'projects', iconSrc: require('../assets/icon_projects.svg'), link: '/projects' },
-  { text: 'resume', iconSrc: require('../assets/icon_skills.svg'), link: require('../assets/pdfs/Resume_Duha_Hassan_v3_default.pdf'), external: true, },
+  { text: 'resume', iconSrc: require('../assets/icon_skills.svg'), link: require('../assets/pdfs/Resume_Duha_Hassan_v3_1_default.pdf'), external: true, },
 ];
 
 export const contactLinks: NavItemData[] = [
