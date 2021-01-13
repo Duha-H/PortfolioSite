@@ -13,9 +13,7 @@ div.nav:not(.visible) {
   max-width: var(--max-content-width);
   margin: 0 auto;
   background-color: var(--bg);
-  z-index: 3;
-  box-shadow: var(--header-shadow);
-
+  z-index: 5;
   transform-origin: top;
 }
 

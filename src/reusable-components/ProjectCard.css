@@ -1,6 +1,7 @@
 .project-container {
   --radius: 10px;
   --img-height: 55%;
+  --info-height: 45%;
 
   min-width: 275px;
   max-width: 300px;
@@ -23,14 +24,16 @@
   background-size: contain;
 }
 
-.project-container a.link-parent {
+.project-container a.link-parent,
+.project-container button.link-parent {
   height: 100%;
   margin: 15px;
   background-color: var(--element-bg);
   border-radius: var(--radius);
 }
 
-.project-container:hover a.link-parent {
+.project-container:hover a.link-parent,
+.project-container:hover button.link-parent {
   box-shadow: var(--hover-shadow);
 }
 
@@ -56,8 +59,11 @@
 }
 
 .info {
-  padding: 20px;
+  padding: 15px;
   text-align: left;
+  height: var(--info-height);
+  box-sizing: border-box;
+  position: relative;
 }
 
 .info h3 {
@@ -87,9 +93,7 @@
   display: flex;
   flex-direction: row;
   position: absolute;
-  left: 30px;
-  right: 30px;
-  bottom: 30px;
+  bottom: 15px;
   overflow: hidden;
 }
 

@@ -1,10 +1,11 @@
 import React from "react";
 import { ProjectItem } from "./types";
 import "./ProjectCard.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 interface CardProps {
   project: ProjectItem,
+  navigate?: boolean,
 }
 
 class ProjectCard extends React.Component<CardProps, CardProps> {
@@ -12,6 +13,7 @@ class ProjectCard extends React.Component<CardProps, CardProps> {
     super(props);
     this.state = {
       project: props.project,
+      navigate: false,
     }
     
   }
@@ -23,9 +25,16 @@ class ProjectCard extends React.Component<CardProps, CardProps> {
   }
 
   render() {
+    if (this.state.navigate) {
+      return <Redirect to={`/projects/${this.state.project.id}`} />;
+    }
+
     return (
       <div className="project-container">
-        <Link to={`/projects/${this.state.project.id}`} className="link-parent" id={`link-${this.state.project.id}`}>
+        <button
+          onClick={() => this.setState({navigate: true})}
+          className="link-parent"
+          id={`link-${this.state.project.id}`}>
           <div className="image-overlay" style={{backgroundImage: `url(${this.state.project.media[0].content})`, }}></div>
           <div className="info">
             <div className="project-header">
@@ -52,7 +61,7 @@ class ProjectCard extends React.Component<CardProps, CardProps> {
               }) }
             </div>
           </div>
-        </Link>
+        </button>
         
       </div>
     );

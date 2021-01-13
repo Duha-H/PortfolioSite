@@ -1,9 +1,7 @@
-.view-container {
-  min-width: 50%;
-  height: 100vh;
-  margin-top: 60px;
-  padding: 20px;
-  box-sizing: border-box;
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .hidden {
@@ -15,6 +13,7 @@
   transform-origin: top;
   display: flex;
   flex-direction: column;
+  min-width: 350px;
 }
 
 .view-header {
@@ -26,18 +25,26 @@
   width: 20px;
 }
 
-.spanning-content.banner {
-  padding-top: 50px;
+.banner {
+  padding-top: 60px;
   padding-bottom: 10px;
-  margin-bottom: 50px;
   position: sticky;
-  top: 40px;
+  top: 50px;
   background-color: var(--bg);
-  z-index: 2;
+  z-index: 4;
+  box-shadow: var(--header-shadow);
+}
+
+.banner .spanning-content {
+  margin-bottom: 20px;
 }
 
 .spanning-content.baseline {
   align-items: baseline;
+}
+
+.spanning-content img.icon {
+  padding-left: 0;
 }
 
 .banner a img.icon:not(.disabled) {
@@ -46,6 +53,27 @@
 
 .banner a:hover img.icon:not(.disabled) {
   transform: scale(1.15);
+}
+
+nav.sidebar {
+  position: sticky;
+  top: 200px;
+  z-index: 4;
+}
+
+.sidebar ul {
+  list-style: disc inside;
+  padding-left: 20px;
+  color: var(--text);
+  width: max-content;
+}
+
+.sidebar li {
+  padding: 5px 0;
+}
+
+.sidebar li:first-of-type {
+  padding-top: 10px;
 }
 
 h2.title {
@@ -148,6 +176,7 @@ h2.title {
   justify-content: center;
   margin-top: 100px;
   max-width: 700px;
+  scroll-margin: 220px;
 }
 
 .baseline .project-section {
@@ -163,7 +192,7 @@ h2.title {
 }
 
 .project-section.multiple {
-  width: 300px;
+  /* width: 300px; */
   margin-right: 50px;
 }
 
@@ -178,7 +207,7 @@ h2.title {
   font-family: var(--font-code);
   color: var(--accent);
   font-weight: 600;
-  min-width: 80px;
+  min-width: 65px;
   margin: 0;
   padding-bottom: 25px;
   text-align: left;
@@ -215,33 +244,18 @@ p.tech-item {
 }
 
 @media screen and (max-width: 900px) {
-  .view-container {
-    position: fixed;
-    min-width: 450px;
-    bottom: 0;
-    box-shadow: 0 0 70px 100px var(--bg-opaque);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-  }
-
   .spanning-content.baseline {
     flex-direction: column-reverse;
   }
 }
 
-@media screen and (max-width: 500px) {
-  .view-container {
-    position: fixed;
-    min-width: 100%;
-    left: 0;
-    transform: translateX(0);
-    top: 25px;
-    box-shadow: 0 0 15px var(--bg);
-    overflow-y: auto;
-    padding-bottom: 80px;
+@media screen and (max-width: 650px) {
+  nav.sidebar {
+    display: none;
   }
+}
 
+@media screen and (max-width: 500px) {
   h2.title {
     font-size: 1.45em;
     white-space: nowrap;

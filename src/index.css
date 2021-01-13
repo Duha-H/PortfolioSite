@@ -50,7 +50,7 @@ body[theme='light'] {
   --secondary: #7c848c;
   --element-bg: #f2f4f7;
   --hover-shadow: 0 0 15px rgba(208, 204, 204, 0.73);
-  --header-shadow: 0 30px 15px #e6e9eccb;
+  --header-shadow: 0 30px 30px #e6e9ec4b;
   --bg-opaque: #e6e9ec;
   scrollbar-color: var(--accent) var(--bg);
 }
@@ -111,9 +111,10 @@ button {
   border: none;
   background: none;
   padding: 0;
+  cursor: pointer;
 }
 
-p a, li a, a.link {
+p a, li a, a.link, nav.sidebar button {
   color: var(--accent);
   font-weight: 600;
   font-family: var(--font-code);
@@ -127,12 +128,12 @@ p b, li b {
   font-weight: normal;
 }
 
-p a:after, ul:not(.nav) li a:after, a.link:after {    
+p a:after, ul:not(.nav) li a:after, a.link:after, nav.sidebar button:after {    
   background: none repeat scroll 0 0 transparent;
-  bottom: -5px;
+  bottom: -4px;
   content: "";
   display: block;
-  height: 3px;
+  height: 2px;
   right: 100%;
   left: 0;
   position: absolute;
@@ -141,7 +142,7 @@ p a:after, ul:not(.nav) li a:after, a.link:after {
   width: 0;
 }
 
-p a:hover:after, ul:not(.nav) li a:hover:after, a.link:hover:after { 
+p a:hover:after, ul:not(.nav) li a:hover:after, a.link:hover:after, nav.sidebar button:hover:after { 
   width: 100%; 
   right: 0;
 }
@@ -248,6 +249,12 @@ div.contact p.prompt {
   flex-wrap: nowrap;
   width: auto;
   margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+  div.page-content {
+    padding: 0 40px;
+  }
 }
 
 @media screen and (max-width: 500px) {
