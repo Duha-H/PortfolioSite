@@ -9,6 +9,10 @@
   line-height: normal;
 }
 
+.nav:not(.contact) li a {
+  filter: grayscale(80%);
+}
+
 .nav li:last-of-type {
   margin-right: 0;
 }
@@ -27,7 +31,7 @@ div:not(.contact) .nav li.reverse, .contact-links li.reverse {
 }
 
 .nav li a.active-link {
-  filter: grayscale(80%);
+  filter: none;
 }
 
 .nav img.icon {

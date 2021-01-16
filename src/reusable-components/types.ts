@@ -33,3 +33,9 @@ export interface MediaItem {
   content: string;
   altText: string;
 }
+
+export interface Skill {
+  name: string;
+  logoUrl: string;
+  level?: 1 | 2 | 3 | 4;
+}

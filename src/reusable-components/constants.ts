@@ -1,6 +1,6 @@
 // Constants
 
-import { NavItemData } from "./types";
+import { NavItemData, Skill } from "./types";
 
 export const TECH = {
   C: 'C',
@@ -44,7 +44,65 @@ export const TECH = {
   GIT: 'Git',
 }
 
-export const languages = [
+export const TECH_LOGOS = {
+  C: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533350/logos/c_wgfk2d.svg',
+  CPP: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533373/logos/c-plusplus_glynll.svg',
+  CSHARP: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533361/logos/c-sharp_ktjulq.svg',
+  PYTHON: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533339/logos/python_dyuo5d.svg',
+  JS: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610532875/logos/javascript_dixzg7.svg',
+  TS: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533318/logos/typescript-icon_y0i2ud.svg',
+  HTML: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610550998/logos/html-5_gohsco.svg',
+  CSS: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551010/logos/css-3_zyl2sa.svg',
+  JAVA: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533329/logos/java_yff0bb.svg',
+  RUST: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610550929/logos/rust_chppkg.svg',
+  SQL: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533150/logos/sql-svgrepo-com_qixtji.svg',
+  GQL: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533308/logos/graphql_uwkp9k.svg',
+  GLSL: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533296/logos/opengl_biepn6.svg',
+  OPENGL: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533296/logos/opengl_biepn6.svg',
+  WEBGL: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610550643/logos/WebGL_Logo_f2dnig.svg',
+  ANGULAR: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610532322/logos/angular-icon_t0fohq.svg',
+  REACT: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610550914/logos/react_ymnjf0.svg',
+  RN: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610550914/logos/react_ymnjf0.svg',
+  UE: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610550866/logos/unity_svsur3.svg',
+  SWING: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533329/logos/java_yff0bb.svg',
+  JDBC: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533329/logos/java_yff0bb.svg',
+  TFLOW: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610550810/logos/tensorflow_kywscs.svg',
+  FLASK: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610550824/logos/flask_qwf4bx.svg',
+  NODE: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610550838/logos/nodejs-icon_rgpl1v.svg',
+  AWS: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551654/logos/aws_pttct2.svg',
+  AWS_COGNITO: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551772/logos/aws-cognito_wiivsg.svg',
+  AWS_APPSYNC: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551329/logos/aws-api-gateway_reyun2.svg',
+  AWS_DB: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551750/logos/aws-dynamodb_efcjos.svg',
+  FB: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551516/logos/firebase_fq1w9a.svg',
+  FB_FIRESTORE: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551516/logos/firebase_fq1w9a.svg',
+  FB_AUTH: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551516/logos/firebase_fq1w9a.svg',
+  MONGO: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551540/logos/mongodb_nvluto.svg',
+  ORACLE: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551561/logos/oracle_ckjkzt.svg',
+  TK: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610533339/logos/python_dyuo5d.svg',
+  VSC: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610557142/logos/visual-studio-code_p9wqkl.svg',
+  RXJS: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610550849/logos/reactivex_ywwc70.svg',
+  WIN: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551614/logos/microsoft-windows_urmkjz.svg',
+  LINUX: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551632/logos/linux-tux_f2w2v5.svg',
+  GIT: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551581/logos/git-icon_vrosdp.svg',
+}
+
+export const languages: Skill[] = [
+  { name: TECH.JS, level: 1, logoUrl: TECH_LOGOS.JS },
+  { name: TECH.TS, level: 1, logoUrl: TECH_LOGOS.TS },
+  { name: TECH.JAVA, level: 1, logoUrl: TECH_LOGOS.JAVA },
+  { name: TECH.PYTHON, level: 1, logoUrl: TECH_LOGOS.PYTHON },
+  { name: TECH.C, level: 1, logoUrl: TECH_LOGOS.C },
+  { name: TECH.CPP, level: 1, logoUrl: TECH_LOGOS.CPP },
+  { name: TECH.CSHARP, level: 1, logoUrl: TECH_LOGOS.CSHARP },
+  { name: TECH.HTML, level: 1, logoUrl: TECH_LOGOS.HTML },
+  { name: TECH.CSS, level: 1, logoUrl: TECH_LOGOS.CSS },
+  { name: TECH.RUST, level: 1, logoUrl: TECH_LOGOS.RUST },
+  { name: TECH.SQL, level: 1, logoUrl: TECH_LOGOS.SQL },
+  { name: TECH.GQL, level: 1, logoUrl: TECH_LOGOS.GQL },
+  { name: TECH.GLSL, level: 1, logoUrl: TECH_LOGOS.GLSL },
+];
+
+export const languages1 = [
   TECH.JS,
   TECH.TS,
   TECH.JAVA,
@@ -60,7 +118,22 @@ export const languages = [
   TECH.GLSL,
 ];
 
-export const libraries = [
+export const libraries: Skill[] = [
+  { name: TECH.ANGULAR, level: 1, logoUrl: TECH_LOGOS.ANGULAR },
+  { name: TECH.REACT, level: 1, logoUrl: TECH_LOGOS.REACT },
+  { name: TECH.OPENGL, level: 1, logoUrl: TECH_LOGOS.OPENGL },
+  { name: TECH.WEBGL, level: 1, logoUrl: TECH_LOGOS.WEBGL },
+  { name: TECH.RN, level: 1, logoUrl: TECH_LOGOS.RN },
+  { name: TECH.UE, level: 1, logoUrl: TECH_LOGOS.UE },
+  { name: TECH.SWING, level: 1, logoUrl: TECH_LOGOS.SWING },
+  { name: TECH.JDBC, level: 1, logoUrl: TECH_LOGOS.JDBC },
+  { name: TECH.TFLOW, level: 1, logoUrl: TECH_LOGOS.TFLOW },
+  { name: TECH.FLASK, level: 1, logoUrl: TECH_LOGOS.FLASK },
+  { name: TECH.NODE, level: 1, logoUrl: TECH_LOGOS.TK },
+  { name: TECH.RXJS, level: 1, logoUrl: TECH_LOGOS.RXJS },
+];
+
+export const libraries1 = [
   TECH.ANGULAR,
   TECH.REACT,
   TECH.OPENGL,
@@ -76,7 +149,22 @@ export const libraries = [
   TECH.RXJS,
 ];
 
-export const tools = [
+export const tools: Skill[] = [
+  { name: TECH.GIT, level: 1, logoUrl: TECH_LOGOS.GIT },
+  { name: TECH.WIN, level: 1, logoUrl: TECH_LOGOS.WIN },
+  { name: TECH.LINUX, level: 1, logoUrl: TECH_LOGOS.LINUX },
+  { name: TECH.AWS, level: 1, logoUrl: TECH_LOGOS.AWS },
+  { name: TECH.AWS_APPSYNC, level: 1, logoUrl: TECH_LOGOS.AWS_APPSYNC },
+  { name: TECH.AWS_COGNITO, level: 1, logoUrl: TECH_LOGOS.AWS_COGNITO },
+  { name: TECH.AWS_DB, level: 1, logoUrl: TECH_LOGOS.AWS_DB },
+  { name: TECH.FB, level: 1, logoUrl: TECH_LOGOS.FB },
+  { name: TECH.FB_AUTH, level: 1, logoUrl: TECH_LOGOS.FB_AUTH },
+  { name: TECH.FB_FIRESTORE, level: 1, logoUrl: TECH_LOGOS.FB_FIRESTORE },
+  { name: TECH.MONGO, level: 1, logoUrl: TECH_LOGOS.MONGO },
+  { name: TECH.ORACLE, level: 1, logoUrl: TECH_LOGOS.ORACLE },
+];
+
+export const tools1 = [
   TECH.GIT,
   TECH.WIN,
   TECH.LINUX,
