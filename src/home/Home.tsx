@@ -10,10 +10,12 @@ import PropTypes from "prop-types";
 import projects from "../projects/projectData";
 import ProjectCard from "../reusable-components/ProjectCard";
 import { languages, libraries, tools } from "../reusable-components/constants";
+import { SkillBubble } from "../reusable-components/SkillBubble";
 
 interface StateType {
   // theme: 'dark' | 'light';
   name: string;
+  visibleSkillSection: 'languages' | 'libraries' | 'tools';
 }
 
 class Home extends React.Component<any, StateType> {
@@ -29,11 +31,13 @@ class Home extends React.Component<any, StateType> {
     location: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
   }
+  visibleSection: 'languages' | 'libraries' | 'tools' = 'languages';
 
   constructor(props: any) {
     super(props);
     this.state = {
       name: '',
+      visibleSkillSection: 'languages',
     }
   }
 
@@ -53,6 +57,10 @@ class Home extends React.Component<any, StateType> {
     }, 150);
   }
 
+  toggleSkillSection(section: 'languages' | 'libraries' | 'tools') {
+    this.setState({visibleSkillSection: section});    
+  }
+
   render() {
     return (
       <div className="page-content" id="center">
@@ -70,13 +78,6 @@ class Home extends React.Component<any, StateType> {
             data-aos-offset="0">
             <h2>Software Developer</h2>
             <h3>I'd love to let you know more about myself and my work &#128578;</h3>
-            <p className="prompt center"
-              data-aos="disappear"
-              data-aos-anchor-placement="top-center"
-              data-aos-easing="ease-in-back"
-              id="scroll-prompt">
-              scroll down <img className="icon" src={require('../assets/icon_arrow_down.svg')} alt="down arrow"/>
-            </p>
           </div>
           
         </div>
@@ -104,31 +105,48 @@ class Home extends React.Component<any, StateType> {
           <h3 className="section-title">Skills</h3>
           <p>Whenever possible, I do my best to select the most appropriate tools for a project &#128296;. This gives me a greater chance to become familiar with a variety of tools and tech stacks out there.</p>
           <p>Here are some <b>technical tools I'm familiar with:</b></p>
-          <ul className="skills">
-            <li>
-              <div>
+          <ul className="skill-nav">
+            <li
+              className={this.state.visibleSkillSection === 'languages' ? 'selected' : ''}>
+              <button onClick={() => this.toggleSkillSection('languages')}>
                 <p className="title"><img src={require('../assets/icon_skills.svg')} className="icon" alt=""/> Languages</p>
-                <div className="skill-group">
-                  { languages.map(language => <p className="tech-item">{ language }</p>) }
-                </div>
-              </div>
+              </button>
             </li>
-            <li>
-              <div>
-                <p className="title"><img src={require('../assets/icon_skills.svg')} className="icon" alt=""/> Libraries, APIs, Frameworks</p>
-                <div className="skill-group">
-                  { libraries.map(library => <p className="tech-item">{ library }</p>) }
-                </div>
-              </div>
+            <li
+              className={this.state.visibleSkillSection === 'libraries' ? 'selected' : ''}>
+              <button onClick={() => this.toggleSkillSection('libraries')}>
+                <p className="title"><img src={require('../assets/icon_skills.svg')} className="icon" alt=""/> Libraries</p>
+              </button>
             </li>
-            <li>
-              <div>
-                <p className="title"><img src={require('../assets/icon_skills.svg')} className="icon" alt=""/> Platforms, Databases, Tools</p>
-                <div className="skill-group">
-                  { tools.map(tool => <p className="tech-item">{ tool }</p>) }
-                </div>
-              </div>
+            <li
+              className={this.state.visibleSkillSection === 'tools' ? 'selected' : ''}>
+              <button onClick={() => this.toggleSkillSection('tools')}>
+                <p className="title"><img src={require('../assets/icon_skills.svg')} className="icon" alt=""/> Tools</p>
+              </button>
             </li>
+          </ul>
+          <ul className="skills">
+            { this.state.visibleSkillSection === 'languages' &&
+              <li>
+                <div className="skill-group">
+                  { languages.map(language => <SkillBubble skill={language} />) }
+                </div>
+              </li>
+            }
+            { this.state.visibleSkillSection === 'libraries' &&
+              <li>
+                <div className="skill-group">
+                  { libraries.map(library => <SkillBubble skill={library} />) }
+                </div>
+              </li>
+            }
+            { this.state.visibleSkillSection === 'tools' &&
+              <li>
+                <div className="skill-group">
+                  { tools.map(tool => <SkillBubble skill={tool} />) }
+                </div>
+              </li>
+            }            
           </ul>
         </div>
 

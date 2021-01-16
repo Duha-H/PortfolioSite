@@ -177,6 +177,42 @@ a.button {
   margin-left: 20px;
 }
 
+ul.skill-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+}
+
+ul.skill-nav button {
+  border-radius: 20px;
+  line-height: auto;
+  padding: 5px;
+  margin: 0 5px;
+  display: flex;
+  filter: grayscale(80%);
+}
+
+ul.skill-nav button:hover {
+  box-shadow: var(--hover-shadow);
+  filter: none;
+}
+
+ul.skill-nav li p.title {
+  margin: 0;
+  display: flex;
+  color: var(--accent);
+  padding-right: 10px;
+}
+
+ul.skill-nav li.selected button {
+  filter: none;
+  background-color: var(--element-bg);
+}
+
 ul.skills {
   list-style: none;
   display: flex;
@@ -186,15 +222,15 @@ ul.skills {
   padding: 0;
   width: 100%;
   align-items: center;
+  margin: 0;
 }
 
 ul.skills li {
-  margin: 20px 10px;
   padding: 10px 20px;
   background-color: var(--element-bg);
   border-radius: 10px;
-  width: 320px;
   box-sizing: border-box;
+  animation: 0.25s pulse ease-in-out;
 }
 
 ul.skills p.title img.icon {
@@ -202,11 +238,12 @@ ul.skills p.title img.icon {
 }
 
 div.skill-group {
-  max-height: 200px;
+  min-height: 200px;
   text-align: left;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
 }
 
 div.contact-links {
@@ -237,18 +274,8 @@ p.prompt:hover {
   color: var(--primary);
 }
 
-.contact-links a img {
-  /* width: 20px; */
-}
-
 .contact-links div.line {
   margin-top: 5px;
-}
-
-@media screen and (max-width: 1400px) {
-  .header {
-    /* margin-left: 75px; */
-  }
 }
 
 @media screen and (max-width: 900px) {
@@ -258,7 +285,7 @@ p.prompt:hover {
 
   ul.skills li {
     min-width: unset;
-    width: 90%;
+    width: 100%;
     box-sizing: border-box;
   }
 }
@@ -268,10 +295,6 @@ p.prompt:hover {
     align-items: baseline;
     margin-left: 0px;
     box-shadow: none;
-  }
-
-  .page-content .home {
-    margin-top: 60%;
   }
 
   .page-content .home.row, .page-content .home .row {
@@ -295,6 +318,10 @@ p.prompt:hover {
 
   div.line {
     display: none;
+  }
+
+  ul.skill-nav img.icon {
+    padding: 0 5px;
   }
 }
 

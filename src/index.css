@@ -157,7 +157,7 @@ p a:hover:after, ul:not(.nav) li a:hover:after, a.link:hover:after, nav.sidebar 
 }
 
 img.logo {
-  width: 35px;
+  max-width: 60px;
   height: 35px;
   margin: 10px 0;
 }
@@ -361,6 +361,21 @@ div.contact p.prompt {
   }
   to {
     filter: brightness(150%) hue-rotate(5deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0%;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 100%;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 100%;
+    transform: scale(1);
   }
 }
 

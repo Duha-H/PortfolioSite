@@ -12,7 +12,6 @@ div.nav:not(.visible) {
   width: 100%;
   max-width: var(--max-content-width);
   margin: 0 auto;
-  background-color: var(--bg);
   z-index: 5;
   transform-origin: top;
 }
