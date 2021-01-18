@@ -90,7 +90,7 @@ const projects: {[key: string]: ProjectItem} = {
       { content: require('../assets/project-media/karen_0.svg'), altText: 'Text Generating RNN cover image'},
       { content: require('../assets/project-media/karen_2.png'), altText: 'KAREN: The Cellphone Review-Generating RNN'},
     ],
-    tech: [TECH.PYTHON, TECH.TFLOW, ],
+    tech: [TECH.PYTHON, TECH.TFLOW, TECH.CUDA ],
     mode: 'team project',
     status: 'comp',
     openSource: false,

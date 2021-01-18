@@ -42,6 +42,7 @@ export const TECH = {
   WIN: 'Windows',
   LINUX: 'Linux',
   GIT: 'Git',
+  CUDA: 'CUDA',
 }
 
 export const TECH_LOGOS = {
