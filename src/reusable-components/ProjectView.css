@@ -261,6 +261,15 @@ p.tech-item {
     white-space: nowrap;
   }
 
+  .banner {
+    padding-top: 10px;
+    top: 70px;
+  }
+
+  .slide-up {
+    min-width: 280px;
+  }
+
   .baseline .project-section {
     margin-top: 10px;
   }
