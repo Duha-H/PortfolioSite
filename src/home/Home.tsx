@@ -87,12 +87,12 @@ class Home extends React.Component<any, StateType> {
           <div className="row">
             <div className="">
               <p>I'm a <b>recently-graduated software developer</b>, currently based in Toronto. I enjoy experimenting with different technologies, and building pieces of software that solve a problem or make a task slightly easier.</p>
-              <p>I haven't always had an interest in software development, but 4 years ago in an inadvertent escape from an Architecture degree I decided to transfer to a Computer Science program, and it has kind of just clicked for me since!</p>
+              <p>I haven't always had an interest in software development, but 4 years ago, in an inadvertent escape from an Architecture degree, I decided to transfer to a Computer Science program. It has kind of just clicked for me since!</p>
             </div>
             
             <div className="">
-              <p>Coming from a background in architectural design, I think I've developed the ability to view projects holistically and anticipate future concerns, as well as a unique attention to minute details. Which, I think, is kind of neat!</p>
-              <p>I have quite a bit of learning to do, and I, therefore, find great value in working as part of a team. I do my best to be a teammate I would want to have, and I greatly value communication as a team member above all else.</p>
+              <p>Coming from a background in architectural design projects, I think I've developed an ability to view projects holistically and anticipate future concerns, as well as an attention to minute details. Which, I think, is kind of neat!</p>
+              <p>I have a lot of learning to do, so I find great value in working as part of a team. I do my best to be a teammate I would want to have, and I greatly value communication as a team member above all else.</p>
               <p className="prompt">
                 <NavLink to="/about" className="link" id="link-about">read more</NavLink>
                 <img className="icon" src={require('../assets/icon_arrow.svg')} alt="right arrow"/>
