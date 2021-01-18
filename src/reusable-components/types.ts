@@ -37,5 +37,5 @@ export interface MediaItem {
 export interface Skill {
   name: string;
   logoUrl: string;
-  level?: 1 | 2 | 3 | 4;
+  level?: 0 | 1 | 2 | 3;
 }

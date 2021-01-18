@@ -87,19 +87,19 @@ export const TECH_LOGOS = {
 }
 
 export const languages: Skill[] = [
-  { name: TECH.JS, level: 1, logoUrl: TECH_LOGOS.JS },
-  { name: TECH.TS, level: 1, logoUrl: TECH_LOGOS.TS },
-  { name: TECH.JAVA, level: 1, logoUrl: TECH_LOGOS.JAVA },
-  { name: TECH.PYTHON, level: 1, logoUrl: TECH_LOGOS.PYTHON },
-  { name: TECH.C, level: 1, logoUrl: TECH_LOGOS.C },
-  { name: TECH.CPP, level: 1, logoUrl: TECH_LOGOS.CPP },
+  { name: TECH.JS, level: 3, logoUrl: TECH_LOGOS.JS },
+  { name: TECH.TS, level: 3, logoUrl: TECH_LOGOS.TS },
+  { name: TECH.JAVA, level: 2, logoUrl: TECH_LOGOS.JAVA },
+  { name: TECH.PYTHON, level: 3, logoUrl: TECH_LOGOS.PYTHON },
+  { name: TECH.C, level: 0, logoUrl: TECH_LOGOS.C },
+  { name: TECH.CPP, level: 2, logoUrl: TECH_LOGOS.CPP },
   { name: TECH.CSHARP, level: 1, logoUrl: TECH_LOGOS.CSHARP },
-  { name: TECH.HTML, level: 1, logoUrl: TECH_LOGOS.HTML },
-  { name: TECH.CSS, level: 1, logoUrl: TECH_LOGOS.CSS },
-  { name: TECH.RUST, level: 1, logoUrl: TECH_LOGOS.RUST },
-  { name: TECH.SQL, level: 1, logoUrl: TECH_LOGOS.SQL },
-  { name: TECH.GQL, level: 1, logoUrl: TECH_LOGOS.GQL },
-  { name: TECH.GLSL, level: 1, logoUrl: TECH_LOGOS.GLSL },
+  { name: TECH.HTML, level: 3, logoUrl: TECH_LOGOS.HTML },
+  { name: TECH.CSS, level: 3, logoUrl: TECH_LOGOS.CSS },
+  { name: TECH.RUST, level: 0, logoUrl: TECH_LOGOS.RUST },
+  { name: TECH.SQL, level: 0, logoUrl: TECH_LOGOS.SQL },
+  { name: TECH.GQL, level: 0, logoUrl: TECH_LOGOS.GQL },
+  { name: TECH.GLSL, level: 0, logoUrl: TECH_LOGOS.GLSL },
 ];
 
 export const languages1 = [
@@ -119,18 +119,18 @@ export const languages1 = [
 ];
 
 export const libraries: Skill[] = [
-  { name: TECH.ANGULAR, level: 1, logoUrl: TECH_LOGOS.ANGULAR },
-  { name: TECH.REACT, level: 1, logoUrl: TECH_LOGOS.REACT },
-  { name: TECH.OPENGL, level: 1, logoUrl: TECH_LOGOS.OPENGL },
-  { name: TECH.WEBGL, level: 1, logoUrl: TECH_LOGOS.WEBGL },
+  { name: TECH.ANGULAR, level: 3, logoUrl: TECH_LOGOS.ANGULAR },
+  { name: TECH.REACT, level: 3, logoUrl: TECH_LOGOS.REACT },
+  { name: TECH.OPENGL, level: 2, logoUrl: TECH_LOGOS.OPENGL },
+  { name: TECH.WEBGL, level: 3, logoUrl: TECH_LOGOS.WEBGL },
   { name: TECH.RN, level: 1, logoUrl: TECH_LOGOS.RN },
-  { name: TECH.UE, level: 1, logoUrl: TECH_LOGOS.UE },
+  { name: TECH.UE, level: 2, logoUrl: TECH_LOGOS.UE },
   { name: TECH.SWING, level: 1, logoUrl: TECH_LOGOS.SWING },
   { name: TECH.JDBC, level: 1, logoUrl: TECH_LOGOS.JDBC },
   { name: TECH.TFLOW, level: 1, logoUrl: TECH_LOGOS.TFLOW },
-  { name: TECH.FLASK, level: 1, logoUrl: TECH_LOGOS.FLASK },
-  { name: TECH.NODE, level: 1, logoUrl: TECH_LOGOS.TK },
-  { name: TECH.RXJS, level: 1, logoUrl: TECH_LOGOS.RXJS },
+  { name: TECH.FLASK, level: 0, logoUrl: TECH_LOGOS.FLASK },
+  { name: TECH.NODE, level: 2, logoUrl: TECH_LOGOS.TK },
+  { name: TECH.RXJS, level: 3, logoUrl: TECH_LOGOS.RXJS },
 ];
 
 export const libraries1 = [
@@ -150,17 +150,17 @@ export const libraries1 = [
 ];
 
 export const tools: Skill[] = [
-  { name: TECH.GIT, level: 1, logoUrl: TECH_LOGOS.GIT },
-  { name: TECH.WIN, level: 1, logoUrl: TECH_LOGOS.WIN },
-  { name: TECH.LINUX, level: 1, logoUrl: TECH_LOGOS.LINUX },
-  { name: TECH.AWS, level: 1, logoUrl: TECH_LOGOS.AWS },
+  { name: TECH.GIT, level: 3, logoUrl: TECH_LOGOS.GIT },
+  { name: TECH.WIN, level: 3, logoUrl: TECH_LOGOS.WIN },
+  { name: TECH.LINUX, level: 3, logoUrl: TECH_LOGOS.LINUX },
+  // { name: TECH.AWS, level: 1, logoUrl: TECH_LOGOS.AWS },
   { name: TECH.AWS_APPSYNC, level: 1, logoUrl: TECH_LOGOS.AWS_APPSYNC },
-  { name: TECH.AWS_COGNITO, level: 1, logoUrl: TECH_LOGOS.AWS_COGNITO },
-  { name: TECH.AWS_DB, level: 1, logoUrl: TECH_LOGOS.AWS_DB },
-  { name: TECH.FB, level: 1, logoUrl: TECH_LOGOS.FB },
-  { name: TECH.FB_AUTH, level: 1, logoUrl: TECH_LOGOS.FB_AUTH },
-  { name: TECH.FB_FIRESTORE, level: 1, logoUrl: TECH_LOGOS.FB_FIRESTORE },
-  { name: TECH.MONGO, level: 1, logoUrl: TECH_LOGOS.MONGO },
+  { name: TECH.AWS_COGNITO, level: 2, logoUrl: TECH_LOGOS.AWS_COGNITO },
+  { name: TECH.AWS_DB, level: 2, logoUrl: TECH_LOGOS.AWS_DB },
+  // { name: TECH.FB, level: 1, logoUrl: TECH_LOGOS.FB },
+  { name: TECH.FB_AUTH, level: 3, logoUrl: TECH_LOGOS.FB_AUTH },
+  { name: TECH.FB_FIRESTORE, level: 3, logoUrl: TECH_LOGOS.FB_FIRESTORE },
+  { name: TECH.MONGO, level: 2, logoUrl: TECH_LOGOS.MONGO },
   { name: TECH.ORACLE, level: 1, logoUrl: TECH_LOGOS.ORACLE },
 ];
 
