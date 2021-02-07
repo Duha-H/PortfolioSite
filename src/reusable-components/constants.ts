@@ -43,6 +43,7 @@ export const TECH = {
   LINUX: 'Linux',
   GIT: 'Git',
   CUDA: 'CUDA',
+  JEST: 'Jest'
 }
 
 export const TECH_LOGOS = {
@@ -85,6 +86,7 @@ export const TECH_LOGOS = {
   WIN: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551614/logos/microsoft-windows_urmkjz.svg',
   LINUX: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551632/logos/linux-tux_f2w2v5.svg',
   GIT: 'https://res.cloudinary.com/djxztokzp/image/upload/v1610551581/logos/git-icon_vrosdp.svg',
+  JEST: 'https://res.cloudinary.com/djxztokzp/image/upload/v1612726193/logos/jest_ufrjxk.svg',
 }
 
 export const languages: Skill[] = [
@@ -132,6 +134,7 @@ export const libraries: Skill[] = [
   { name: TECH.FLASK, level: 0, logoUrl: TECH_LOGOS.FLASK },
   { name: TECH.NODE, level: 2, logoUrl: TECH_LOGOS.TK },
   { name: TECH.RXJS, level: 3, logoUrl: TECH_LOGOS.RXJS },
+  { name: TECH.JEST, level: 1, logoUrl: TECH_LOGOS.JEST },
 ];
 
 export const libraries1 = [
