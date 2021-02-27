@@ -23,7 +23,7 @@ class Projects extends React.Component {
         <div className="projects-parent slide-up">
           <div className="">
             <div className="projects">
-              { Object.values(projects).map(project => {
+              { projects.map(project => {
                 return <ProjectCard project={project} />
               }) }
             </div>

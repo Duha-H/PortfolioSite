@@ -10,6 +10,7 @@ export interface NavItemData {
 
 export interface ProjectItem {
   id: string;
+  idx: number;
   title: string;
   excerpt: string;
   description: string;

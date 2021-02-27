@@ -3,9 +3,10 @@ import { ProjectItem } from "../reusable-components/types";
 import { TECH, TAGS } from "../reusable-components/constants";
 
 
-const projects: {[key: string]: ProjectItem} = {
-  'traccio': {
+const projects: ProjectItem[] = [
+  {
     id: 'traccio',
+    idx: 0,
     title: 'Traccio',
     excerpt: 'Job-search tracking application',
     description: 'Traccio is a simple <b>job search tracking application</b>. It allows users to organize their job search endeavors, log in job applications they\'ve submitted, and conveniently track them. It also helps users better monitor their progress, and distill different trends in their job hunts. <br><br> More details about Traccio are available in the <a href="https://github.com/Duha-H/Traccio/wiki" target="_blank" rel="noopener noreferrer">application wiki</a>.',
@@ -31,8 +32,9 @@ const projects: {[key: string]: ProjectItem} = {
       </ul> I was able to handle that with observable datastreams using <b>RxJS</b>. I went with using RxJS, as opposed to a full-fledged state-management library like Ngrx, to get a better understanding of how observables work. I think that helped me take <b>full-advantage of piping asynchronous data</b> to Angular templates, while unifying my data-sources and updates using RxJS\'s <b>BehaviourSubjects</b> and observables.',
     roadmap: 'I plan to continue to maintain and add features to Traccio continuously. Currently, <a href="https://github.com/Duha-H/Traccio/wiki/Changelog" target="_blank" rel="noopener noreferrer">v0.1.0</a> is released. In future releases, I plan to configure <b>more customizable relationship visualizations</b> between application data, I think this is going to allow users to have a better understanding of their progress. Like which resume version they submitted gave them more responses, or what percentage of applications they submitted through a job-fair gave them more offers, and other interesting details like that!',
   },
-  '3d-modeller': {
+  {
     id: '3d-modeller',
+    idx: 1,
     title: 'Interactive 3D Modeller',
     excerpt: 'Simple, interactive, 3D modelling application',
     description: 'This application is a super simple, <b>interactive 3D city block visualization tool</b> built for the web. It allows the user to create and manipulate simple models, and store and upload 3D models.',
@@ -57,8 +59,9 @@ const projects: {[key: string]: ProjectItem} = {
     </ul> Given that breakdown, I\'m able to quickly add functionalities to the application and experiment with it more comfortably.',
     challenges: 'The most exciting challenge in building this application, and precisely why I set out to build it in the first place, was <b>understanding the rendering pipeline</b> a little better. Using WebGL without a wrapper framework eliminates the existence of a fixed pipeline; meaning that it forces the user to <b>manually handle the communication with a shader program</b>, the order of their <b>model, view, and projection matrix multiplcations</b>, and the <b>binding of an object\'s vertex buffers</b> for rendering. It also gave me the chance to manually create vertex array objects for models that I wanted to include, which is a very tedious but educating process to say the least. <br><br> However, countless educational sources exist out there that I was able to use to my advantage, and a basic understanding of the graphics pipeline (from my previous experience with <b>OpenGL</b>) made the learning curve a little more gentle &#128578;.',
   },
-  'terra-pizza': {
+  {
     id: 'terra-pizza',
+    idx: 2,
     title: 'Terra Pizza (Game)',
     excerpt: 'Desktop pizza-making game',
     description: 'This project is an <b>experiment of natural interaction techniques in virtual reality</b>, taking form in a cooking game. In this game, you\'ve been hired as a pizza cook at Terra Pizza, a pizza place on an alien planet. Aliens love their "Earth pizza", and you\'re the person for the job!',
@@ -81,8 +84,9 @@ const projects: {[key: string]: ProjectItem} = {
     </ul> You can learn more about the development details of Terra Pizza <a href="https://duha-h.github.io/TerraPizza/about" target="_blank" rel="noopener noreferrer">here</a>.',
     challenges: 'I think the functionality that was most-tasking while implementing Terra Pizza was definitely the <b>slicing behaviour</b>. This is because it involved altering the geometry of the parent mesh to produce two new meshes. And given the confines of Unity Game Engine\'s <b>vertex buffer definitions</b>, I had to navigate computing intersection positions between the slicing plane and an arbitrary object, of arbitrary shape, and figure out how to use these intersection points to generate mesh triangles of a new sliced surface for both resulting meshes. <br><br> It was a fun challenge that gave me the chance to tinker with some lower level aspects of the application, and not fully rely on Unity Engine\'s existing object interactions. In the future, I would probably like to <b>improve the computational performance of the slicing behaviour</b>, since my primary goal at the time was to simply implement the functionality.',
   },
-  'text-gen-rnn': {
+  {
     id: 'text-gen-rnn',
+    idx: 3,
     title: 'Text-Generating RNN',
     excerpt: 'Recurrent Neural Network generating phone reviews',
     description: 'KAREN is a <b>cellphone review-generating Recurrent Neural Network</b>. It is part of a research project centered around designing and training a neural network to generate text of restricted length. The network uses <b>Long Short Term Memory (LSTM)</b> architecture, which is better suited for recognizing long-distance dependencies in input data, and ideal for generating text predictions.',
@@ -105,6 +109,6 @@ const projects: {[key: string]: ProjectItem} = {
     contribution: 'My role in this project involved portions of the preprocessing phase (specifically data-encoding), as well as designing and configuring the network structure. While the preprocessing of text for training is a widely documented phase in existing references, designing the network itself was very much a shot in the dark. It involved gradually increasing the size of the network (adding additional hidden layers, and increasing the number of neurons in each layer), while maintaining a manageable architecture for training. My GPU was probably not happy.',
     challenges: 'I think that our biggest take-away from working on this project was how designing and training neural networks is a heavily empirically-based process. It involves tonnes of <b>trial and error</b>. Our generated network actually <b>did not quite deliver</b>! It managed to recognize review structures and produce a format similar to the input data, but the generated text was mostly incoherent and had a poor test performance. We suspect that we had a classic case of <b>over-fitting</b> our input data, which explains the variations in our training and testing results. <br><br> However, we gained a <b>great deal of insight</b> into the process of designing and training a neural network, and the magnitudes of difference that minor variations in the structure of the network and the format of the input dataset can create. It was a strenuous process (for us and our GPUs), but a fulfilling one nonetheless.',
   }
-}
+]
 
 export default projects;

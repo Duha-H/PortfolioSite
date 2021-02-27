@@ -123,7 +123,7 @@ class AppContainer extends React.Component<any, StateType> {
             <Route path="/" exact component={Home} />
             <Route path="/about" exact sensitive={false} component={About} />
             <Route path="/projects" exact sensitive={false} component={Projects} />
-            <Route path="/projects/:projectId" component={ProjectView} />
+            <Route path="/projects/:projectId" render={(props) => <ProjectView {...props} /> } />
             <Route path="/skills" exact sensitive={false} component={Skills} />
             <Route path="/contact" exact sensitive={false} component={Contact} />
             <Route path="/404" component={NotFound} exact />
