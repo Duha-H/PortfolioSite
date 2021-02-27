@@ -132,7 +132,7 @@ p b, li b {
 
 p a:after, ul:not(.nav) li a:after, a.link:after, nav.sidebar button:after {    
   background: none repeat scroll 0 0 transparent;
-  bottom: -4px;
+  bottom: -3px;
   content: "";
   display: block;
   height: 2px;
@@ -140,7 +140,7 @@ p a:after, ul:not(.nav) li a:after, a.link:after, nav.sidebar button:after {
   left: 0;
   position: absolute;
   background: var(--accent);
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.2s ease 0s, left 0.2s ease 0s;
   width: 0;
 }
 

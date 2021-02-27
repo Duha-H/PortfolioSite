@@ -26,7 +26,7 @@
 }
 
 .banner {
-  padding-top: 60px;
+  padding-top: 30px;
   padding-bottom: 10px;
   position: sticky;
   top: 50px;
@@ -36,7 +36,7 @@
 }
 
 .banner .spanning-content {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .spanning-content.baseline {
@@ -64,16 +64,26 @@ nav.sidebar {
 .sidebar ul {
   list-style: disc inside;
   padding-left: 20px;
-  color: var(--text);
+  color: var(--accent);
   width: max-content;
+  font-family: var(--font-code);
+  font-weight: 600;
+  font-size: 1.1em;
 }
 
 .sidebar li {
-  padding: 5px 0;
+  padding: 2.5px 0;
 }
 
 .sidebar li:first-of-type {
   padding-top: 10px;
+}
+
+nav.sidebar li button {
+  color: var(--text);
+  font-family: var(--font-poppins);
+  font-size: 1em;
+  font-weight: 500;
 }
 
 h2.title {
@@ -90,6 +100,7 @@ h2.title {
 
 .project-section .status-icon {
   width: 10px;
+  min-width: 10px;
   height: 10px;
   border-radius: 50%;
   margin: 8px 10px;
@@ -180,7 +191,7 @@ h2.title {
 }
 
 .baseline .project-section {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .project-section.right {
